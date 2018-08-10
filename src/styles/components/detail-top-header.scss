@@ -1,0 +1,59 @@
+.vw__detail-top-header {
+  .top-bar {
+    background: black;
+  }
+
+  .car-basic {
+    margin-top: 6px;
+
+    @include bp(tablet) {
+      margin-top: 0;
+    }
+
+    .dealer-actions {
+      margin-top: 22px;
+
+      .vw__icon {
+        width: 42px;
+      }
+
+      @include bp(tablet) {
+        display: none;
+      }
+    }
+  }
+
+  .car-detail {
+    margin-top: 18px;
+
+    @include bp(tablet) {
+      margin-top: 30px;
+    }
+
+    .car-name {
+      padding-bottom: 6px;
+
+      @include bp(tablet) {
+        padding-bottom: 8px;
+      }
+    }
+
+    .car-trim {
+      padding-bottom: 10px;
+
+      @include bp(tablet) {
+        padding-bottom: 12px;
+      }
+    }
+
+    .car-packages {
+      padding: 15px 0;
+    }
+
+    .car-dealer-container {
+      .car-dealer-name {
+        color: $blue1;
+      }
+    }
+  }
+}
