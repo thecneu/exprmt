@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: map-get($container-width, mobile);
+
+  @include bp(tablet) {
+    width: map-get($container-width, tablet);
+  }
+
+  @include bp(desktop) {
+    width: map-get($container-width, desktop);
+  }
+
+  @include bp(wide) {
+    width: map-get($container-width, wide);
+  }
+
+  @include bp(xl) {
+    width: map-get($container-width, xl);
+  }
+}
+
+.navigation {
+  display: none;
+
+  @include bp(desktop) {
+    display: block;
+    width: 95px;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.main-content {
+  @include bp(desktop) {
+    margin-left: 95px;
+  }
+}
