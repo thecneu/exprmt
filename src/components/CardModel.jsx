@@ -5,7 +5,10 @@ const CardModel = ({ car }) => (
     <div className="car-image">
       <img src={car.mediaImageUrl} alt={car.mediaImageUrlAlt} />
     </div>
-    <span className="price">{car.msrpFormatted}</span>
+
+    <div className="price">
+      <span>{car.msrpFormatted}</span>
+    </div>
   </div>
 )
 

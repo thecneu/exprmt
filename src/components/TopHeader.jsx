@@ -10,7 +10,6 @@ class TopHeader extends Component {
     return (
       <section className="vw__top-header">
         <div className="top-bar" />
-
         <div className="container">
           <div className="inner-container">
             <div className="inner-content">

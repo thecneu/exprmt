@@ -1,0 +1,33 @@
+.vw__models-container {
+  margin: 20px 0;
+
+  @include bp(tablet) {
+    margin: $gutter 0;
+  }
+
+  section {
+    margin-top: 20px;
+    margin-bottom: -13px;
+
+    @include bp(tablet) {
+      margin-top: $gutter;
+      margin-bottom: -$gutter / 2;
+    }
+  }
+
+  .flex-container {
+    @include flex-container;
+
+    .flex-item > div {
+      border: 1px solid;
+    }
+  }
+
+  .model-type, .flex-item {
+    margin-bottom: 13px;
+
+    @include bp(tablet) {
+      margin-bottom: $gutter / 2;
+    }
+  }
+}
