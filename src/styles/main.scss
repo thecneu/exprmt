@@ -12,6 +12,8 @@ h1, h2, h3, p { margin: 0 }
 
 .container {
   margin: 0 auto;
+  // max-width: 1160px;
+
   width: map-get($container-width, mobile);
 
   @include bp(tablet) {

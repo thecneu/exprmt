@@ -1,11 +1,11 @@
 import React from 'react'
 import TopHeader from 'components/TopHeader'
-import CarsContainer from 'components/CarsContainer'
+import ResultsContainer from 'components/ResultsContainer'
 
 const Results = () => (
   <main>
-    <TopHeader />
-    <CarsContainer />
+    {/*<TopHeader />*/}
+    <ResultsContainer />
   </main>
 )
 

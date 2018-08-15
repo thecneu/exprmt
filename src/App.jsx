@@ -13,8 +13,8 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route path="/inventory/model/:model/:key?/:value?/results" component={Results} />
-              <Route path="/vehicle/:vin?" component={Details} />
+              <Route path="/results" component={Results} />
+              <Route path="details" component={Details} />
             </Switch>
           </Router>
         </div>

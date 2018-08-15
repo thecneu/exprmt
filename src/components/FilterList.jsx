@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class FilterList extends Component {
   render() {
     return (
-      <div className="vw__filter-list-container">
-        <div className="vw__filter-list"></div>
+      <div className="vw__filter-list">
+        <div className="filter-list"></div>
       </div>
     )
   }
