@@ -1,7 +1,8 @@
 import React from 'react'
+import styles from './filter-list-item.module.scss'
 
 const FilterListItem = ({ filter, removeFilter }) => (
-  <div className="filter-list-item" onClick={() => removeFilter(filter)}>
+  <div className={styles.item} onClick={() => removeFilter(filter)}>
     <div>
       <span>Item</span>
     </div>
