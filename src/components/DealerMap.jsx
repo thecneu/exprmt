@@ -1,4 +1,5 @@
 import React from 'react'
+import ButtonLink from './ButtonLink'
 
 const DealerMap = ({ name, distance }) => (
   <div className="inner-content-map">

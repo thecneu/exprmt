@@ -4,7 +4,7 @@ const findHp = (hp) => hp.split(',').reduce(
   (next, s) => s.includes('HP') ? s.replace('HP', '').trim() : next
 , '')
 
-const CarStats = () => (
+const CarStats = ({ city, highway, hp }) => (
   <div className="car-stats">
     <ul>
       <li>

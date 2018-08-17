@@ -1,5 +1,5 @@
 import React from 'react'
-import DetailTopHeader from 'components/DetailTopHeader'
+import DetailHeaderMasthead from 'components/DetailHeaderMasthead'
 import DetailTabs from 'components/DetailTabs'
 import DetailAccessories from 'components/DetailAccessories'
 
@@ -57,7 +57,7 @@ const props = {
 
 const Details = () => (
   <main>
-    <DetailTopHeader car={props.car} />
+    <DetailHeaderMasthead car={props.car} />
     <DetailTabs features={props.features} tabs={props.tabs} />
     <DetailAccessories accessories={props.accessories} />
   </main>

@@ -15,14 +15,14 @@
 
   .content {
     padding: 20px;
-    // padding: .75 * $gutter;
+    padding: .75 * $gutter;
 
     @include bp(desktop) {
-      // padding: $gutter;
+      padding: $gutter;
     }
 
     @include bp(wide) {
-      // padding: .75 * $gutter;
+      padding: .75 * $gutter;
     }
   }
 
@@ -39,21 +39,5 @@
   .car-detail {
     @include car-flex;
     flex: 1;
-
-    span, a {
-      display: block;
-    }
-
-    .car-stats {
-      padding-bottom: 20px;
-    }
-
-    ul {
-      padding: 10px 0 20px;
-
-      li {
-        padding-left: 20px;
-      }
-    }
   }
 }

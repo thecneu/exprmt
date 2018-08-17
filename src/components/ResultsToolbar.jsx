@@ -4,7 +4,7 @@ import FilterList from './FilterList'
 import ModelDropdown from './ModelDropdown'
 import ResultsViews from './ResultsViews'
 
-const ResultsToolbar = () => (
+const ResultsToolbar = ({ type, changeType }) => (
   <div className="vw__results-toolbar">
     <div className="flex-container">
       <div className="filter-area">
@@ -13,11 +13,10 @@ const ResultsToolbar = () => (
 
       <div className="results-area">
         <div className="filter-list-area">
-          <FilterButton />
-          <FilterList />
+          <FilterButton /><FilterList />
         </div>
 
-        <ResultsViews />
+        <ResultsViews type={type} changeType={changeType} />
       </div>
     </div>
   </div>

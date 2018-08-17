@@ -1,11 +1,14 @@
 import React from 'react'
-import ModelsContainer from 'components/ModelsContainer'
-import TopHeader from 'components/TopHeader'
+import InventoryProvider from 'controllers/Inventory'
+import ModelsWrapper from 'components/ModelsWrapper'
+import HeaderMasthead from 'components/HeaderMasthead'
 
 const Landing = () => (
   <main>
-    <TopHeader />
-    <ModelsContainer />
+    <InventoryProvider>
+      {/*<HeaderMasthead />*/}
+      <ModelsWrapper />
+    </InventoryProvider>
   </main>
 )
 

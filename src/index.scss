@@ -1,7 +1,89 @@
 @import '~normalize.scss/normalize.scss';
-@import 'styles/mixins';
-@import 'styles/main';
+@import 'components/mixins';
 
-@import 'components/top-header';
-@import 'components/models-container';
-@import 'components/results-container';
+*, *:before, *:after { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, p { margin: 0 }
+
+.container {
+  margin: 0 auto;
+  // max-width: 1160px;
+
+  width: map-get($container-width, mobile);
+
+  @include bp(tablet) {
+    width: map-get($container-width, tablet);
+  }
+
+  @include bp(desktop) {
+    width: map-get($container-width, desktop);
+  }
+
+  @include bp(wide) {
+    width: map-get($container-width, wide);
+  }
+
+  @include bp(xl) {
+    width: map-get($container-width, xl);
+  }
+}
+
+.navigation {
+  display: none;
+
+  @include bp(tablet) {
+    display: block;
+    width: 95px;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.main-content {
+  @include bp(tablet) {
+    margin-left: 95px;
+  }
+}
+
+.vw__icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.flex-grid {
+    flex-wrap: wrap;
+    margin: 0 (-$gutter/2);
+
+    .flex-item {
+      padding: 0 ($gutter/2);
+      width: 50%;
+
+      @include bp(tablet) {
+        width: (100% / 3);
+      }
+
+      @include bp(wide) {
+        width: 25%;
+      }
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}

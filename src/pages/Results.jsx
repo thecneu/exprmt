@@ -1,11 +1,14 @@
 import React from 'react'
-import TopHeader from 'components/TopHeader'
-import ResultsContainer from 'components/ResultsContainer'
+import InventoryProvider from 'controllers/Inventory'
+import HeaderMasthead from 'components/HeaderMasthead'
+import ResultsWrapper from 'components/ResultsWrapper'
 
-const Results = () => (
+const Results = ({ match: { params } }) => (
   <main>
-    {/*<TopHeader />*/}
-    <ResultsContainer />
+    <InventoryProvider model={params.model} >
+      {/*<HeaderMasthead results={true} />*/}
+      <ResultsWrapper />
+    </InventoryProvider>
   </main>
 )
 

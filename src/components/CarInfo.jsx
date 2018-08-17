@@ -1,4 +1,9 @@
 import React from 'react'
+import Link from './Link'
+import Swatch from './Swatch'
+import ButtonLink from './ButtonLink'
+import DisplayHtml from './DisplayHtml'
+
 
 const CarInfo = ({ car }) => (
   <div className="content">

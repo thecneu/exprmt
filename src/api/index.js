@@ -10,10 +10,14 @@ const thingsToFilter = {
   // 'drivetrain': false
 }
 
-export const getCarModels = () => {
+export const getModels = () => {
   const carFilter = 'model' // interiorColorImage vehicleURL
   return _.uniq(_.map(dataJson, carFilter)).sort()
 }
+
+export const getCarModels = (models) => (
+  models.map(model => dataJson.find(car => car.model === model))
+)
 
 export const getFilterables = (carsData) => {
   const reducedData = carsData.map(json => {

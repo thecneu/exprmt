@@ -1,6 +1,10 @@
 import React from 'react'
+import Link from './Link'
+import CarStats from './CarStats'
+import DealerMap from './DealerMap'
+import ButtonLink from './ButtonLink'
 
-const CarDetail = () => (
+const CarDetail = ({ car }) => (
   <div className="content">
     <div className="inner-content-detail">
       <div className="top">

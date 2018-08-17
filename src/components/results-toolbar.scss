@@ -1,0 +1,44 @@
+@import './mixins';
+
+.vw__results-toolbar {
+  display: none;
+
+  @include bp(tablet) {
+    padding: 30px 0;
+    display: block;
+    border: 1px solid;
+  }
+
+  .vw__filter-button {
+    @include bp(xl) {
+      display: none;
+    }
+  }
+
+  .flex-container {
+    .filter-area {
+      border: 1px solid;
+      width: 5 / 12 * 100%;
+
+      @include bp(desktop) {
+        width: 4 / 12 * 100%;
+      }
+
+      @include bp(wide) {
+        width: 3 / 12 * 100%;
+      }
+    }
+
+    .results-area {
+      border: 1px solid;
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+
+      .filter-list-area {
+        border: 1px solid blue;
+        max-width: 7 / 12 * 100%;
+      }
+    }
+  }
+}
