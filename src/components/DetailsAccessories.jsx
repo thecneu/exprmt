@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DetailAccessories = ({ accessories }) => (
+const DetailsAccessories = ({ accessories }) => (
   <div className="container">
     <section className="vw__detail-accessories-container">
       Accessories
@@ -9,7 +9,7 @@ const DetailAccessories = ({ accessories }) => (
 
       {accessories.map(accessory => (
         <div className="accessory-item" key={accessory.title}>
-          <div className="item-image"><img src={`/assets/${accessory.image}`} /></div>
+          <div className="item-image"><img src={`/assets/${accessory.image}`} alt="" /></div>
           <div className="accessory-tile">
             <span>{accessory.title}</span>
           </div>
@@ -27,4 +27,4 @@ const DetailAccessories = ({ accessories }) => (
   </div>
 )
 
-export default DetailAccessories
+export default DetailsAccessories

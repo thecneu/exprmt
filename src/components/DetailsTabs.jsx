@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CheckboxIcon from 'icons/Checkbox'
 
-class DetailTabs extends Component {
+class DetailsTabs extends Component {
   render() {
     const { tabs, features } = this.props
 
@@ -28,4 +28,4 @@ class DetailTabs extends Component {
   }
 }
 
-export default DetailTabs
+export default DetailsTabs

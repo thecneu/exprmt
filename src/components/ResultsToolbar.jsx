@@ -2,7 +2,7 @@ import React from 'react'
 import FilterButton from './FilterButton'
 import FilterList from './FilterList'
 import ModelDropdown from './ModelDropdown'
-import ResultsViews from './ResultsViews'
+import ResultsViewTypes from './ResultsViewTypes'
 
 const ResultsToolbar = ({ type, changeType }) => (
   <div className="vw__results-toolbar">
@@ -16,7 +16,7 @@ const ResultsToolbar = ({ type, changeType }) => (
           <FilterButton /><FilterList />
         </div>
 
-        <ResultsViews type={type} changeType={changeType} />
+        <ResultsViewTypes type={type} changeType={changeType} />
       </div>
     </div>
   </div>

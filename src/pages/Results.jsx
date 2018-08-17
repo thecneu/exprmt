@@ -1,6 +1,6 @@
 import React from 'react'
 import InventoryProvider from 'controllers/Inventory'
-import HeaderMasthead from 'components/HeaderMasthead'
+// import HeaderMasthead from 'components/HeaderMasthead'
 import ResultsWrapper from 'components/ResultsWrapper'
 
 const Results = ({ match: { params } }) => (

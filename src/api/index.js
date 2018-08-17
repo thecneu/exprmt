@@ -105,3 +105,14 @@ const mapHeadingToKey = (key) => {
   const filterKey = thingsToFilter[key]
   return Array.isArray(filterKey) ? filterKey[0] : filterKey
 }
+
+
+export const getCar = (vin) => dataJson.find(car => car.vin === vin)
+export const getDealer = () => ({
+  name: 'VOLKSWAGEN OF SANTA MONICA',
+  address: {
+    street: '2440 Santa Monica Blvd',
+    city: 'Santa Monica, CA 90404',
+    phone: '(424) 322-2756'
+  }
+})

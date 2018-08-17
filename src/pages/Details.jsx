@@ -1,7 +1,9 @@
-import React from 'react'
-import DetailHeaderMasthead from 'components/DetailHeaderMasthead'
-import DetailTabs from 'components/DetailTabs'
-import DetailAccessories from 'components/DetailAccessories'
+import React, { Component } from 'react'
+import { getCar, getDealer } from 'api'
+import DetailsHeaderMasthead from 'components/DetailsHeaderMasthead'
+import DetailsTabs from 'components/DetailsTabs'
+import DetailsAccessories from 'components/DetailsAccessories'
+import DetailsDealerMap from 'components/DetailsDealerMap'
 
 const props = {
   features: [
@@ -34,33 +36,42 @@ const props = {
     { image: 'heavyduty.png', title: 'Heavy Duty Trunk Liner with VW CarGo Blocks', price: '$130 MSRP', description: 'This ingenious trunk tray fits snugly in your trunk area and is easy to remove. Heavy-duty rubber backing helps make the bottom rugged and durable. Comes standard with a set of four cargo-organizer blocks.' },
     { image: 'mojomats.png', title: 'MojoMats® – Jetta', price: '$99 MSRP', description: 'Customized to fit your vehicle, these mats help provide coverage and protection. Made from durable, plush, 24-ounce carpet weight for improved appearance and durability. Nylon fibers provide color-fade resistance and cleanability. Positive retention clips and anti-slip backing help ensure they stay in place. Features Jetta logo. Set of four.' }
   ],
-  car: {
-    model: 'Tiguan',
-    displayName: '2018 TIGUAN',
-    trim: 'SEL Premium with 4MOTION®',
-    vin: 'WVGBV7AX7HK029960',
-    price: '$20,342',
-    image: 'car.png',
-    packages: [{
-      title: '16” ALLOY WHEEL PACKAGE',
-      image: 'snow'
-    }],
-    dealer: {
-      name: 'VOLKSWAGEN OF SANTA MONICA',
-      address: { street: '2440 Santa Monica Blvd', city: 'Santa Monica, CA 90404', phone: '(424) 322-2756' },
-      map: 'map.jpg'
-    }
-  },
   tabs: ['exterior', 'performance', 'interior', 'technology', 'safety', 'dimensions', 'warranty']
 }
 
+class Details extends Component {
+  state = {
+    car: {},
+    dealer: {}
+  }
 
-const Details = () => (
-  <main>
-    <DetailHeaderMasthead car={props.car} />
-    <DetailTabs features={props.features} tabs={props.tabs} />
-    <DetailAccessories accessories={props.accessories} />
-  </main>
-)
+  componentDidMount() {
+    const vin = this.props.match.params.vin
+    const car = getCar(vin)
+    const dealer = getDealer(car.dealerId)
+
+    this.setState({ car, dealer })
+  }
+
+  render() {
+    const { car, dealer } = this.state
+
+    return (
+      <main>
+        <div className="vw__detail">
+          <div className="detail-car-container">
+          <DetailsHeaderMasthead car={car} dealer={dealer} />
+          <DetailsTabs features={props.features} tabs={props.tabs} />
+          <DetailsAccessories accessories={props.accessories} />
+          </div>
+        </div>
+
+        <div className="detail-dealer-map-container">
+          <DetailsDealerMap dealer={dealer} />
+        </div>
+      </main>
+    )
+  }
+}
 
 export default Details

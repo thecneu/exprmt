@@ -55,7 +55,7 @@ class FilterSection extends Component {
 
     return (
       <div className="filter-section">
-        <header>
+        <header onClick={this.toggle}>
           <div className="flex-container">
             <div className="headline-container">
               <h2>{headline}</h2>
@@ -67,7 +67,7 @@ class FilterSection extends Component {
               </div>
 
               <div className="action">
-                <button onClick={this.toggle}>{isOpen ? '-' : '+'}</button>
+                <button>{isOpen ? '-' : '+'}</button>
               </div>
             </div>
           </div>
