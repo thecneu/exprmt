@@ -33,8 +33,11 @@ class FilterSection extends Component {
 
   onChange = (e) => {
     const value = e.currentTarget.value
-    const filters = this.state.filters
-    const checked = filters.includes(value) ? filters.filter(chk => chk !== value) : [ ...filters, value ]
+    const currentFilters = this.state.filters
+    const filters = currentFilters.includes(value)
+      ? currentFilters.filter(chk => chk !== value)
+      : [ ...currentFilters, value ]
+
     this.setFilteredState(filters)
     this.setState({ filters })
   }
@@ -42,6 +45,7 @@ class FilterSection extends Component {
   toggle = () => this.setState(({ isOpen }) => ({ isOpen: !isOpen }))
 
   setFilteredState = (filters) => {
+    console.log('setFilteredState', filters)
     this.props.updateFilters(this.props.headline, filters)
   }
 

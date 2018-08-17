@@ -25,11 +25,11 @@ const CarDetail = ({ car }) => (
           )}
         </div>
 
-        <div className="view-details"><Link url={car.vehicleURL}>View Details</Link></div>
+        <div className="view-details"><Link url={`/details/${car.vin}` || car.vehicleURL}>View Details</Link></div>
       </div>
 
       <div className="bottom">
-        <div className="view-details"><Link url={car.vehicleURL}>View Details</Link></div>
+        <div className="view-details"><Link url={`/details/${car.vin}` || car.vehicleURL}>View Details</Link></div>
         <div className="contact-dealer"><ButtonLink>Contact Dealer</ButtonLink></div>
       </div>
     </div>

@@ -50,7 +50,7 @@ class InventoryProvider extends Component {
   changeMax = () => this.setState(({ max }) => ({ max: max + 10 }))
 
   updateFilters = (key, data) => {
-    console.log('updateFilter', key, data)
+    console.log('updateFilters', key, data)
     const filters = {
       ...this.state.filters,
       [key]: data
@@ -73,7 +73,7 @@ class InventoryProvider extends Component {
     filters: this.fix(queryString.parse(window.location.search)),
     changeState: this.changeState,
     changeMax: this.changeMax,
-    updateFilters: this.updateFilter
+    updateFilters: this.updateFilters
   }
 
   componentDidMount() {

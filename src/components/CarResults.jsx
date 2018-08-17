@@ -6,7 +6,9 @@ const CarResults = ({ type }) => (
   <div className="vw__car-results">
     <div className="flex-container">
       <Inventory.Consumer>
-        {({ filteredCars, max }) => filteredCars.slice(0, max).map(car => <Card car={car} key={car.vin} type={type} />)}
+        {({ filteredCars, max }) => filteredCars.slice(0, max).map(car =>
+          <Card car={car} key={car.vin} type={type} />
+        )}
       </Inventory.Consumer>
     </div>
   </div>
