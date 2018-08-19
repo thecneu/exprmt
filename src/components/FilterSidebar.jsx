@@ -2,6 +2,7 @@ import React from 'react'
 import { Inventory } from 'controllers/Inventory'
 import FilterHeader from './FilterHeader'
 import FilterSection from './FilterSection'
+import './filter-sidebar.scss'
 
 const FilterSidebar = () => (
   <aside className="vw__filter-sidebar">

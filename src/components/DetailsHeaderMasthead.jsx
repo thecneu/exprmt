@@ -5,6 +5,7 @@ import LinkAnchor from 'components/LinkAnchor'
 import WheelIcon from 'icons/Wheel'
 import PhoneIcon from 'icons/Phone'
 import LocationIcon from 'icons/Location'
+import './detail-header-masthead.scss'
 
 class DetailsHeaderMasthead extends Component {
   showIcon(name) {

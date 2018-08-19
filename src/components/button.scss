@@ -1,10 +1,16 @@
-@import './mixins';
+@import 'mixins';
 
 .vw__button {
     background-appearance: none;
     padding: 16px 32px;
     background: $blue1;
     color: white;
+    display: inline-block;
+    text-decoration: none;
+
+    &:focus {
+        outline: 0;
+    }
 
     &.btn-inverted {
         background: white;

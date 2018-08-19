@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ResultsToolbar from 'components/ResultsToolbar'
 import FilterSidebar from 'components/FilterSidebar'
 import CarResults from 'components/CarResults'
+import './results-container.scss'
 
 class ResultsWrapper extends Component {
   state = { type: 'list' }

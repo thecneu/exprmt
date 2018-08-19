@@ -1,4 +1,4 @@
-@import './mixins';
+@import 'mixins';
 
 .vw__header-masthead {
   border: 1px solid;
@@ -13,7 +13,7 @@
   .container {
     @include bp(tablet) {
       $padding: map_get($gutters, tablet);
-      padding: ($padding * 2) 0 (-$padding * 2;
+      padding: ($padding * 2) 0 (-$padding * 2);
     }
 
     @include bp(xl) {

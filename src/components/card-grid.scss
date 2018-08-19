@@ -1,11 +1,10 @@
-@import './card';
+@import 'card';
 
 .vw__card-grid {
   background: white;
   position: relative;
   border: 1px solid;
   margin: 10px;
-  flex: 0 0 31%;
 
   .content {
     padding: 24px;

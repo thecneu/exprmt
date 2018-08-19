@@ -3,6 +3,7 @@ import FilterButton from './FilterButton'
 import FilterList from './FilterList'
 import ModelDropdown from './ModelDropdown'
 import ResultsViewTypes from './ResultsViewTypes'
+import './results-toolbar.scss'
 
 const ResultsToolbar = ({ type, changeType }) => (
   <div className="vw__results-toolbar">

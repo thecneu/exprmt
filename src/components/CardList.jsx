@@ -1,6 +1,7 @@
 import React from 'react'
 import CarInfo from './CarInfo'
 import CarDetail from './CarDetail'
+import './card-list.scss'
 
 const CardList = ({ car }) => (
   <div className="vw__card-list">

@@ -2,6 +2,7 @@ import React from 'react'
 import compact from 'lodash/compact'
 import { Inventory } from 'controllers/Inventory'
 import CardModel from 'components/CardModel'
+import './models-container.scss'
 
 const groupModelMappings = {
   sedans: ['Jetta', 'Passat'],

@@ -1,5 +1,6 @@
 import React from 'react'
 import kebabCase from 'lodash/kebabCase'
+import './card-model.scss'
 
 const CardModel = ({ model: car }) => (
   <div className="vw__card-model">
