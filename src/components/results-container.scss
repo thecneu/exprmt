@@ -1,11 +1,15 @@
 @import './mixins';
 
-.vw__results-container {
+.vw__car-results-container {
   background: $bluegray95;
   padding-top: 20px;
 
   @include bp(tablet) {
     padding-top: 0;
+  }
+
+  @include bp(wide) {
+    display: flex;
   }
 }
 

@@ -7,13 +7,13 @@
 
   .top-bar {
     background: $blue1;
-    height: 10px;
+    height: 8px;
   }
 
   .container {
     @include bp(tablet) {
       $padding: map_get($gutters, tablet);
-      padding: $padding * 2 0 $padding * 2;
+      padding: ($padding * 2) 0 (-$padding * 2;
     }
 
     @include bp(xl) {

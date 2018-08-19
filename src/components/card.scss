@@ -1,10 +1,6 @@
 @import './mixins';
 
 @mixin car {
-  span {
-    display: block;
-  }
-
   .favorite {
     position: absolute;
     right: 20px;

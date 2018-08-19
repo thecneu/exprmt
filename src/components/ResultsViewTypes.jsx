@@ -1,6 +1,6 @@
 import React from 'react'
 
-const getStyle = (chosenType, type) => type == chosenType ? ({ border: '1px solid' }) : null
+const getStyle = (chosenType, type) => type === chosenType ? ({ border: '1px solid' }) : null
 
 const ResultsViewTypes = ({ type, changeType }) => (
   <div className="vw__results-views">

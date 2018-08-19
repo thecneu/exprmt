@@ -6,11 +6,19 @@ import CardModel from './CardModel'
 const Card = ({ car, type }) => {
   switch(type) {
     case 'grid':
-      return <CardGrid car={car} />
+      return (
+        <div className="grid-item">
+          <CardGrid car={car} />
+        </div>
+      )
     case 'list':
       return <CardList car={car} />
     default:
-      return <CardModel car={car} />
+      return (
+        <div className="model-item">
+          <CardModel car={car} />
+        </div>
+      )
   }
 }
 

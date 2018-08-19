@@ -1,0 +1,17 @@
+@import './mixins';
+
+.vw__button {
+    background-appearance: none;
+    padding: 16px 32px;
+    background: $blue1;
+    color: white;
+
+    &.btn-inverted {
+        background: white;
+        color: $blue1;
+    }
+
+    &.btn-full {
+        width: 100%;
+    }
+}

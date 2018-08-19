@@ -13,7 +13,7 @@ const CarInfo = ({ car }) => (
       </div>
 
       <div className="car-title">
-        <div>{car.Year} {car.modelYear}</div>
+        <div>{car.modelYear} {car.model}</div>
         <div>{car.subTrimLevel} <DisplayHtml>{car.transmissionDescription}</DisplayHtml></div>
       </div>
 

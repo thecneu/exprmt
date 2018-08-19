@@ -13,7 +13,7 @@ const CarDetail = ({ car }) => (
         <div className="car-features">
           <div>The {car.subTrimLevel} includes:</div>
           <ul className="subtrim-features">
-            <li><strike-through>2.0L Turbo Engine</strike-through></li>
+            <li><del>2.0L Turbo Engine</del></li>
           </ul>
 
           {car.packages.length > 0 && (

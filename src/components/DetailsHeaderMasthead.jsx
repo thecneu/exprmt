@@ -22,7 +22,7 @@ class DetailsHeaderMasthead extends Component {
               <LinkAnchor url={`/results/${kebabCase(car.model)}`}>{'<'} <span className="model">{car.model}</span> {'inventory'}</LinkAnchor>
               <div className="car-image"></div>
               <div className="car-title">
-                <div>{car.modelYear} {car.subTrimLevel}</div>
+                <div>{car.modelYear} {car.model} {car.subTrimLevel}</div>
                 <div><b>vin</b> {car.vin}</div>
               </div>
             </div>
@@ -53,7 +53,7 @@ class DetailsHeaderMasthead extends Component {
             </div>
 
             <div className="car-detail">
-              <div className="car-name">{car.modelYear}</div>
+              <div className="car-name">{car.modelYear} {car.model}</div>
               <div className="car-trim">{car.subTrimLevel}</div>
               <div className="car-vin"><b>vin</b> {car.vin}</div>
               <div className="car-price">{car.msrpFormatted}</div>

@@ -1,17 +1,24 @@
 import React from 'react'
 import { Inventory } from 'controllers/Inventory'
 import Card from './Card'
+import Button from './Button'
 
 const CarResults = ({ type }) => (
-  <div className="vw__car-results">
-    <div className="flex-container">
-      <Inventory.Consumer>
-        {({ filteredCars, max }) => filteredCars.slice(0, max).map(car =>
-          <Card car={car} key={car.vin} type={type} />
-        )}
-      </Inventory.Consumer>
-    </div>
-  </div>
+  <Inventory.Consumer>
+    {({ filteredCars, max, changeMax }) => (
+      <div className="vw__car-results">
+        <div className="flex-container">
+          {filteredCars.slice(0, max).map(car =>
+            <Card car={car} key={car.vin} type={type} />
+          )}
+        </div>
+
+        <div className="view-more">
+          <Button full onClick={changeMax}>View More</Button>
+        </div>
+      </div>
+    )}
+  </Inventory.Consumer>
 )
 
 export default CarResults
