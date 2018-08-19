@@ -9,13 +9,13 @@ const FilterSidebar = () => (
     <FilterHeader />
 
     <Inventory.Consumer>
-      {({ filterables, updateFilters, filters }) => Object.keys(filterables).map(headline =>
+      {({ filterables, updateFilters, filters, chosenModel }) => Object.keys(filterables).map(headline =>
         <FilterSection
           updateFilters={updateFilters}
           filterables={filterables[headline]}
           headline={headline}
           filters={filters[headline]}
-          key={headline}
+          key={`${headline}-${chosenModel}`}
         />
       )}
     </Inventory.Consumer>
