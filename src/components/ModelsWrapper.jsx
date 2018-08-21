@@ -32,9 +32,9 @@ const ModelsWrapper = () => (
                 <h3>{group.type}</h3>
               </div>
 
-              <div className="flex-container">
+              <div className="grid-container">
                 {group.models.map(model => (
-                  <div className="flex-item" key={model.model}>
+                  <div className="grid-item" key={model.model}>
                     <CardModel model={model} />
                   </div>
                 ))}

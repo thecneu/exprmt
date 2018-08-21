@@ -47,7 +47,7 @@ class InventoryProvider extends Component {
     this.setState({ [key]: data, filters: {} }, () => this.getData())
   }
 
-  changeMax = () => this.setState(({ max }) => ({ max: max + 10 }))
+  changeMax = () => this.setState(({ max }) => ({ max: max + 12 }))
 
   updateFilters = (key, data) => {
     console.log('updateFilters', key, data)
@@ -63,7 +63,7 @@ class InventoryProvider extends Component {
   }
 
   state = {
-    max: 10,
+    max: 12,
     chosenModel: mapSlug(this.props.model),
     models: [],
     cars: [],

@@ -17,13 +17,13 @@
     }
   }
 
-  .flex-container {
-    .flex-item > div {
+  .grid-container {
+    .grid-item > div {
       border: 1px solid;
     }
   }
 
-  .model-type, .flex-item {
+  .model-type, .grid-item {
     margin-bottom: 13px;
 
     @include bp(tablet) {

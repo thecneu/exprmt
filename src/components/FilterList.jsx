@@ -1,20 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import FilterListItem from './FilterListItem'
 
-class FilterList extends Component {
-  state = { filters: Array(24).fill('Filter me') }
-
-  render() {
-    return (
-      <div className="vw__filter-list">
-        <div className="filter-list">
-          {this.state.filters.map((filter, index) =>
-            <FilterListItem key={filter + index} filter={filter} removeFilter={this.removeFilter} />
-          )}
-        </div>
-      </div>
-    )
-  }
-}
+const FilterList = ({ filters = [] }) => (
+  <div className="vw__filter-list">
+    <div className="filter-list">
+      {Object.keys(filters).map((filter, index) =>
+        <FilterListItem key={filter + index} filter={filter} />
+      )}
+    </div>
+  </div>
+)
 
 export default FilterList

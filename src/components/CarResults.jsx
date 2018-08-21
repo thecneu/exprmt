@@ -7,7 +7,7 @@ const CarResults = ({ type }) => (
   <Inventory.Consumer>
     {({ filteredCars, max, changeMax }) => (
       <div className="vw__car-results">
-        <div className="flex-container">
+        <div className="grid-container">
           {filteredCars.slice(0, max).map(car =>
             <Card car={car} key={car.vin} type={type} />
           )}

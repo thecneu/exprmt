@@ -6,7 +6,6 @@ class DetailsDealerMap extends Component {
 
     return (
       <div className="vw__dealer-map">
-        {console.log(this.props)}
         <div>{name}</div>
         <div><mark>{JSON.stringify(address)}</mark></div>
         <div>direction: https://maps.google.com/maps?saddr=&daddr=2440 Santa Monica Blvd Santa Monica CA 90404</div>

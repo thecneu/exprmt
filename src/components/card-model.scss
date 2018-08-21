@@ -4,6 +4,7 @@
   background: white;
   padding-bottom: 10px;
   border-radius: 5px;
+  height: 100%;
 
   @include bp(desktop) {
     padding-bottom: 14px;

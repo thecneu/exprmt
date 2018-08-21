@@ -56,7 +56,7 @@ class FilterSection extends Component {
     return (
       <div className="filter-section">
         <header onClick={this.toggle}>
-          <div className="flex-container">
+          <div className="grid-container">
             <div className="headline-container">
               <h2>{headline}</h2>
             </div>

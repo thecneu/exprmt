@@ -3,7 +3,7 @@ import React from 'react'
 const FilterHeader = () => (
   <header className="filter-header">
     <div className="header-container">
-      <div className="flex-container">
+      <div className="grid-container">
         <div className="left-container">
           <button>Close</button>
         </div>

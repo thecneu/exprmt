@@ -17,8 +17,12 @@
 
   .grid-item {
     @include bp(desktop) {
-      flex: 0 0 31%;
+      width: (100% / 3);
     }
+  }
+
+  .list-item {
+    width: 100%;
   }
 }
 

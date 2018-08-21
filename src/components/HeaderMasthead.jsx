@@ -7,38 +7,38 @@ import ToTop from './ToTop'
 import FilterList from './FilterList'
 import './header-masthead.scss'
 
-const Masthead = ({ filteredCars, chosenModel, results }) => (
-  <section className="vw__top-header">
-    <div className="top-bar" />
-    <div className="container">
-      <div className="inner-container">
-        <div className="inner-content">
-          <h1>Let's find your perfect Volkwagen.</h1>
-          <p>Select a model to find inventory near you.</p>
+const HeaderMasthead = ({ results = false, filteredCars, chosenModel, filters }) => (
+  <Inventory.Consumer>
+    {({ filteredCars, chosenModel, filters }) => (
+      <section className="vw__header-masthead">
+        <div className="top-bar" />
+        <div className="container">
+          <div className="grid-container">
+            <div className="inner-content">
+              <h1>Let's find your perfect Volkwagen.</h1>
+              {!results && <p>Select a model to find inventory near you.</p>}
 
-          There are <b>{filteredCars.length} matches for {chosenModel}</b> at <b>{'Volkwagen of Santa Monica'}</b>
-          <FilterList />
-        </div>
+              {results && (
+                <>
+                  There are <b>{filteredCars.length} matches for {chosenModel}</b> at <b>{'Volkwagen of Santa Monica'}</b>
+                  <FilterList filters={filters} />
+                </>
+              )}
+            </div>
 
-        <div className="actions-content">
-          <FilterButton />
-          <ZipInput />
-          <ModelDropdown />
-          <ToTop />
+            {results && (
+              <div className="actions-content">
+                <FilterButton />
+                <ZipInput />
+                <ModelDropdown />
+                <ToTop />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    )}
+  </Inventory.Consumer>
 )
-
-class HeaderMasthead extends Component {
-  render() {
-    return (
-      <Inventory.Consumer>
-        {({ filteredCars, chosenModel }) => <Masthead chosenModel={chosenModel} filteredCars={filteredCars} {...this.props} />}
-      </Inventory.Consumer>
-    )
-  }
-}
 
 export default HeaderMasthead

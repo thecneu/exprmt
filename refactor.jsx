@@ -19,7 +19,7 @@
 
 <styled.div`background: #f3f6f7;` 'Inventory'>
   <div className="container">
-    <div className="flex-container">
+    <div className="grid-container">
       <div 'FilterSidebar'>
         <Inventory.Consumer>
           {({ models, chosenModel, changeState }) =>
@@ -93,7 +93,7 @@
         </div>
         <Inventory.Consumer>
           {({ filteredCars, sortBy }) => (
-            <div className="flex-container">
+            <div className="grid-container">
               {filteredCars.map(car =>
                 <Card car={car} key={car.vin} type={this.state.type} />
               )}
