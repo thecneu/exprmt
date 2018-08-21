@@ -13,24 +13,26 @@ const HeaderMasthead = ({ results = false, filteredCars, chosenModel, filters })
       <section className="vw__header-masthead">
         <div className="top-bar" />
         <div className="container">
-          <div className="grid-container">
-            <div className="inner-content">
-              <h1 className="headline">Let's find your perfect Volkwagen.</h1>
-              {!results && <p>Select a model to find inventory near you.</p>}
+          <div className="masthead-container">
+            <div className="grid-container">
+              <div className="inner-content">
+                <h1 className="headline">Let's find your perfect Volkwagen.</h1>
+                {!results && <p>Select a model to find inventory near you.</p>}
 
-              {results && (
-                <>
-                  There are <b>{filteredCars.length} matches for {chosenModel}</b> at <b>{'Volkwagen of Santa Monica'}</b>
-                  <FilterList filters={filters} />
-                </>
-              )}
-            </div>
+                {results && (
+                  <>
+                    There are <b>{filteredCars.length} matches for {chosenModel}</b> at <b>{'Volkwagen of Santa Monica'}</b>
+                    <FilterList filters={filters} />
+                  </>
+                )}
+              </div>
 
-            <div className="actions-content">
-              {results && <FilterButton />}
-              <ZipInput />
-              <ModelDropdown />
-              {results && <ToTop />}
+              <div className="actions-content">
+                {results && <FilterButton />}
+                <ZipInput />
+                <ModelDropdown />
+                {results && <ToTop />}
+              </div>
             </div>
           </div>
         </div>

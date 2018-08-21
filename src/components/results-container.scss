@@ -14,14 +14,4 @@
   @include bp(wide) {
     display: flex;
   }
-
-  .grid-item {
-    @include bp(desktop) {
-      width: (100% / 3);
-    }
-  }
-
-  .list-item {
-    width: 100%;
-  }
 }

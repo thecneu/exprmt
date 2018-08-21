@@ -1,0 +1,8 @@
+@import 'mixins';
+
+.vw__card-cardetail {
+  &.is-list {
+    @include bp(tablet) {
+    }
+  }
+}

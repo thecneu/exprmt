@@ -1,7 +1,8 @@
 import React from 'react'
 import { Inventory } from 'controllers/Inventory'
-import Card from './Card'
+import CardCarDetail from './CardCarDetail'
 import Button from './Button'
+import './car-results.scss';
 
 const CarResults = ({ type }) => (
   <Inventory.Consumer>
@@ -9,7 +10,9 @@ const CarResults = ({ type }) => (
       <div className="vw__car-results">
         <div className="grid-container">
           {filteredCars.slice(0, max).map(car =>
-            <Card car={car} key={car.vin} type={type} />
+            <div className={`grid-item ${type === 'list' ? 'is-list' : ''}`}>
+              <CardCarDetail car={car} key={car.vin} type={type} />
+            </div>
           )}
         </div>
 

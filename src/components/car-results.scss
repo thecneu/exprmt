@@ -1,0 +1,12 @@
+@import 'mixins';
+
+.vw__car-results {
+  flex: 1;
+
+  .grid-item {
+    &.is-list {
+      @include bp(tablet) {
+      }
+    }
+  }
+}
