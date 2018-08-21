@@ -1,5 +1,6 @@
 import React from 'react'
 import FilterListItem from './FilterListItem'
+import './filter-list.scss'
 
 const FilterList = ({ filters = [] }) => (
   <div className="vw__filter-list">

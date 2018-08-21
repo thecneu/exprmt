@@ -45,6 +45,7 @@ $gutters: (
 );
 
 $gutter: 3.5vw;
+$gutter-xl: 40px;
 
 @mixin bp($device) {
   @media (min-width: map-get($bp, $device)) {

@@ -6,7 +6,7 @@ class FilterButton extends Component {
 
   render() {
     return (
-      <div className="vw__filter-button">
+      <div className="vw__filter-button-container">
         <button onClick={this.toggle}>filter</button>
       </div>
     )

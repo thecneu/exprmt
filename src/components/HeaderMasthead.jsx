@@ -15,7 +15,7 @@ const HeaderMasthead = ({ results = false, filteredCars, chosenModel, filters })
         <div className="container">
           <div className="grid-container">
             <div className="inner-content">
-              <h1>Let's find your perfect Volkwagen.</h1>
+              <h1 className="headline">Let's find your perfect Volkwagen.</h1>
               {!results && <p>Select a model to find inventory near you.</p>}
 
               {results && (
@@ -26,14 +26,12 @@ const HeaderMasthead = ({ results = false, filteredCars, chosenModel, filters })
               )}
             </div>
 
-            {results && (
-              <div className="actions-content">
-                <FilterButton />
-                <ZipInput />
-                <ModelDropdown />
-                <ToTop />
-              </div>
-            )}
+            <div className="actions-content">
+              {results && <FilterButton />}
+              <ZipInput />
+              <ModelDropdown />
+              {results && <ToTop />}
+            </div>
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@
     border: 1px solid;
   }
 
-  .vw__filter-button {
+  .vw__filter-button-container {
     @include bp(xl) {
       display: none;
     }
@@ -21,11 +21,7 @@
       width: 5 / 12 * 100%;
 
       @include bp(desktop) {
-        width: 4 / 12 * 100%;
-      }
-
-      @include bp(wide) {
-        width: 3 / 12 * 100%;
+        width: 23%;
       }
     }
 

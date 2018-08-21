@@ -1,0 +1,9 @@
+@import 'mixins';
+
+.vw__results-view-types {
+  display: none;
+
+  @include bp(desktop) {
+    display: block;
+  }
+}

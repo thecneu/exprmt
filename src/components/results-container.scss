@@ -25,12 +25,3 @@
     width: 100%;
   }
 }
-
-.vw__filter-list {
-  display: none;
-  margin-bottom: -8px;
-
-  @include bp(xl) {
-    display: block;
-  }
-}

@@ -2,51 +2,69 @@
 
 .vw__header-masthead {
   border: 1px solid;
-
   background: white;
+
+  &.is-sticky {
+    .container {
+      padding: 20px 0 20px;
+    }
+
+    .vw__filter-button-container {
+      display: block;
+
+      @include bp(wide) {
+        display: none;
+      }
+    }
+  }
 
   .top-bar {
     background: $blue1;
     height: 8px;
   }
 
-  .container {
+  .masthead-container {
+    padding: 30px 0 20px;
+
     @include bp(tablet) {
-      $padding: map_get($gutters, tablet);
-      padding: ($padding * 2) 0 (-$padding * 2);
+      padding: ($gutter * 2) 0 (-$gutter * 2);
     }
 
     @include bp(xl) {
-      $padding: map_get($gutters, xl);
-      padding: $padding 0 $padding;
+      padding: $gutter-xl 0 $gutter-xl;
     }
   }
 
-  &.is-sticky {
-    .top-bar {
-      display: none;
+  .grid-container {
+    justify-content: space-between;
+  }
+
+  .headline {
+    margin-bottom: 15px;
+
+    @include bp(tablet) {
+      margin-bottom: $gutter;
     }
 
-    .container {
-      padding: 20px 0 20px;
+    @include bp(xl) {
+      margin-bottom: $gutter-xl / 2;
     }
   }
 
   .actions-content {
     display: flex;
     align-items: center;
-    margin: 0 -5px;
+    margin: 15px -5px 0;
 
     > div {
       margin: 0 5px;
     }
 
     @include bp(tablet) {
-      $margin: map_get($gutters, tablet) / 2;
-      margin: 0 -$margin;
+      margin: 0 (-$gutter / 2);
 
       > div {
-        margin: 0 $margin;
+        margin: 0 ($gutter / 2);
       }
     }
   }
@@ -80,6 +98,7 @@
 
     @include bp(tablet) {
       order: 0;
+      display: none;
     }
   }
 
