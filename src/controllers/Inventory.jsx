@@ -62,8 +62,11 @@ class InventoryProvider extends Component {
     this.setState({ filteredCars, filters })
   }
 
+  toggleFilter = () => this.setState(({ filterActive }) => ({ filterActive: !filterActive}))
+
   state = {
     max: 12,
+    filterActive: false,
     chosenModel: mapSlug(this.props.model),
     models: [],
     cars: [],
@@ -73,7 +76,8 @@ class InventoryProvider extends Component {
     filters: this.fix(queryString.parse(window.location.search)),
     changeState: this.changeState,
     changeMax: this.changeMax,
-    updateFilters: this.updateFilters
+    updateFilters: this.updateFilters,
+    toggleFilter: this.toggleFilter
   }
 
   componentDidMount() {

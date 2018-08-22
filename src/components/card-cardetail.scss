@@ -1,8 +1,179 @@
 @import 'mixins';
 
 .vw__card-cardetail {
+  border: 1px solid;
+  height: 100%;
+
+  .card-container {
+    height: 100%;
+    display: flex;
+  }
+
+  .car-panel {
+    border-radius: 5px;
+    background: white;
+    height: 100%;
+  }
+
+  .content {
+    padding: 24px;
+    height: 100%;
+
+    @include bp(tablet) {
+      padding: .75 * $gutter;
+    }
+
+    @include bp(desktop) {
+      padding: $gutter;
+    }
+  }
+
+  .content-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .car-image {
+    text-align: center;
+
+    img {
+      height: 70px;
+    }
+  }
+
+  .car-title {
+    padding: 10px 0;
+  }
+
+  .dealer-name {
+    padding-bottom: 6px;
+  }
+
+  .car-price {
+    padding: 20px 0;
+  }
+
+  .car-info {
+    text-align: center;
+    width: 100%;
+
+    .contact-dealer {
+      padding-bottom: 24px;
+    }
+  }
+
+  .car-details {
+    display: none;
+
+    .subtrim-features {
+      margin: 10px 0 20px;
+    }
+
+    .content {
+      display: flex;
+    }
+
+    .content-container {
+      margin: 0 10px;
+      flex: 1;
+    }
+
+    .dealer-content {
+      display: none;
+      margin-left: 0;
+
+      @include bp(desktop) {
+        display: flex;
+      }
+
+      .contact-dealer {
+        display: block;
+      }
+    }
+  }
+
+  .dealer-info {
+    .dealer-name {
+      margin-bottom: 6px;
+    }
+
+    .dealer-mileage {
+      margin-bottom: 10px;
+    }
+  }
+
+  .details-content {
+    .top {
+      .view-details {
+        margin-top: 10px;
+
+        @include bp(desktop) {
+          display: none;
+        }
+      }
+    }
+
+    .bottom {
+      .view-details {
+        @include bp(tablet) {
+          display: none;
+        }
+
+        @include bp(desktop) {
+          display: block;
+        }
+      }
+
+      .contact-dealer {
+        @include bp(desktop) {
+          display: none;
+        }
+      }
+    }
+  }
+
   &.is-list {
     @include bp(tablet) {
+      margin-bottom: 10px;
+      border: 1px solid;
+      background: lightblue;
+      min-height: 346px;
+    }
+
+    @include bp(desktop) {
+      min-height: 316px;
+    }
+
+    .car-info {
+      @include bp(tablet) {
+         width: 50%;
+
+        .contact-dealer {
+          display: none;
+        }
+
+        .view-details {
+          display: none;
+        }
+
+        .car-price {
+          padding-bottom: 0;
+        }
+      }
+
+      @include bp(desktop) {
+        width: 33%;
+      }
+    }
+
+    .car-details {
+      @include bp(tablet) {
+        display: block;
+        flex: 1;
+        margin-left: 4px;
+      }
     }
   }
 }

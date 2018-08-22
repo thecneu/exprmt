@@ -1,7 +1,8 @@
 import React from 'react'
+import './filter-header.scss'
 
 const FilterHeader = () => (
-  <header className="filter-header">
+  <header className="vw__filter-header">
     <div className="header-container">
       <div className="grid-container">
         <div className="left-container">

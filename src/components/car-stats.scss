@@ -1,0 +1,20 @@
+.vw__car-stats {
+  margin-bottom: 20px;
+
+  ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  li {
+    margin: 0;
+    flex: 1;
+  }
+
+  .stat-container {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

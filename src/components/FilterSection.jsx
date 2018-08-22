@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import _isObject from 'lodash/isObject'
 import InputCheckbox from './InputCheckbox'
 import ColorBox from './ColorBox'
+import './filter-section.scss'
 
 class FilterSection extends Component {
   static defaultProps = { filters: [] }
@@ -54,7 +55,7 @@ class FilterSection extends Component {
     const { isOpen } = this.state
 
     return (
-      <div className="filter-section">
+      <div className="vw__filter-section">
         <header onClick={this.toggle}>
           <div className="grid-container">
             <div className="headline-container">

@@ -18,7 +18,7 @@
   .grid-container {
     .filter-area {
       border: 1px solid;
-      width: 5 / 12 * 100%;
+      width: (5 / 12) * 100%;
 
       @include bp(desktop) {
         width: 23%;
@@ -33,7 +33,7 @@
 
       .filter-list-area {
         border: 1px solid blue;
-        max-width: 7 / 12 * 100%;
+        max-width: (7 / 12) * 100%;
       }
     }
   }

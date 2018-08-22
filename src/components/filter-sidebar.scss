@@ -1,35 +1,33 @@
 @import 'mixins';
 
 .vw__filter-sidebar {
+  margin: 0 -4%;
+
+  &.is-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-scrolling-overflow: touch;
+  }
+
+  @include bp(desktop) {
+    margin: 0;
+  }
+
+  @include bp(wide) {
     min-width: 23%;
+  }
 
-    .filter-header {
-        @include bp(desktop) {
-            display: none;
-        }
+  .filter-container {
+    background: white;
 
-        .grid-container {
-            justify-content: space-between;
-        }
+    @include bp(desktop) {
+      background: none;
     }
-
-    .filter-section {
-        header {
-            cursor: pointer;
-        }
-
-        .grid-container {
-            justify-content: space-between;
-        }
-
-        label {
-            display: block;
-        }
-
-        .filtered-choices {
-            @include bp(desktop) {
-                display: none;
-            }
-        }
-    }
+  }
 }
+

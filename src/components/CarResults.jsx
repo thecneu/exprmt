@@ -10,8 +10,8 @@ const CarResults = ({ type }) => (
       <div className="vw__car-results">
         <div className="grid-container">
           {filteredCars.slice(0, max).map(car =>
-            <div className={`grid-item ${type === 'list' ? 'is-list' : ''}`}>
-              <CardCarDetail car={car} key={car.vin} type={type} />
+            <div key={car.vin} className={`grid-item ${type === 'list' ? 'is-list' : ''}`}>
+              <CardCarDetail car={car} type={type} />
             </div>
           )}
         </div>

@@ -1,0 +1,13 @@
+@import 'mixins';
+
+.vw__filter-header {
+  background: white;
+
+  @include bp(desktop) {
+    display: none;
+  }
+
+  .grid-container {
+    justify-content: space-between;
+  }
+}
