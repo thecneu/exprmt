@@ -5,26 +5,24 @@ import FilterSection from './FilterSection'
 import './filter-sidebar.scss'
 
 const FilterSidebar = () => (
-  <aside className="vw__filter-sidebar">
-    <div className="filter-container">
-      <Inventory.Consumer>
-        {({ filterables, updateFilters, filters, chosenModel, toggleFilter, filterActive }) => (
-          <>
-            <FilterHeader toggleFilter={toggleFilter} filterActive={filterActive} />
-            {Object.keys(filterables).map(headline =>
-              <FilterSection
-                updateFilters={updateFilters}
-                filterables={filterables[headline]}
-                headline={headline}
-                filters={filters[headline]}
-                key={`${headline}-${chosenModel}`}
-              />
-            )}
-          </>
-        )}
-      </Inventory.Consumer>
-    </div>
-  </aside>
+  <Inventory.Consumer>
+    {({ filterables, updateFilters, filters, chosenModel, toggleFilter, filterActive }) => (
+      <aside className={`vw__filter-sidebar ${filterActive && 'is-active'}`.trim()}>
+        <div className="filter-container">
+          <FilterHeader toggleFilter={toggleFilter} filterActive={filterActive} />
+          {Object.keys(filterables).map(headline =>
+            <FilterSection
+              updateFilters={updateFilters}
+              filterables={filterables[headline]}
+              headline={headline}
+              filters={filters[headline]}
+              key={`${headline}-${chosenModel}`}
+            />
+          )}
+        </div>
+      </aside>
+    )}
+  </Inventory.Consumer>
 )
 
 export default FilterSidebar

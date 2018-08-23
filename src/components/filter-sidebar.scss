@@ -1,8 +1,6 @@
 @import 'mixins';
 
 .vw__filter-sidebar {
-  margin: 0 -4%;
-
   &.is-active {
     position: fixed;
     top: 0;

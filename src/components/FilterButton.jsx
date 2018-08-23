@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Inventory } from 'controllers/Inventory'
 
-class FilterButton extends Component {
-  state = { active: false }
-  toggle = () => this.setState(state => ({ active: !state.active}))
-
-  render() {
-    return (
-      <div className="vw__filter-button-container">
-        <button onClick={this.toggle}>filter</button>
-      </div>
-    )
-  }
-}
+const FilterButton = () => (
+  <div className="vw__filter-button-container">
+    <Inventory.Consumer>
+      {({ toggleFilter, filterActive }) => (
+        <button onClick={toggleFilter} style={{ border: `1px solid ${filterActive ? 'black': 'transparent'}` }}>Filter</button>
+      )}
+    </Inventory.Consumer>
+  </div>
+)
 
 export default FilterButton

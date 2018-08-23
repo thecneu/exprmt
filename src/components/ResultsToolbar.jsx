@@ -14,7 +14,8 @@ const ResultsToolbar = ({ type, changeType }) => (
 
       <div className="results-area">
         <div className="filter-list-area">
-          <FilterButton /><FilterList />
+          <FilterButton />
+          <FilterList />
         </div>
 
         <ResultsViewTypes type={type} changeType={changeType} />

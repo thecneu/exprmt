@@ -1,12 +1,12 @@
 import React from 'react'
 import './filter-header.scss'
 
-const FilterHeader = () => (
+const FilterHeader = ({ toggleFilter }) => (
   <header className="vw__filter-header">
     <div className="header-container">
       <div className="grid-container">
         <div className="left-container">
-          <button>Close</button>
+          <button onClick={toggleFilter}>Close</button>
         </div>
 
         <div className="middle-container">
@@ -15,7 +15,7 @@ const FilterHeader = () => (
         </div>
 
         <div className="right-container">
-          <button>Done</button>
+          <button onClick={toggleFilter}>Done</button>
         </div>
       </div>
     </div>

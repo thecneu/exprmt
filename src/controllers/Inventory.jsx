@@ -62,7 +62,10 @@ class InventoryProvider extends Component {
     this.setState({ filteredCars, filters })
   }
 
-  toggleFilter = () => this.setState(({ filterActive }) => ({ filterActive: !filterActive}))
+  toggleFilter = () => {
+    document.body.classList.toggle('is-overflow')
+    this.setState(({ filterActive }) => ({ filterActive: !filterActive}))
+  }
 
   state = {
     max: 12,
