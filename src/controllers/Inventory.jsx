@@ -67,6 +67,24 @@ class InventoryProvider extends Component {
     this.setState(({ filterActive }) => ({ filterActive: !filterActive}))
   }
 
+  removeFilter = (key, value) => {
+    console.group('removeFilter')
+    console.log(this.state.filters)
+    console.log(key, value)
+    console.groupEnd();
+    const filters = this.state.filters
+    const specificFilters = filters[key]
+    const newFilters = (specificFilters && specificFilters.includes(value))
+      ? { [key]: specificFilters.filter(filter => filter !== key) }
+      : { [key]: [...specificFilters, value] }
+    this.setState(({ filters }) => ({
+      filters: [
+        ...filters,
+        ...newFilters
+      ]
+    }))
+  }
+
   state = {
     max: 12,
     filterActive: false,
@@ -80,7 +98,8 @@ class InventoryProvider extends Component {
     changeState: this.changeState,
     changeMax: this.changeMax,
     updateFilters: this.updateFilters,
-    toggleFilter: this.toggleFilter
+    toggleFilter: this.toggleFilter,
+    removeFilter: this.removeFilter
   }
 
   componentDidMount() {

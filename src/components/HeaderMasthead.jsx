@@ -7,9 +7,9 @@ import ToTop from './ToTop'
 import FilterList from './FilterList'
 import './header-masthead.scss'
 
-const HeaderMasthead = ({ results = false, filteredCars, chosenModel, filters }) => (
+const HeaderMasthead = ({ results = false }) => (
   <Inventory.Consumer>
-    {({ filteredCars, chosenModel, filters }) => (
+    {({ filteredCars, chosenModel }) => (
       <section className="vw__header-masthead">
         <div className="top-bar" />
         <div className="container">
@@ -22,7 +22,7 @@ const HeaderMasthead = ({ results = false, filteredCars, chosenModel, filters })
                 {results && (
                   <>
                     There are <b>{filteredCars.length} matches for {chosenModel}</b> at <b>{'Volkwagen of Santa Monica'}</b>
-                    <FilterList filters={filters} />
+                    <FilterList />
                   </>
                 )}
               </div>

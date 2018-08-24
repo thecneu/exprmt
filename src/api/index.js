@@ -63,7 +63,9 @@ export const getFilterables = (carsData) => {
 }
 
 export const getCars = (model) => {
-  return dataJson.filter(cars => cars.model === model)
+  return dataJson
+    .filter(cars => cars.AORclass === 'aorDealer')
+    .filter(cars => cars.model === model)
 }
 
 export const filterCars = (cars, theFilter = {}) => {
@@ -81,31 +83,51 @@ export const filterCars = (cars, theFilter = {}) => {
   console.log('filtering:', filter)
 
   const filtered = cars.filter(car => {
-    const some = Object.keys(filter).some(filterKey => {
+    const some = Object.keys(filter).every(filterKey => {
       const filterValue = filter[filterKey]
       const carKey = mapHeadingToKey(filterKey)
       const carValue = car[carKey]
+      console.log('car filter', filterKey, filterValue.includes(carValue))
       return filterValue.includes(carValue)
     })
 
     return some
   })
 
+  const filterableKeys = Object.keys(filter)
+
+  const filteredCars = {
+    exactMatches: [],
+    closeMatches: []
+  }
+
+  const hasProperties = (car, filterKey) => {
+    const filterValue = filter[filterKey]
+    const carKey = mapHeadingToKey(filterKey)
+    const carValue = car[carKey]
+    return filterValue.includes(carValue)
+  }
+
+  cars.forEach(car => {
+    // const exactMatches = filterableKeys.every((filterKey) => next + hasProperties(car, filterKey))
+    // const closeMatches = filterableKeys.some((filterKey) => hasProperties(car, filterKey))
+    // if (exactMatches) filteredCars.exactMatches.push(car)
+    // else if (closeMatches) filteredCars.closeMatches.push(car)
+    console.log(`keys ${filterableKeys.length}`)
+  })
+
   console.log(filtered.length)
   console.groupEnd()
 
+  console.log(filteredCars)
+
   return filtered
-}
-
-export const checkMatch = (cars) => {
-
 }
 
 const mapHeadingToKey = (key) => {
   const filterKey = thingsToFilter[key]
   return Array.isArray(filterKey) ? filterKey[0] : filterKey
 }
-
 
 export const getCar = (vin) => dataJson.find(car => car.vin === vin)
 export const getDealer = () => ({

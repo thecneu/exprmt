@@ -1,14 +1,10 @@
 import React from 'react'
 import styles from './filter-list-item.module.scss'
 
-const FilterListItem = ({ filter, removeFilter }) => (
-  <div className={styles.item} onClick={() => removeFilter(filter)}>
+const FilterListItem = ({ filter, headline, updateFilters }) => (
+  <div className={styles.item} onClick={() => updateFilters(headline, filter)}>
     <div>
-      <span>Item</span>
-    </div>
-
-    <div className="icon-container">
-      {/*<CloseIcon />*/}
+      <span>{filter}</span>
     </div>
   </div>
 )
