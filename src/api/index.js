@@ -5,8 +5,8 @@ const thingsToFilter = {
   'model': 'model',
   'transmission': 'transmissionType',
   'trims': 'trimLevel',
-  'exterior color': ['exteriorColorDescription', 'exteriorColorBaseColor'],
-  'interior': ['interiorColorDescription', 'interiorColorBaseColor'],
+  'exterior color': 'exteriorColorBaseColor',
+  'interior color': 'interiorColorBaseColor',
   // 'drivetrain': false
 }
 

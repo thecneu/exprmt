@@ -14,8 +14,8 @@ const HeaderMasthead = ({ results = false }) => (
         <div className="top-bar" />
         <div className="container">
           <div className="masthead-container">
-            <div className="grid-container">
-              <div className="inner-content">
+            <div className="content-container">
+              <div className="info-content">
                 <h1 className="headline">Let's find your perfect Volkwagen.</h1>
                 {!results && <p>Select a model to find inventory near you.</p>}
 

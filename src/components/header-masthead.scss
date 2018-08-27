@@ -1,7 +1,6 @@
 @import 'mixins';
 
 .vw__header-masthead {
-  border: 1px solid;
   background: white;
 
   &.is-sticky {
@@ -35,10 +34,6 @@
     }
   }
 
-  .grid-container {
-    justify-content: space-between;
-  }
-
   .headline {
     margin-bottom: 15px;
 
@@ -52,19 +47,18 @@
   }
 
   .actions-content {
-    display: flex;
-    align-items: center;
     margin: 15px -5px 0;
 
     > div {
-      margin: 0 5px;
+      padding: 0 5px;
+      width: 50%;
     }
 
     @include bp(tablet) {
       margin: 0 (-$gutter / 2);
 
       > div {
-        margin: 0 ($gutter / 2);
+        padding: 0 ($gutter / 2);
       }
     }
   }
