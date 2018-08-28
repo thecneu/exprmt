@@ -1,0 +1,50 @@
+$color-blue1: #00b1eb;
+$color-blue2: #009dd8;
+$color-blue3: #2274ac;
+$color-bluegray50: #011a2c;
+$color-bluegray55: #7c878e;
+$color-bluegray70: #9eaab0;
+$color-bluegray80: #c0cacc;
+$color-bluegray90: #e3ebed;
+$color-bluegray95: #f1f5f6;
+$color-gray90: #e5e7e8;
+$color-gray20: #2c2d32;
+$color-gray10: #1d1e1f;
+
+$bp: (
+  tablet: 768px,
+  desktop: 1024px,
+  wide: 1280px,
+  xl: 1440px
+);
+
+$container-width: (
+  mobile: 86.13%,
+  tablet: 89.88%,
+  desktop: 87.5%,
+  wide: 88.17%,
+  xl: 86.3%
+);
+
+$gutter: 3.5%;
+$gutter-xl: 40px;
+
+@mixin bp($device) {
+  @media (min-width: map-get($bp, $device)) {
+    @content
+  }
+}
+
+@mixin bpm($device) {
+  @if $device == mobile {
+    @media (max-width: map-get($bp, tablet) - 1) {
+      @content;
+    }
+  }
+
+  @if $device == desktop {
+    @media (max-width: map-get($bp, desktop) - 1) {
+      @content;
+    }
+  }
+}
