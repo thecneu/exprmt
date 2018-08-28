@@ -1,0 +1,118 @@
+[
+   {
+      "name": "sedans",
+      "models": [
+         {
+            "name": "Jetta",
+            "slug": "jetta",
+            "price": "$18,545",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/jetta19nf.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_BU34MS_7CB_PYC_S0B_WYG_2017_12_10&paint=2B2B&fabric=BR&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2000&w=7000&h=5150&width=600"
+         },
+         {
+            "name": "Passat",
+            "slug": "passat",
+            "price": "$22,995",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/passat.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_A334T6_2017_07_02&paint=8E8E&fabric=TL&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&width=600&h=4960&w=6750&x=1500&y=2200"
+         }
+      ]
+   },
+   {
+      "name": "suvs",
+      "models": [
+         {
+            "name": "Atlas",
+            "slug": "atlas",
+            "price": "$30,750",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/atlas.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_CA15UR_S99_2017_03_12&paint=8E8E&fabric=SV&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&h=5200&width=600&x=1500&y=2000&w=7000"
+         },
+         {
+            "name": "Tiguan Limited",
+            "slug": "tiguan-limited",
+            "price": "$22,250",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/tiguan-new.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_5N21V3_2017_11_05&paint=8E8E&fabric=DM&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=1900&w=7000&h=5420&width=600"
+         },
+         {
+            "name": "Tiguan",
+            "slug": "tiguan",
+            "price": "$24,595",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/tiguan.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_BW24VJ_2017_07_02&paint=V9V9&fabric=BR&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1500&y=2500&w=6920&h=4540&width=600"
+         }
+      ]
+   },
+   {
+      "name": "wagons",
+      "models": [
+         {
+            "name": "Golf SportWagen",
+            "slug": "golf-sportwagen",
+            "price": "$21,685",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/golf-sportwagen.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_BX64N3_2017_07_02&paint=G2G2&fabric=TW&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2000&w=7000&h=5150&width=600"
+         },
+         {
+            "name": "Golf Alltrack",
+            "slug": "golf-alltrack",
+            "price": "Golf Alltrack",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/golf-alltrack.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_BX6CN7_7Y9_EL2_W03_2017_07_02&paint=0Q0Q&fabric=TW&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2000&w=7000&h=5150&width=600"
+         }
+      ]
+   },
+   {
+      "name": "compacts",
+      "models": [
+         {
+            "name": "Beetle",
+            "slug": "beetle",
+            "price": "$20,220",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/beetle.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_5C23P6_2017_07_09&paint=V9V9&fabric=JU&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2000&w=7000&h=5150&width=600"
+         },
+         {
+            "name": "Golf",
+            "slug": "golf",
+            "price": "$20,910",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/golf.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_AU23N1_P01_2017_07_02&paint=2B2B&fabric=TW&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2000&w=7000&h=5150&width=600"
+         },
+         {
+            "name": "Golf GTI",
+            "slug": "golf-gti",
+            "price": "$26,415",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/golf-gti.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_AU29X2_P07_2017_07_02&paint=8P8P&fabric=TL&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&width=600&h=4900&w=6750&x=1500&y=1900"
+         },
+         {
+            "name": "e-Golf",
+            "slug": "e-golf",
+            "price": "$30,495",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/e-golf.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_BE23D1_S3T_2017_07_02&paint=0Q0Q&fabric=ET&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2200&w=6600&h=4860&width=600"
+         },
+         {
+            "name": "Golf R",
+            "slug": "golf-r",
+            "price": "$39,785",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/golf-r.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_BQ1RST_WOC_2017_07_02&paint=L9L9&fabric=TL&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2200&w=6600&h=4860&width=600"
+         }
+      ]
+   },
+   {
+      "name": "convertibles",
+      "models": [
+         {
+            "name": "Beetle Convertible",
+            "slug": "beetle-convertible",
+            "price": "$25,440",
+            "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/beetle-convertible.png",
+            "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_5C83P6_W2L_2017_08_06&paint=2BSM&fabric=NJ&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2000&w=7000&h=5150&width=600"
+         }
+      ]
+   }
+]
