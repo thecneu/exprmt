@@ -7,7 +7,7 @@ import './filter-sidebar.scss'
 const FilterSidebar = () => (
   <Inventory.Consumer>
     {({ filterables, updateFilters, filters, chosenModel, toggleFilter, filterActive }) => (
-      <aside className={`vw__filter-sidebar ${filterActive && 'is-active'}`.trim()}>
+      <aside className={`vw__filter-sidebar ${filterActive ? 'is-active' : ''}`.trim()}>
         <div className="filter-container">
           <FilterHeader toggleFilter={toggleFilter} filterActive={filterActive} />
           {Object.keys(filterables).map(headline =>

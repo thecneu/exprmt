@@ -26,11 +26,11 @@
     padding: 30px 0 20px;
 
     @include bp(tablet) {
-      padding: ($gutter * 2) 0 (-$gutter * 2);
+      padding: ($gutter * 2) 0;
     }
 
     @include bp(xl) {
-      padding: $gutter-xl 0 $gutter-xl;
+      padding: $gutter-xl 0;
     }
   }
 
@@ -46,8 +46,15 @@
     }
   }
 
+  .info-content {
+    @include bp(tablet) {
+      max-width: 75%;
+    }
+  }
+
   .actions-content {
     margin: 15px -5px 0;
+    display: flex;
 
     > div {
       padding: 0 5px;
@@ -55,10 +62,11 @@
     }
 
     @include bp(tablet) {
-      margin: 0 (-$gutter / 2);
+      margin: 0;
 
       > div {
-        padding: 0 ($gutter / 2);
+        padding: 0;
+        width: auto;
       }
     }
   }
@@ -68,14 +76,17 @@
 
     @include bp(tablet) {
       order: 1;
+      text-align: right;
     }
 
     .vw__zip-input {
-      max-width: 110px;
-
-      input {
-        max-width: 100%;
+      @include bp(tablet) {
+        max-width: 120px;
       }
+    }
+
+    input {
+      width: 100%;
     }
   }
 
@@ -84,6 +95,10 @@
 
     @include bp(tablet) {
       display: none;
+    }
+
+    select {
+      width: 100%;
     }
   }
 

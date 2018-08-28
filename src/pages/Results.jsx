@@ -1,12 +1,12 @@
 import React from 'react'
 import InventoryProvider from 'controllers/Inventory'
-import HeaderMasthead from 'components/HeaderMasthead'
+import ResultsMasthead from 'components/ResultsMasthead'
 import ResultsWrapper from 'components/ResultsWrapper'
 
 const Results = ({ match: { params } }) => (
   <main>
     <InventoryProvider model={params.model} >
-      <HeaderMasthead results={true} />
+      <ResultsMasthead />
       <ResultsWrapper />
     </InventoryProvider>
   </main>

@@ -1,19 +1,24 @@
 @import 'mixins';
 
 .vw__filter-sidebar {
+  display: none;
+
   &.is-active {
+    -webkit-scrolling-overflow: touch;
     position: fixed;
+    display: block;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    background: white;
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-scrolling-overflow: touch;
   }
 
   @include bp(desktop) {
     margin: 0;
+    display: block;
   }
 
   @include bp(wide) {
