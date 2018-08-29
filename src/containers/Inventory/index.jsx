@@ -1,48 +1,76 @@
 import React, { Component } from 'react'
 import ModelsDataProvider from 'data-providers/Models'
 import DealersDataProvider from 'data-providers/Dealers'
-import InventoryDataProvider from 'data-providers/Inventory'
+import ZipDataProvider from 'data-providers/Zip'
+import PageDataProvider from 'data-providers/Page'
 
 export const InventoryContext = React.createContext()
 
-const getCarModel = (carModels, name) => carModels.find(model => model.name === name)
+const getCarBySlug = (carModels, name) => carModels.find(model => model.name === name)
 
 class InventoryProvider extends Component {
   state = {
-    ...this.props
+    models: this.props.models,
+    chosenModel: 'Jetta',
+    carsByModel: [],
+    filterAttributes: [],
+    appliedFilters: [],
+    filteredCars: [],
+    changeModel: this.changeModel,
+    updateFilter: this.updateFilter,
   }
 
-  static getDerivedStateFromProps(nextProps) {
-    return {
-      inventory: nextProps.inventory
-    }
+  componentDidMount() {
+    // grab cars
+    // find filterable items
+    // organize by cars - number
+    // apply filters to cars
+    // organize by exact | close - number of each
+    //
+    // console.log(this.state)
+  }
+
+  changeModel = () => {
+
+  }
+
+  updateFilter = () => {
+
+  }
+
+  toggleFavorite = () => {
+
   }
 
   render() {
     return (
-      <InventoryContext.Provider value={this.state}>
+      <InventoryContext.Provider>
         {this.props.children}
       </InventoryContext.Provider>
     )
   }
 }
 
-const InventoryContainer = ({ children, path }) => (
-  <ModelsDataProvider>
-    {(models) => (
-      <DealersDataProvider>
-        {(dealers) => (
-          <InventoryDataProvider dealers={dealers}>
-            {(inventory) => (
-              <InventoryProvider {...models} {...dealers} {...inventory}>
-                {children}
-              </InventoryProvider>
+const InventoryContainer = ({ children }) => (
+  <ZipDataProvider>
+    {(zip) => (
+      <ModelsDataProvider>
+        {(models) => (
+          <DealersDataProvider zip={zip}>
+            {(dealers) => (
+              <PageDataProvider>
+                {(pageData) => (
+                  <InventoryProvider pageData={pageData} models={models} dealers={dealers}>
+                    {children}
+                  </InventoryProvider>
+                )}
+              </PageDataProvider>
             )}
-          </InventoryDataProvider>
+          </DealersDataProvider>
         )}
-      </DealersDataProvider>
+      </ModelsDataProvider>
     )}
-  </ModelsDataProvider>
+  </ZipDataProvider>
 )
 
 export default InventoryContainer
