@@ -10,7 +10,7 @@ const App = () => (
       <Router>
         <Switch>
           <Route path="/" component={Landing} exact />
-          {/*<Route path="/results/:model?" component={Results} />*/}
+          <Route path="/results/:model?" component={Results} />
         </Switch>
       </Router>
     </div>
