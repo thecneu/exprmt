@@ -12,7 +12,7 @@ const InventoryContainer = ({ children, router, params }) => (
         {(modelsData) => {
           const currentModel = modelsData.carModels.find(model => params.model === model.slug)
           return (
-            <DealersDataProvider currentModel={currentModel} zip={zip}>
+            <DealersDataProvider zip={zip}>
               {(dealers) => (
                 <PageDataProvider>
                   {(pageData) => (

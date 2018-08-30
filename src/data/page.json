@@ -1,0 +1,24 @@
+{
+  "filters": [
+    {
+      "key": ["transmissionType"],
+      "friendlyName": "transmission",
+      "required": ["automatic", "manual"]
+    },
+    {
+      "key": ["trimLevel"],
+      "friendlyName": "trims",
+      "required": []
+    },
+    {
+      "key": ["exteriorColorDescription", "exteriorColorBaseColor"],
+      "friendlyName": "exterior color",
+      "required": []
+    },
+    {
+      "key": ["interiorColorDescription", "interiorColorBaseColor"],
+      "friendlyName": "interior color",
+      "required": []
+    }
+  ]
+}
