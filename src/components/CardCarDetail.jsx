@@ -22,6 +22,7 @@ const CardCarDetail = ({ car, type }) => (
               </div>
 
               <div className="vin">
+                {car.isMatched}
                 <nobr><b>vin</b> {car.vin}</nobr>
               </div>
             </div>

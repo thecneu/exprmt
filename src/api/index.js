@@ -82,46 +82,27 @@ export const filterCars = (cars, theFilter = {}) => {
 
   console.log('filtering:', filter)
 
-  const filtered = cars.filter(car => {
-    const some = Object.keys(filter).every(filterKey => {
+  const filterableKeys = Object.keys(filter)
+
+  const filteredCars = cars.map(car => {
+    const amountFilters = filterableKeys.length
+    const rank = filterableKeys.reduce((next, filterKey) => {
       const filterValue = filter[filterKey]
       const carKey = mapHeadingToKey(filterKey)
       const carValue = car[carKey]
-      console.log('car filter', filterKey, filterValue.includes(carValue))
-      return filterValue.includes(carValue)
-    })
+      return next + (filterValue.includes(carValue) ? 1 : 0)
+    }, 0)
 
-    return some
+    return {
+      ...car,
+      isMatched: rank === amountFilters ? 'exact' : rank === amountFilters - 1 ? 'close' : false
+    }
   })
-
-  const filterableKeys = Object.keys(filter)
-
-  const filteredCars = {
-    exactMatches: [],
-    closeMatches: []
-  }
-
-  const hasProperties = (car, filterKey) => {
-    const filterValue = filter[filterKey]
-    const carKey = mapHeadingToKey(filterKey)
-    const carValue = car[carKey]
-    return filterValue.includes(carValue)
-  }
-
-  cars.forEach(car => {
-    // const exactMatches = filterableKeys.every((filterKey) => next + hasProperties(car, filterKey))
-    // const closeMatches = filterableKeys.some((filterKey) => hasProperties(car, filterKey))
-    // if (exactMatches) filteredCars.exactMatches.push(car)
-    // else if (closeMatches) filteredCars.closeMatches.push(car)
-    console.log(`keys ${filterableKeys.length}`)
-  })
-
-  console.log(filtered.length)
-  console.groupEnd()
 
   console.log(filteredCars)
+  console.groupEnd()
 
-  return filtered
+  return filteredCars
 }
 
 const mapHeadingToKey = (key) => {

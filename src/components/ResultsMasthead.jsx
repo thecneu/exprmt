@@ -12,7 +12,7 @@ class ResultsMasthead extends Component {
   state = { isSticky: false }
 
   onScroll = (e) => {
-    console.log('onScroll');
+    // console.log('onScroll');
   }
 
   componentDidMount() {
