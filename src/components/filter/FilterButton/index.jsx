@@ -1,8 +1,8 @@
 import React from 'react'
 
-const FilterButton = () => (
+const FilterButton = ({ onClick }) => (
   <div className="vw__filter-button">
-    <button>FilterButton</button>
+    <button onClick={onClick}>FilterButton</button>
   </div>
 )
 

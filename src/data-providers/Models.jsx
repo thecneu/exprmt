@@ -15,7 +15,7 @@ const carModels = modelJson.reduce((next, section) => {
 
 const ModelsDataProvider = ({ children }) => children({
   models: modelJson,
-  carModels: sortBy(carModels, 'name')
+  carModels: sortBy(carModels, 'slug')
 })
 
 export default ModelsDataProvider

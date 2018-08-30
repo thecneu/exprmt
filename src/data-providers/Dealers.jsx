@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import dealersJson from 'data/dealers.json'
 
+// API Functions //
+
 class DealersDataProvider extends Component {
   state = {
     dealers: dealersJson.dealers,
@@ -13,6 +15,10 @@ class DealersDataProvider extends Component {
 
   getCarsNearby() {
 
+  }
+
+  componentDidMount() {
+    console.log('grabbing cars for', this.props.currentModel.name)
   }
 
   render() {

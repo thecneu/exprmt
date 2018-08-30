@@ -1,7 +1,8 @@
 import React from 'react'
 
-const ResultsWrapper = () => (
-  <div />
+const ResultsWrapper = (props) => (
+  <div>
+  </div>
 )
 
 export default ResultsWrapper

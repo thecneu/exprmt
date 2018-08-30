@@ -1,15 +1,14 @@
 import React from 'react'
-import InventoryProvider from 'containers/Inventory'
+import InventoryContainer from 'containers/Inventory'
 import ResultsMasthead from 'components/results/ResultsMasthead'
 import ResultsWrapper from 'components/results/ResultsWrapper'
 
-const Results = ({ match }) => (
+const Results = ({ match, history }) => (
   <main>
-    {console.log(match)}
-    <InventoryProvider>
+    <InventoryContainer key={match.params.model} params={match.params} router={history}>
       <ResultsMasthead />
       <ResultsWrapper />
-    </InventoryProvider>
+    </InventoryContainer>
   </main>
 )
 
