@@ -1,0 +1,38 @@
+@import 'src/mixins';
+
+.model {
+  position: relative;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  height: 100%;
+  border: 3px solid transparent;
+  text-align: center;
+
+  @include bp(tablet) {
+    border-width: 4px;
+  }
+
+  @include bp(desktop) {
+    padding-bottom: 14px;
+  }
+
+  &:hover {
+    border-color: $color-blue1;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .image {
+    position: absolute;
+  }
+
+  .car {
+    position: relative;
+    z-index: 1;
+    min-height: 90px;
+  }
+}

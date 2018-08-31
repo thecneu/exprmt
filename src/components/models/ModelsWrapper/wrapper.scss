@@ -1,0 +1,46 @@
+@import 'src/mixins';
+
+.vw__models {
+  margin: 20px 0;
+
+  @include bp(tablet) {
+    margin: $gutter 0;
+  }
+
+  section {
+    margin-top: 20px;
+    margin-bottom: -13px;
+
+    @include bp(tablet) {
+      margin-top: $gutter;
+      margin-bottom: -$gutter / 2;
+    }
+  }
+
+  .model-group {
+    margin-bottom: 13px;
+
+    @include bp(tablet) {
+      margin-bottom: $gutter / 2;
+    }
+  }
+
+  .grid-container {
+    margin: 0 (-$gutter/2);
+
+    .grid-item {
+      padding: 0 ($gutter/2);
+      width: 50%;
+      margin-bottom: 13px;
+
+      @include bp(tablet) {
+        width: (100% / 3);
+        margin-bottom: $gutter / 2;
+      }
+
+      @include bp(wide) {
+        width: 25%;
+      }
+    }
+  }
+}

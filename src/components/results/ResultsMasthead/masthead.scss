@@ -1,0 +1,6 @@
+@import 'src/mixins';
+@import 'src/styles/masthead';
+
+.vw__results-masthead {
+  @extend %masthead;
+}
