@@ -3,19 +3,23 @@ import DataProvider from 'data-providers/DataProvider'
 import CardModel from 'components/cards/Model'
 import './wrapper.scss'
 
+const formatModels = (models, layout) => {
+  return models
+}
+
 const ModelsWrapper = () => (
   <div className="vw__models">
     <div className="container">
       <DataProvider>
-        {({ models }) => (
-          models.map(group => (
-            <section key={group.name}>
+        {({ modelsData, modelsLayoutData }) => (
+          formatModels(modelsData, modelsLayoutData).map(modelGroup => (
+            <section key={modelGroup.name}>
               <div className="model-group">
-                <h3 className="title-1">{group.name}</h3>
+                <h3 className="title-1">{modelGroup.name}</h3>
               </div>
 
               <div className="grid-container">
-                {group.models.map(model => (
+                {modelGroup.models.map(model => (
                   <div className="grid-item" key={model.slug}>
                     <CardModel model={model} />
                   </div>

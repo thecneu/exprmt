@@ -1,0 +1,313 @@
+[
+  {
+    "key": "transmissionType",
+    "values": [
+      "Automatic",
+      "Manual"
+    ]
+  },
+  {
+    "key": "trimLevel",
+    "values": [
+      "1.4T S",
+      "1.4T Wolfsburg",
+      "1.8T SE",
+      "1.8T SEL",
+      "2.0T S",
+      "2.0T SE",
+      "2.0T SE with Technology",
+      "2.0T SEL Premium",
+      "Autobahn",
+      "Dune",
+      "GLI",
+      "GT",
+      "Golf R w/ DCC&reg; and Nav.",
+      "Limited",
+      "Limited with 4MOTION&reg;",
+      "R-Line",
+      "S",
+      "S with 4MOTION&reg;",
+      "S with Style and Comfort",
+      "SE",
+      "SE with 4MOTION&reg;",
+      "SE with Technology",
+      "SE with Technology and 4MOTION&reg;",
+      "SEL",
+      "SEL Premium",
+      "SEL Premium with 4MOTION&reg;",
+      "SEL with 4MOTION&REG;",
+      "SEL with 4MOTION&reg;",
+      "V6 SEL Premium"
+    ]
+  },
+  {
+    "key": "exteriorColorDescription",
+    "values": [
+      [
+        "Black",
+        "BLACK"
+      ],
+      [
+        "Deep Black Pearl Effect",
+        "BLACK"
+      ],
+      [
+        "Deep Black W/Black Top",
+        "BLACK"
+      ],
+      [
+        "Deep Black W/Beige Top",
+        "BLACK"
+      ],
+      [
+        "Silk Blue Metallic",
+        "BLUE"
+      ],
+      [
+        "Night Blue Metallic",
+        "BLUE"
+      ],
+      [
+        "Silk Blue Metallic W/Beige Top",
+        "BLUE"
+      ],
+      [
+        "Dark Iron Blue",
+        "BLUE"
+      ],
+      [
+        "Tourmaline Blue",
+        "BLUE"
+      ],
+      [
+        "Pacific Blue",
+        "BLUE"
+      ],
+      [
+        "Lapiz Blue Metallic",
+        "BLUE"
+      ],
+      [
+        "Platinum Gray Metallic",
+        "GRAY"
+      ],
+      [
+        "Platinum Gray Metallic W/Black Roof",
+        "GRAY"
+      ],
+      [
+        "Indium Gray Metallic",
+        "GRAY"
+      ],
+      [
+        "Pepper Gray",
+        "GRAY"
+      ],
+      [
+        "Bottle Green",
+        "GREEN"
+      ],
+      [
+        "Moss Green",
+        "GREEN"
+      ],
+      [
+        "Great Falls Green",
+        "GREEN"
+      ],
+      [
+        "Sage Green",
+        "GREEN"
+      ],
+      [
+        "Habanero Orange",
+        "ORANGE"
+      ],
+      [
+        "Tornado Red",
+        "RED"
+      ],
+      [
+        "Cardinal Red",
+        "RED"
+      ],
+      [
+        "Tornado Red W/Beige Top",
+        "RED"
+      ],
+      [
+        "Fortana Red",
+        "RED"
+      ],
+      [
+        "White Silver",
+        "SILVER"
+      ],
+      [
+        "Tungsten Silver Metallic",
+        "SILVER"
+      ],
+      [
+        "Reflex Silver",
+        "SILVER"
+      ],
+      [
+        "Reflex Silver W/Black Roof",
+        "SILVER"
+      ],
+      [
+        "Pure White",
+        "WHITE"
+      ],
+      [
+        "Pure White W/Beige Top",
+        "WHITE"
+      ],
+      [
+        "Oryx White Pearl Effect",
+        "WHITE"
+      ],
+      [
+        "Pure White W/Black Roof",
+        "WHITE"
+      ],
+      [
+        "Pure White W/Black Top",
+        "WHITE"
+      ],
+      [
+        "exteriorColorDescription": "Kurkuma Yellow",
+        "YELLOW"
+      ]
+    ]
+  },
+  {
+    "key": "interiorColorDescription",
+    "values": [
+      [
+        "2 Tone Shetland & Black V Tex Leatherette",
+        "2 TONE"
+      ],
+      [
+        "Beige Cloth",
+        "BEIGE"
+      ],
+      [
+        "Beige Leatherette",
+        "BEIGE"
+      ],
+      [
+        "Beige V-Tex",
+        "BEIGE"
+      ],
+      [
+        "Cornsilk Beige Leatherette W/Brown Piping",
+        "BEIGE"
+      ],
+      [
+        "Dune Cloth",
+        "BEIGE"
+      ],
+      [
+        "Beige Leather",
+        "BEIGE"
+      ],
+      [
+        "Shetland V-Tex Leatherette",
+        "BEIGE"
+      ],
+      [
+        "Shetland Vienna Leather",
+        "BEIGE"
+      ],
+      [
+        "Dark Beige Leatherette",
+        "BEIGE"
+      ],
+      [
+        "Black Cloth",
+        "BLACK"
+      ],
+      [
+        "Titan Black Cloth",
+        "BLACK"
+      ],
+      [
+        "Titan Black Cloth Golf",
+        "BLACK"
+      ],
+      [
+        "Black Leatherette",
+        "BLACK"
+      ],
+      [
+        "Titan Black Leatherette",
+        "BLACK"
+      ],
+      [
+        "Black Leather",
+        "BLACK"
+      ],
+      [
+        "Titan Black Leather",
+        "BLACK"
+      ],
+      [
+        "Titan Black V-Tex",
+        "BLACK"
+      ],
+      [
+        "Marrakesch Brown",
+        "BROWN"
+      ],
+      [
+        "Golden Oak/Black Leatherette",
+        "GOLDEN"
+      ],
+      [
+        "Storm Gray Cloth",
+        "GRAY"
+      ],
+      [
+        "Storm Gray Leatherette",
+        "GRAY"
+      ],
+      [
+        "Black/Gray Leatherette",
+        "GRAY"
+      ],
+      [
+        "Gray Cloth",
+        "GRAY"
+      ],
+      [
+        "Gray Leatherette",
+        "GRAY"
+      ],
+      [
+        "Moonrock Gray Leatherette W/Quartz Piping",
+        "GRAY"
+      ],
+      [
+        "Gray Leather",
+        "GRAY"
+      ],
+      [
+        "Black/Palladium Grey",
+        "GRAY"
+      ],
+      [
+        "Titan Black W/ Moonrock",
+        "GX"
+      ],
+      [
+        "Saffrano/Black Leather",
+        "NY"
+      ],
+      [
+        "Golden Oak Vienna Leather",
+        "TAN"
+      ]
+    ]
+  }
+]
