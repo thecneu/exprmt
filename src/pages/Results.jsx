@@ -5,7 +5,7 @@ import ResultsWrapper from 'components/results/ResultsWrapper'
 
 const Results = ({ match, history }) => (
   <main>
-    <InventoryProvider>
+    <InventoryProvider params={match.params} history={history}>
       <ResultsMasthead />
       <ResultsWrapper />
     </InventoryProvider>

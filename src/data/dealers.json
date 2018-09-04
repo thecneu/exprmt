@@ -1,5 +1,4 @@
-{
-   "dealers":[
+[
       {
          "generatedDate":"Mon 2018.08.27 at 11:49:57 AM UTC",
          "dealerid":"422503",
@@ -2120,5 +2119,4 @@
          "assessing":true,
          "satellite":false
       }
-   ]
-}
+]

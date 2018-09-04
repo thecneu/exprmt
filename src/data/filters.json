@@ -1,0 +1,313 @@
+[
+  {
+    "key": "transmission",
+    "values": [
+      "Automatic",
+      "Manual"
+    ]
+  },
+  {
+    "key": "trims",
+    "values": [
+      "1.4T S",
+      "1.4T Wolfsburg",
+      "1.8T SE",
+      "1.8T SEL",
+      "2.0T S",
+      "2.0T SE",
+      "2.0T SE with Technology",
+      "2.0T SEL Premium",
+      "Autobahn",
+      "Dune",
+      "GLI",
+      "GT",
+      "Golf R w/ DCC&reg; and Nav.",
+      "Limited",
+      "Limited with 4MOTION&reg;",
+      "R-Line",
+      "S",
+      "S with 4MOTION&reg;",
+      "S with Style and Comfort",
+      "SE",
+      "SE with 4MOTION&reg;",
+      "SE with Technology",
+      "SE with Technology and 4MOTION&reg;",
+      "SEL",
+      "SEL Premium",
+      "SEL Premium with 4MOTION&reg;",
+      "SEL with 4MOTION&REG;",
+      "SEL with 4MOTION&reg;",
+      "V6 SEL Premium"
+    ]
+  },
+  {
+    "key": "exterior color",
+    "values": [
+      {
+        "exteriorColorDescription": "Black",
+        "exteriorColorBaseColor": "BLACK"
+      },
+      {
+        "exteriorColorDescription": "Deep Black Pearl Effect",
+        "exteriorColorBaseColor": "BLACK"
+      },
+      {
+        "exteriorColorDescription": "Deep Black W/Black Top",
+        "exteriorColorBaseColor": "BLACK"
+      },
+      {
+        "exteriorColorDescription": "Deep Black W/Beige Top",
+        "exteriorColorBaseColor": "BLACK"
+      },
+      {
+        "exteriorColorDescription": "Silk Blue Metallic",
+        "exteriorColorBaseColor": "BLUE"
+      },
+      {
+        "exteriorColorDescription": "Night Blue Metallic",
+        "exteriorColorBaseColor": "BLUE"
+      },
+      {
+        "exteriorColorDescription": "Silk Blue Metallic W/Beige Top",
+        "exteriorColorBaseColor": "BLUE"
+      },
+      {
+        "exteriorColorDescription": "Dark Iron Blue",
+        "exteriorColorBaseColor": "BLUE"
+      },
+      {
+        "exteriorColorDescription": "Tourmaline Blue",
+        "exteriorColorBaseColor": "BLUE"
+      },
+      {
+        "exteriorColorDescription": "Pacific Blue",
+        "exteriorColorBaseColor": "BLUE"
+      },
+      {
+        "exteriorColorDescription": "Lapiz Blue Metallic",
+        "exteriorColorBaseColor": "BLUE"
+      },
+      {
+        "exteriorColorDescription": "Platinum Gray Metallic",
+        "exteriorColorBaseColor": "GRAY"
+      },
+      {
+        "exteriorColorDescription": "Platinum Gray Metallic W/Black Roof",
+        "exteriorColorBaseColor": "GRAY"
+      },
+      {
+        "exteriorColorDescription": "Indium Gray Metallic",
+        "exteriorColorBaseColor": "GRAY"
+      },
+      {
+        "exteriorColorDescription": "Pepper Gray",
+        "exteriorColorBaseColor": "GRAY"
+      },
+      {
+        "exteriorColorDescription": "Bottle Green",
+        "exteriorColorBaseColor": "GREEN"
+      },
+      {
+        "exteriorColorDescription": "Moss Green",
+        "exteriorColorBaseColor": "GREEN"
+      },
+      {
+        "exteriorColorDescription": "Great Falls Green",
+        "exteriorColorBaseColor": "GREEN"
+      },
+      {
+        "exteriorColorDescription": "Sage Green",
+        "exteriorColorBaseColor": "GREEN"
+      },
+      {
+        "exteriorColorDescription": "Habanero Orange",
+        "exteriorColorBaseColor": "ORANGE"
+      },
+      {
+        "exteriorColorDescription": "Tornado Red",
+        "exteriorColorBaseColor": "RED"
+      },
+      {
+        "exteriorColorDescription": "Cardinal Red",
+        "exteriorColorBaseColor": "RED"
+      },
+      {
+        "exteriorColorDescription": "Tornado Red W/Beige Top",
+        "exteriorColorBaseColor": "RED"
+      },
+      {
+        "exteriorColorDescription": "Fortana Red",
+        "exteriorColorBaseColor": "RED"
+      },
+      {
+        "exteriorColorDescription": "White Silver",
+        "exteriorColorBaseColor": "SILVER"
+      },
+      {
+        "exteriorColorDescription": "Tungsten Silver Metallic",
+        "exteriorColorBaseColor": "SILVER"
+      },
+      {
+        "exteriorColorDescription": "Reflex Silver",
+        "exteriorColorBaseColor": "SILVER"
+      },
+      {
+        "exteriorColorDescription": "Reflex Silver W/Black Roof",
+        "exteriorColorBaseColor": "SILVER"
+      },
+      {
+        "exteriorColorDescription": "Pure White",
+        "exteriorColorBaseColor": "WHITE"
+      },
+      {
+        "exteriorColorDescription": "Pure White W/Beige Top",
+        "exteriorColorBaseColor": "WHITE"
+      },
+      {
+        "exteriorColorDescription": "Oryx White Pearl Effect",
+        "exteriorColorBaseColor": "WHITE"
+      },
+      {
+        "exteriorColorDescription": "Pure White W/Black Roof",
+        "exteriorColorBaseColor": "WHITE"
+      },
+      {
+        "exteriorColorDescription": "Pure White W/Black Top",
+        "exteriorColorBaseColor": "WHITE"
+      },
+      {
+        "exteriorColorDescription": "Kurkuma Yellow",
+        "exteriorColorBaseColor": "YELLOW"
+      }
+    ]
+  },
+  {
+    "key": "interior color",
+    "values": [
+      {
+        "interiorColorDescription": "2 Tone Shetland & Black V Tex Leatherette",
+        "interiorColorBaseColor": "2 TONE"
+      },
+      {
+        "interiorColorDescription": "Beige Cloth",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Beige Leatherette",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Beige V-Tex",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Cornsilk Beige Leatherette W/Brown Piping",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Dune Cloth",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Beige Leather",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Shetland V-Tex Leatherette",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Shetland Vienna Leather",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Dark Beige Leatherette",
+        "interiorColorBaseColor": "BEIGE"
+      },
+      {
+        "interiorColorDescription": "Black Cloth",
+        "interiorColorBaseColor": "BLACK"
+      },
+      {
+        "interiorColorDescription": "Titan Black Cloth",
+        "interiorColorBaseColor": "BLACK"
+      },
+      {
+        "interiorColorDescription": "Titan Black Cloth Golf",
+        "interiorColorBaseColor": "BLACK"
+      },
+      {
+        "interiorColorDescription": "Black Leatherette",
+        "interiorColorBaseColor": "BLACK"
+      },
+      {
+        "interiorColorDescription": "Titan Black Leatherette",
+        "interiorColorBaseColor": "BLACK"
+      },
+      {
+        "interiorColorDescription": "Black Leather",
+        "interiorColorBaseColor": "BLACK"
+      },
+      {
+        "interiorColorDescription": "Titan Black Leather",
+        "interiorColorBaseColor": "BLACK"
+      },
+      {
+        "interiorColorDescription": "Titan Black V-Tex",
+        "interiorColorBaseColor": "BLACK"
+      },
+      {
+        "interiorColorDescription": "Marrakesch Brown",
+        "interiorColorBaseColor": "BROWN"
+      },
+      {
+        "interiorColorDescription": "Golden Oak/Black Leatherette",
+        "interiorColorBaseColor": "GOLDEN"
+      },
+      {
+        "interiorColorDescription": "Storm Gray Cloth",
+        "interiorColorBaseColor": "GRAY"
+      },
+      {
+        "interiorColorDescription": "Storm Gray Leatherette",
+        "interiorColorBaseColor": "GRAY"
+      },
+      {
+        "interiorColorDescription": "Black/Gray Leatherette",
+        "interiorColorBaseColor": "GRAY"
+      },
+      {
+        "interiorColorDescription": "Gray Cloth",
+        "interiorColorBaseColor": "GRAY"
+      },
+      {
+        "interiorColorDescription": "Gray Leatherette",
+        "interiorColorBaseColor": "GRAY"
+      },
+      {
+        "interiorColorDescription": "Moonrock Gray Leatherette W/Quartz Piping",
+        "interiorColorBaseColor": "GRAY"
+      },
+      {
+        "interiorColorDescription": "Gray Leather",
+        "interiorColorBaseColor": "GRAY"
+      },
+      {
+        "interiorColorDescription": "Black/Palladium Grey",
+        "interiorColorBaseColor": "GRAY"
+      },
+      {
+        "interiorColorDescription": "Titan Black W/ Moonrock",
+        "interiorColorBaseColor": "GX"
+      },
+      {
+        "interiorColorDescription": "Saffrano/Black Leather",
+        "interiorColorBaseColor": "NY"
+      },
+      {
+        "interiorColorDescription": "Golden Oak Vienna Leather",
+        "interiorColorBaseColor": "TAN"
+      }
+    ]
+  }
+]

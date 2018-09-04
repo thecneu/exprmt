@@ -1,1 +1,22 @@
-[]
+[
+   {
+      "name": "sedans",
+      "models": ["jetta", "passat"]
+   },
+   {
+      "name": "suvs",
+      "models": ["atlas", "tiguan-limited", "tiguan"]
+   },
+   {
+      "name": "wagons",
+      "models": ["golf-sportwagen", "golf-alltrack"]
+   },
+   {
+      "name": "compacts",
+      "models": ["beetle", "golf", "golf-gti", "e-golf", "golf-r"]
+   },
+   {
+      "name": "convertibles",
+      "models": ["beetle-convertible"]
+   }
+]
