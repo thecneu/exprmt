@@ -1,17 +1,41 @@
 import React, { Component } from 'react'
 import DataProvider from 'data-providers/DataProvider'
 
+const getInventory = (id) => {
+  // console.log(`http://www.vw.com/vwsdl/rest/product/dealers/inventory/${id}.json`)
+  return require(`data/${id}.json`)
+}
 const getModelBySlug = (carModels = [], slug) => carModels.find(model => model.slug === slug)
 const getAorDealer = (dealers = []) => dealers.find(dealer => dealer.aor)
-const getAorInventory = (aorDealer) => {
-  console.log(`http://www.vw.com/vwsdl/rest/product/dealers/inventory/${aorDealer.dealerid}.json`)
-  // const inventory = require(`data/inventory/${aorDealer.dealerid}`)
-}
+const getAorInventory = (aorDealer) => getInventory(aorDealer.dealerid)
 const getCarsByModel = (inventory = [], model) => inventory.filter(car => car.model === model)
 
-const buildFilterAttributes = (modelFilters, attributes, modelInventory) => {
-  const filterAttributes = []
-  console.log(modelFilters, attributes)
+const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
+  const filterAttributes = filterData.map(filterGroup => {
+    const filterTypeKey = filterGroup.key[0]
+    const filters = (modelFilters.find(({ key }) => filterTypeKey === key) || {}).values
+
+    const attributes = filters.map(attribute => ({
+      key: filterTypeKey,
+      value: Array.isArray(attribute) ? attribute[0] : attribute,
+      color: Array.isArray(attribute) ? attribute[1] : false,
+      required: filterGroup.required.length
+        ? modelInventory.filter(car => car[filterTypeKey] === attribute).length : false
+    }))
+
+    if (attributes.some(attribute => attribute.required.length === 0)) {
+      console.log('some 0')
+    }
+
+    return {
+      key: filterTypeKey,
+      name: filterGroup.friendlyName,
+      required: filterGroup.required,
+      attributes
+    }
+  })
+
+  console.log(filterAttributes)
   return filterAttributes
 }
 
@@ -29,11 +53,9 @@ class InventoryController extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
     const models = this.props.modelsData.map(({ slug, name, ...rest }) => ({ slug, name }))
     this.aorDealer = getAorDealer(this.props.dealersData)
-    this.attributes = this.props.pageData.filters
-    // get Model inventory
+    this.modelFilters = this.props.pageData.filters
     this.aorInventory = getAorInventory(this.aorDealer)
     const filterAttributes = this.getModelData('jetta')
 
@@ -46,7 +68,6 @@ class InventoryController extends Component {
 
   changeModel = (slug) => {
     const filterAttributes = this.getModelData(slug)
-    // get ModelInventory
     this.setState({
       filterList: [],
       appliedFilters: [],
@@ -62,7 +83,7 @@ class InventoryController extends Component {
   getModelData(slug) {
     this.currentModel = getModelBySlug(this.props.modelsData, slug)
     this.modelInventory = getCarsByModel(this.aorInventory, this.currentModel.name)
-    return buildFilterAttributes(this.props.filtersData, this.attributes, this.modelInventory)
+    return buildFilterAttributes(this.props.filtersData, this.modelFilters, this.modelInventory)
   }
 
   render() {

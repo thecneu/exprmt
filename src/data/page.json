@@ -3,7 +3,7 @@
     {
       "key": ["transmissionType"],
       "friendlyName": "transmission",
-      "required": ["automatic", "manual"]
+      "required": ["Automatic", "Manual"]
     },
     {
       "key": ["trimLevel"],
