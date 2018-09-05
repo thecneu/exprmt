@@ -16,7 +16,7 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
     const filters = (modelFilters.find(({ key }) => filterTypeKey === key) || {}).values
 
     let attributes = filters.map(attribute => ({
-      key: filterTypeKey,
+      filterKey: filterTypeKey,
       value: Array.isArray(attribute) ? attribute[0] : attribute,
       color: Array.isArray(attribute) ? attribute[1] : false,
       required: filterGroup.required.length
@@ -33,47 +33,26 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
     }
 
     return {
-      key: filterTypeKey,
+      filterKey: filterTypeKey,
       name: filterGroup.friendlyName,
       required: filterGroup.required,
       attributes
     }
   })
 
-  console.log(filterAttributes)
   return filterAttributes
 }
 
 export const InventoryContext = React.createContext()
 class InventoryController extends Component {
-  state = {
-    filteredCars: [],
-    nearbyFilteredCars: [],
-    filterAttributes: [],
-    appliedFilters: [],
-    filterList: [],
-    models: [],
-    currentModel: {},
-    showFilter: false
+  toggleFilter = () => {
+    document.body.classList.toggle('is-overflow')
+    this.setState(({ showFilter }) => ({ showFilter: !showFilter}))
   }
 
-  componentDidMount() {
-    const models = this.props.modelsData.map(({ slug, name, ...rest }) => ({ slug, name }))
-    this.aorDealer = getAorDealer(this.props.dealersData)
-    this.modelFilters = this.props.pageData.filters
-    this.aorInventory = getAorInventory(this.aorDealer)
-    const filterAttributes = this.getModelData('atlas')
-
-    this.setState({
-      filteredCars: this.modelInventory,
-      currentModel: this.currentModel,
-      models,
-      filterAttributes
-    })
-  }
-
-  changeModel = (slug) => {
+  onModelChange = (slug) => {
     const filterAttributes = this.getModelData(slug)
+
     this.setState({
       filterList: [],
       appliedFilters: [],
@@ -83,7 +62,37 @@ class InventoryController extends Component {
       filterAttributes
     })
 
-    this.props.history.push(`/results/${this.currentModel.slug}`)
+    this.props.history.push(`/results/${slug}`)
+  }
+
+  state = {
+    aorDealer: {},
+    filteredCars: [],
+    nearbyFilteredCars: [],
+    filterAttributes: [],
+    appliedFilters: [],
+    filterList: [],
+    models: [],
+    currentModel: {},
+    showFilter: false,
+    onModelChange: this.onModelChange,
+    toggleFilter: this.toggleFilter
+  }
+
+  componentDidMount() {
+    const models = this.props.modelsData.map(({ slug, name, ...rest }) => ({ slug, name }))
+    this.aorDealer = getAorDealer(this.props.dealersData)
+    this.modelFilters = this.props.pageData.filters
+    this.aorInventory = getAorInventory(this.aorDealer)
+    const filterAttributes = this.getModelData(this.props.params.model)
+
+    this.setState({
+      filteredCars: this.modelInventory,
+      currentModel: this.currentModel,
+      aorDealer: this.aorDealer,
+      models,
+      filterAttributes,
+    })
   }
 
   getModelData(slug) {
@@ -101,10 +110,10 @@ class InventoryController extends Component {
   }
 }
 
-const InventoryProvider = ({ children }) => (
+const InventoryProvider = ({ children, ...props }) => (
   <DataProvider>
-    {(props) => (
-      <InventoryController {...props}>
+    {(data) => (
+      <InventoryController {...props} {...data}>
         {children}
       </InventoryController>
     )}

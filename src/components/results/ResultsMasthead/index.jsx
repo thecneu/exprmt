@@ -7,18 +7,20 @@ import ZipInput from 'components/common/ZipInput'
 
 class Masthead extends Component {
   render() {
+    const { currentModel, filteredCars, filterList, aorDealer } = this.props
+
     return (
       <section className="vw__models-masthead">
         <div className="top-bar"></div>
         <div className="container">
           <div className="content-container">
             <div className="info-content">
-              <h1 className="h5-light headline">Great, let’s get you into a "{'Tiguan'}".</h1>
+              <h1 className="h5-light headline">Great, let’s get you into a {currentModel.name}.</h1>
               <p className="info">
                 <span className="h9-light">
-                  There are <span className="h9">"15"</span> for "{'Tiguan'}" at
+                  There are <span className="h9">{filteredCars.length}</span> for {currentModel.name} at
                   {' '}
-                  <span className="h9 label-dealer">"{'VOLKSWAGEN'}"</span>
+                  <span className="h9 label-dealer">{aorDealer.name}</span>
                 </span>
               </p>
             </div>

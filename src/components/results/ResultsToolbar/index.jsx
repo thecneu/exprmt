@@ -5,7 +5,7 @@ import ModelsDropdown from 'components/models/ModelsDropdown'
 import ResultsViewTypes from 'components/results/ResultsViewTypes'
 import './results-toolbar.scss'
 
-const ResultsToolbar = () => (
+const ResultsToolbar = ({ changeType, type }) => (
   <div className="vw__results-toolbar">
     <div className="grid-container">
       <div className="filter-area">
@@ -18,7 +18,7 @@ const ResultsToolbar = () => (
           <FilterList />
         </div>
 
-        <ResultsViewTypes />
+        <ResultsViewTypes changeType={changeType} type={type} />
       </div>
     </div>
   </div>

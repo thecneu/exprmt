@@ -3,7 +3,7 @@ import CarStats from 'components/cards/CarStats'
 import ColorSwatch from 'components/cards/ColorSwatch'
 import Link from 'components/common/Link'
 import ButtonLink from 'components/common/ButtonLink'
-import './card-etail.scss'
+import './car-detail.scss'
 
 const CardCarDetail = ({ car, type }) => (
   <div className={`vw__card-cardetail ${type === 'list' ? 'is-list' : ''}`}>

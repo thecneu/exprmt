@@ -1,15 +1,20 @@
 import React from 'react'
+import { InventoryContext } from 'controllers/Inventory'
 
-const ModelsDropdown = ({ models = [], selected, onChange }) => (
-  <div className="vw__models-dropdown">
-    <select value={selected} onChange={(e) => onChange(e.currentTarget.value)}>
-      {models.map(model => (
-        <option key={model.slug} value={model.slug}>
-          {model.name}
-        </option>
-      ))}
-    </select>
-  </div>
+const ModelsDropdown = () => (
+  <InventoryContext.Consumer>
+    {({ currentModel, models, onModelChange }) => (
+      <div className="vw__models-dropdown">
+        <select value={currentModel.slug} onChange={(e) => onModelChange(e.currentTarget.value)}>
+          {models.map(model => (
+            <option key={model.slug} value={model.slug}>
+              {model.name}
+            </option>
+          ))}
+        </select>
+      </div>
+    )}
+  </InventoryContext.Consumer>
 )
 
 export default ModelsDropdown
