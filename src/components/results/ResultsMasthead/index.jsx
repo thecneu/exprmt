@@ -13,11 +13,12 @@ class Masthead extends Component {
         <div className="container">
           <div className="content-container">
             <div className="info-content">
-              <h1 className="h5-light headline">Great, let’s get you into a {'Tiguan'}.</h1>
+              <h1 className="h5-light headline">Great, let’s get you into a "{'Tiguan'}".</h1>
               <p className="info">
                 <span className="h9-light">
-                  There are <span className="h9">15</span> for {'Tiguan'} at
-                  <span className="h9 label-dealer">{'VOLKSWAGEN'}</span>
+                  There are <span className="h9">"15"</span> for "{'Tiguan'}" at
+                  {' '}
+                  <span className="h9 label-dealer">"{'VOLKSWAGEN'}"</span>
                 </span>
               </p>
             </div>

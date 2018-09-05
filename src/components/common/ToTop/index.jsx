@@ -1,8 +1,13 @@
 import React from 'react'
 
+const scrollToTop = (e) => {
+  e.preventDefault();
+  document.body.scrollIntoView()
+}
+
 const ToTop = () => (
-  <div className="vw__totop">
-    <button>ToTop</button>
+  <div className="vw__to-top">
+    <button onClick={scrollToTop}>To Top</button>
   </div>
 )
 

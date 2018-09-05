@@ -1,0 +1,13 @@
+@import 'src/mixins';
+
+.header {
+  background: white;
+
+  @include bp(desktop) {
+    display: none;
+  }
+}
+
+.grid {
+  justify-content: space-between;
+}

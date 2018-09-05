@@ -1,0 +1,39 @@
+@import 'src/mixins';
+
+.vw__results-toolbar {
+  display: none;
+
+  @include bp(tablet) {
+    padding: 30px 0;
+    display: block;
+    border: 1px solid;
+  }
+
+  .vw__filter-button-container {
+    @include bp(xl) {
+      display: none;
+    }
+  }
+
+  .grid-container {
+    .filter-area {
+      border: 1px solid;
+      width: (5 / 12) * 100%;
+
+      @include bp(desktop) {
+        width: 23%;
+      }
+    }
+
+    .results-area {
+      border: 1px solid;
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+
+      .filter-list-area {
+        border: 1px solid blue;
+      }
+    }
+  }
+}

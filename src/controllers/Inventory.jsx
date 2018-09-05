@@ -15,8 +15,6 @@ const buildFilterAttributes = (modelFilters, attributes, modelInventory) => {
   return filterAttributes
 }
 
-const forceAttributes = ''
-
 export const InventoryContext = React.createContext()
 class InventoryController extends Component {
   state = {

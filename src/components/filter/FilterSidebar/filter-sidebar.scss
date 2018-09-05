@@ -1,0 +1,34 @@
+@import 'src/mixins';
+
+.vw__filter-sidebar {
+  display: none;
+
+  &.is-active {
+    -webkit-scrolling-overflow: touch;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  @include bp(desktop) {
+    display: block;
+  }
+
+  @include bp(wide) {
+    min-width: 23%;
+  }
+
+  .filter-container {
+    background: white;
+
+    @include bp(desktop) {
+      background: none;
+    }
+  }
+}

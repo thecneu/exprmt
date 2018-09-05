@@ -1,7 +1,27 @@
 import React from 'react'
+import FilterButton from 'components/filter/FilterButton'
+import FilterList from 'components/filter/FilterList'
+import ModelsDropdown from 'components/models/ModelsDropdown'
+import ResultsViewTypes from 'components/results/ResultsViewTypes'
+import './results-toolbar.scss'
 
 const ResultsToolbar = () => (
-  <div />
+  <div className="vw__results-toolbar">
+    <div className="grid-container">
+      <div className="filter-area">
+        <ModelsDropdown />
+      </div>
+
+      <div className="results-area">
+        <div className="filter-list-area">
+          <FilterButton />
+          <FilterList />
+        </div>
+
+        <ResultsViewTypes />
+      </div>
+    </div>
+  </div>
 )
 
 export default ResultsToolbar

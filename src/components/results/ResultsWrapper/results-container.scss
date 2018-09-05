@@ -1,0 +1,17 @@
+@import 'src/mixins';
+
+.vw__results-container {
+  background: $color-bluegray95;
+}
+
+.vw__car-results-container {
+  padding: 20px 0;
+
+  @include bp(tablet) {
+    padding-top: 0;
+  }
+
+  @include bp(wide) {
+    display: flex;
+  }
+}

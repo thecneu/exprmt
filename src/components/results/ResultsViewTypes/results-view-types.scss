@@ -1,0 +1,11 @@
+@import 'src/mixins';
+
+.vw__results-view-types {
+  // display: none;
+
+  @include bp(desktop) {
+    display: block;
+    width: 90px;
+    text-align: right;
+  }
+}

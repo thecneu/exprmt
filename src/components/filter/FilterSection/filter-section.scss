@@ -1,0 +1,21 @@
+@import 'src/mixins';
+
+.vw__filter-section {
+  header {
+    cursor: pointer;
+  }
+
+  .grid-container {
+    justify-content: space-between;
+  }
+
+  label {
+    display: block;
+  }
+
+  .filtered-choices {
+    @include bp(desktop) {
+      display: none;
+    }
+  }
+}

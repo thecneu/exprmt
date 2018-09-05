@@ -1,0 +1,26 @@
+@import 'src/mixins';
+
+.vw__car-results {
+  .grid-container {
+    margin: -5px -5px 0;
+  }
+
+  .grid-item {
+    padding: 5px;
+    width: 100%;
+
+    @include bp(tablet) {
+      width: (100% / 2);
+    }
+
+    @include bp(desktop) {
+      width: (100% / 3);
+    }
+
+    &.is-list {
+      @include bp(tablet) {
+        width: 100%;
+      }
+    }
+  }
+}
