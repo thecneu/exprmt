@@ -4,7 +4,7 @@ import CardModel from 'components/cards/Model'
 import './wrapper.scss'
 
 const formatModels = (models, layout) => {
-  return models
+  return []
 }
 
 const ModelsWrapper = () => (
