@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { InventoryContext } from 'controllers/Inventory'
 import FilterButton from 'components/filter/FilterButton'
-import ModelsDropdown from 'components/common/ModelsDropdown'
+import ModelsDropdown from 'components/models/ModelsDropdown'
 import ToTop from 'components/common/ToTop'
 import ZipInput from 'components/common/ZipInput'
 

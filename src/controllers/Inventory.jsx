@@ -15,7 +15,7 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
     const filterTypeKey = filterGroup.key[0]
     const filters = (modelFilters.find(({ key }) => filterTypeKey === key) || {}).values
 
-    const attributes = filters.map(attribute => ({
+    let attributes = filters.map(attribute => ({
       key: filterTypeKey,
       value: Array.isArray(attribute) ? attribute[0] : attribute,
       color: Array.isArray(attribute) ? attribute[1] : false,
@@ -23,8 +23,13 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
         ? modelInventory.filter(car => car[filterTypeKey] === attribute).length : false
     }))
 
-    if (attributes.some(attribute => attribute.required.length === 0)) {
-      console.log('some 0')
+    if (attributes.some(({ required }) => required === 0)) {
+      attributes = attributes.map(attribute => ({
+        ...attribute,
+        required: attribute.required > 0
+      }))
+    } else {
+      attributes = attributes.map(({ required, ...attribute }) => ({ ...attribute }))
     }
 
     return {
@@ -57,11 +62,12 @@ class InventoryController extends Component {
     this.aorDealer = getAorDealer(this.props.dealersData)
     this.modelFilters = this.props.pageData.filters
     this.aorInventory = getAorInventory(this.aorDealer)
-    const filterAttributes = this.getModelData('jetta')
+    const filterAttributes = this.getModelData('atlas')
 
     this.setState({
       filteredCars: this.modelInventory,
       currentModel: this.currentModel,
+      models,
       filterAttributes
     })
   }
