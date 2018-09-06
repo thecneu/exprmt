@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import sortBy from 'lodash/sortBy'
 import dealersJson from 'data/dealers.json'
 import filtersJson from 'data/model-filters.json'
 import modelsJson from 'data/models.json'

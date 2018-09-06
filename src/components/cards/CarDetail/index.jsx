@@ -13,7 +13,7 @@ const CardCarDetail = ({ car, type }) => (
           <div className="content-container">
             <div className="top">
               <div className="car-image">
-                <img src={car.mediaImageUrl} alt={car.mediaImageUrlAlt} />
+                <img src={car.mediaImageUrl + '&quality=10'} alt={car.mediaImageUrlAlt} />
               </div>
 
               <div className="car-title">

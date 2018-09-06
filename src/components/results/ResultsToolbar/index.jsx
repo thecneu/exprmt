@@ -7,6 +7,7 @@ import './results-toolbar.scss'
 
 const ResultsToolbar = ({ changeType, type }) => (
   <div className="vw__results-toolbar">
+    {console.log('ResultsToolbar render')}
     <div className="grid-container">
       <div className="filter-area">
         <ModelsDropdown />

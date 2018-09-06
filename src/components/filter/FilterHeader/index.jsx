@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './filter-header.module.scss'
 
-const FilterHeader = ({ toggleFilter }) => (
+const FilterHeader = ({ toggleFilter, appliedFilters }) => (
   <header className={`vw__filter-header ${styles.header}`}>
     <div className="header-container">
       <div className={`grid-container ${styles.grid}`}>

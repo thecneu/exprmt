@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import { InventoryContext } from 'controllers/Inventory'
 import FilterButton from 'components/filter/FilterButton'
+import FilterList from 'components/filter/FilterList'
 import ModelsDropdown from 'components/models/ModelsDropdown'
 import ToTop from 'components/common/ToTop'
 import ZipInput from 'components/common/ZipInput'
+import './masthead.scss'
 
 class Masthead extends Component {
   render() {
-    const { currentModel, filteredCars, filterList, aorDealer } = this.props
+    const { currentModel, filteredCars, appliedFilters, aorDealer } = this.props
 
     return (
-      <section className="vw__models-masthead">
-        <div className="top-bar"></div>
+      <section className="vw__results-masthead">
+        <div className="top-bar">{console.log('results-masthead render')}</div>
         <div className="container">
           <div className="content-container">
             <div className="info-content">
@@ -23,6 +25,10 @@ class Masthead extends Component {
                   <span className="h9 label-dealer">{aorDealer.name}</span>
                 </span>
               </p>
+
+              <div className="filter-list-container">
+                <FilterList />
+              </div>
             </div>
 
             <div className="actions-content">

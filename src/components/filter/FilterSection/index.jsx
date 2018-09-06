@@ -7,9 +7,20 @@ class FilterSection extends Component {
 
   toggle = () => this.setState(({ isOpen }) => ({ isOpen: !isOpen }))
 
+  isSelected(attribute) {
+    const { appliedFilters } = this.props
+    const selected = appliedFilters.filter(filter => filter.value === attribute.value)
+    return selected.length > 0
+  }
+
+  appliedFilters() {
+    const { appliedFilters, filterKey } = this.props
+    return appliedFilters.filter(filter => filter.filterKey === filterKey).map(filter => filter.value).join(', ')
+  }
+
   render() {
     const { isOpen } = this.state
-    const { name, attributes } = this.props
+    const { name, attributes, updateAppliedFilter } = this.props
 
     return (
       <div className="vw__filter-section">
@@ -21,7 +32,9 @@ class FilterSection extends Component {
             </div>
 
             <div className="filter-actions">
-              <div className="filtered-choices"></div>
+              <div className="filtered-choices">
+                {this.appliedFilters()}
+              </div>
 
               <div className="action">
                 <button>{isOpen ? '-' : '+'}</button>
@@ -32,7 +45,9 @@ class FilterSection extends Component {
 
         {isOpen && (
           <div className="section-content">
-            {attributes.map(attribute => <FilterAttribute key={attribute.value} {...attribute} />)}
+            {attributes.map(attribute =>
+              <FilterAttribute key={attribute.value} selected={this.isSelected(attribute)} attribute={attribute} updateAppliedFilter={updateAppliedFilter} />
+            )}
           </div>
         )}
       </div>

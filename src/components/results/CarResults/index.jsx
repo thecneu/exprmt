@@ -13,16 +13,19 @@ class CarResults extends Component {
 
     return (
       <InventoryContext.Consumer>
-        {({ filteredCars, nearbyFilteredCars, filterList }) => (
+        {({ filteredCars, nearbyFilteredCars, appliedFilters }) => (
           <div className="vw__car-results">
+            {console.log('carresults render', this.props)}
             <div className="grid-container">
               {filteredCars.map(car =>
                 <div key={car.vin} className={cx('grid-item', { 'is-list' : type === 'list' })}>
-                  <CardCarDetail car={car} type={type} showMatchLabel={filterList.length > 0} />
+                  <CardCarDetail car={car} type={type} showMatchLabel={appliedFilters.length > 0} />
                 </div>
               )}
             </div>
+
             {nearbyFilteredCars.length > 0 && <button>Show nearby cars</button>}
+
             {showNearbyCars && (
               <div className="grid-container">
                 {nearbyFilteredCars.map(car =>

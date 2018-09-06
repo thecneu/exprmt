@@ -7,13 +7,17 @@ import './results-container.scss'
 class ResultsWrapper extends Component {
   state = { type: 'list' }
 
-  changeType = (type) => this.setState({ type })
+  changeType = (type) => {
+    console.log('--- change type ---')
+    this.setState({ type })
+  }
 
   render() {
     const { type } = this.state
 
     return (
       <div className="vw__results-container">
+        {console.log('ResultsWrapper render', this.props)}
         <div className="container">
           <ResultsToolbar type={type} changeType={this.changeType} />
 

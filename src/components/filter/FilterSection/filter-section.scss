@@ -14,8 +14,15 @@
   }
 
   .filtered-choices {
+    padding-right: 10px;
+
     @include bp(desktop) {
-      display: none;
+      // display: none;
     }
+  }
+
+  .filter-actions {
+    display: flex;
+
   }
 }
