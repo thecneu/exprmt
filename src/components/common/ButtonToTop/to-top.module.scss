@@ -1,0 +1,29 @@
+@import 'src/mixins';
+
+.totop {
+  @include title-3;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+  height: 32px;
+  color: $color-bluegray80;
+  text-transform: uppercase;
+
+  .vw__icon {
+    width: 12px;
+    margin-bottom: 8px;
+
+    svg {
+      fill: $color-bluegray80;
+    }
+  }
+
+  &:hover {
+    color: $color-blue1;
+
+    .vw__icon svg {
+      fill: $color-blue1;
+    }
+  }
+}

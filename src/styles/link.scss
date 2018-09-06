@@ -1,0 +1,28 @@
+@import 'src/mixins';
+
+.vw__link {
+  color: $color-blue1;
+  font-family: 'VW Head bold';
+  font-size: 15px;
+  line-height: 18px;
+
+  .vw__icon {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    color: $color-blue2;
+
+    .vw__icon svg {
+      fill: $color-blue2;
+    }
+  }
+
+  &:active {
+    color: $color-blue3;
+
+    .vw__icon svg {
+      fill: $color-blue3;
+    }
+  }
+}

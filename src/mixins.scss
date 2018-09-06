@@ -26,6 +26,14 @@ $container-width: (
   xl: 86.3%
 );
 
+$gutters: (
+  mobile: 13px,
+  tablet: 20px,
+  desktop: 28px,
+  wide: 36px,
+  xl: 40px
+);
+
 $gutter: 3.5%;
 $gutter-xl: 40px;
 
@@ -48,3 +56,6 @@ $gutter-xl: 40px;
     }
   }
 }
+
+@mixin title-2 {}
+@mixin title-3 {}

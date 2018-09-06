@@ -49,35 +49,34 @@ export const filterCars = (inventory, appliedFilters) => {
   //   theFilter[key].length ? { ...next, [key]: theFilter[key] } : next
   // , {})
 
-  // if (Object.keys(filter).length === 0) {
-  //   console.log('just cars')
-  //   console.groupEnd()
-  //   return cars
-  // }
+  if (appliedFilters.length === 0) {
+    console.log('just cars')
+    console.groupEnd()
+    return inventory
+  }
 
-  // console.log('filtering:', filter)
+  console.log('filtering:', appliedFilters)
 
-  // const filterableKeys = Object.keys(filter)
 
-  // const filteredCars = cars.map(car => {
-  //   const amountFilters = filterableKeys.length
-  //   const rank = filterableKeys.reduce((next, filterKey) => {
-  //     const filterValue = filter[filterKey]
-  //     const carKey = mapHeadingToKey(filterKey)
-  //     const carValue = car[carKey]
-  //     return next + (filterValue.includes(carValue) ? 1 : 0)
-  //   }, 0)
+  const filteredCars = inventory.map(car => {
+    const amountFilters = appliedFilters.length
+    const rank = filterableKeys.reduce((next, filterKey) => {
+      const filterValue = filter[filterKey]
+      const carKey = mapHeadingToKey(filterKey)
+      const carValue = car[carKey]
+      return next + (filterValue.includes(carValue) ? 1 : 0)
+    }, 0)
 
-  //   return {
-  //     ...car,
-  //     isMatched: rank === amountFilters ? 'exact' : rank === amountFilters - 1 ? 'close' : false
-  //   }
-  // })
+    return {
+      ...car,
+      isMatched: rank === amountFilters ? 'exact' : rank === amountFilters - 1 ? 'close' : false
+    }
+  })
 
-  // console.log(filteredCars)
-  // console.groupEnd()
+  console.log(filteredCars)
+  console.groupEnd()
 
-  // return filteredCars
+  return filteredCars
 }
 
 export const InventoryContext = React.createContext()

@@ -13,5 +13,24 @@
 
   @include bp(wide) {
     display: flex;
+    margin: 0 (-$gutter/2);
+  }
+
+  > .grid-item {
+    @include bp(wide) {
+      padding: 0 ($gutter/2);
+    }
+  }
+
+  .side-container {
+    @include bp(wide) {
+      width: 25%;
+    }
+  }
+
+  .results-container {
+    @include bp(wide) {
+      width: 75%;
+    }
   }
 }

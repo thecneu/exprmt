@@ -181,3 +181,16 @@
     }
   }
 }
+
+
+.packages {
+  @include text-3;
+  color: $color-bluegray55;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+
+  .vw__icon {
+    fill: $color-bluegray80;
+    margin-right: 8px;
+  }
+}

@@ -13,3 +13,46 @@
     border: 1px solid;
   }
 }
+
+.vw__btn-view-type {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px dashed #FF00D5;
+  width: 40px;
+  height: 32px;
+  border-radius: 5px;
+  margin: 0 6px;
+
+  @include bp(desktop) {
+    width: 46px;
+    height: 38px;
+    margin: 0 8px;
+  }
+
+  .vw__icon {
+    width: 21px;
+    height: 16px;
+
+    @include bp(desktop) {
+      width: 26px;
+      height: 20px;
+    }
+
+    svg {
+      fill: $color-bluegray80;
+    }
+  }
+
+  &.selected {
+    border: 2px solid $color-bluegray80;
+
+    .vw__icon svg {
+      fill: $color-blue1;
+    }
+  }
+
+  &:hover:not(.selected) {
+    border: 2px solid $color-bluegray80;
+  }
+}

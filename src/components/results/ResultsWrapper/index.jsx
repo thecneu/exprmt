@@ -22,8 +22,13 @@ class ResultsWrapper extends Component {
           <ResultsToolbar type={type} changeType={this.changeType} />
 
           <div className="vw__car-results-container">
-            <FilterSidebar />
-            <CarResults type={type} />
+            <div className="grid-item side-container">
+              <FilterSidebar />
+            </div>
+
+            <div className="grid-item results-container">
+              <CarResults type={type} />
+            </div>
           </div>
         </div>
       </div>

@@ -1,25 +1,74 @@
-@import 'mixins';
+@import 'src/mixins';
 
 .vw__button {
-  background-appearance: none;
-  padding: 16px 32px;
-  background: $blue1;
+  @include title-2;
+  appearance: none;
+  background: $color-blue1;
+  border-radius: 5px;
   color: white;
   display: inline-block;
-  text-decoration: none;
-  border-radius: 5px;
+  line-height: 44px;
+  min-height: 44px;
+  padding: 0 24px;
   text-align: center;
+  text-decoration: none;
+  transition: 230ms ease-in;
+
+  &:hover {
+    background: $color-blue2;
+  }
+
+  &:active {
+    background: $color-blue3;
+  }
 
   &:focus {
     outline: 0;
   }
 
-  &.btn-inverted {
-    background: white;
-    color: $blue1;
+  &.btn-stroked {
+    @include title-3;
+    background: none;
+    padding: 0 10px;
+    min-height: 26px;
+    line-height: 26px;
+    border: 1px solid white;
+
+    @include bp(desktop) {
+      padding: 0 20px;
+      min-height: 32px;
+      line-height: 32px;
+    }
+
+    &:hover {
+      background: none;
+      border-width: 2px;
+    }
+
+    &:active {
+      background: none;
+      border-width: 3px;
+    }
   }
 
   &.btn-full {
-    width: 100%;
+    background: none;
+    border: 1px solid $color-blue1;
+    color: $color-blue1;
+    font-family: 'VW Head bold';
+    font-size: 15px;
+    line-height: 18px;
+    min-height: 60px;
+    display: block;
+
+    &:hover {
+      background: none;
+      border-width: 2px;
+    }
+
+    &:active {
+      background: $color-blue1;
+      color: white;
+    }
   }
 }

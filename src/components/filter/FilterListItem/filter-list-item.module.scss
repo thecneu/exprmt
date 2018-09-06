@@ -1,8 +1,35 @@
 .item {
+  @include label-3;
+  color: $color-bluegray80;
+  border: 1px solid $color-bluegray80;
   display: inline-block;
-  padding: 8px;
   margin-right: 8px;
   margin-bottom: 8px;
-  border: 1px solid;
   cursor: pointer;
+  padding: 10px;
+  transition: 230ms ease-in;
+
+  .vw__icon {
+    margin-left: 10px;
+
+    svg {
+      fill: $color-blue1;
+    }
+  }
+
+  &.btn-clear {
+    color: $color-bluegray50;
+  }
+
+  &:hover {
+    border-color: $color-blue1;
+
+    .vw__icon svg {
+      fill: $color-blue1;
+    }
+  }
+
+  &:active {
+    border: 2px solid $color-blue1;
+  }
 }

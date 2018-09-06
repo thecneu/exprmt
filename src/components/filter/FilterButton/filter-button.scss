@@ -1,0 +1,45 @@
+.vw__filter-button {
+  appearance: none;
+  border: 1px solid rgba($color-blue1, .6);
+  border-radius: 5px;
+  position: relative;
+  width: 40px;
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+
+  svg {
+    fill: $color-blue1;
+    height: 18px;
+
+    @include bp(desktop) {
+      height: 22px;
+    }
+  }
+
+  @include bp(desktop) {
+    width: 38px;
+    height: 46px;
+  }
+
+  &.active {
+    border: 2px solid $color-blue1;
+  }
+
+  &.has-filters {
+    .filters-count {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      background: $color-blue1;
+      width: 20px;
+      height: 16px;
+      text-align: center;
+      vertical-align: middle;
+      color: white;
+      font-family: 'VW Text Regular';
+      font-size: 12px;
+    }
+  }
+}
