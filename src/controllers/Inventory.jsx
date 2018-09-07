@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import DataProvider from 'data-providers/DataProvider'
 
-const getInventory = (id) => {
-  // console.log(`http://www.vw.com/vwsdl/rest/product/dealers/inventory/${id}.json`)
-  return require(`data/${id}.json`)
+const getInventory = (dealer) => {
+  // console.log(`http://www.vw.com/vwsdl/rest/product/dealers/inventory/${dealerid}.json`)
+  const inventory = require(`data/${dealer.dealerid}.json`)
+  const { aor, dealerid, name, latlong, distance } = dealer
+  return inventory.map(car => ({
+    ...car,
+    dealer: { aor, dealerid, name, latlong, distance }
+  }))
 }
 const getModelBySlug = (carModels = [], slug) => carModels.find(model => model.slug === slug)
 const getAorDealer = (dealers = []) => dealers.find(dealer => dealer.aor)
-const getAorInventory = (aorDealer) => getInventory(aorDealer.dealerid)
 const getCarsByModel = (inventory = [], model) => inventory.filter(car => car.model === model)
 
 const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
@@ -45,9 +49,6 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
 
 export const filterCars = (inventory, appliedFilters) => {
   console.group('car filter called', appliedFilters)
-  // const filters = Object.keys(theFilter).reduce((next, key) =>
-  //   theFilter[key].length ? { ...next, [key]: theFilter[key] } : next
-  // , {})
 
   const amountFilters = appliedFilters.length
   if (amountFilters === 0) {
@@ -56,27 +57,43 @@ export const filterCars = (inventory, appliedFilters) => {
     return inventory
   }
 
-  console.log('filtering:', appliedFilters)
+  const filters = appliedFilters.reduce((next, { filterKey, value }) => ({
+    ...next,
+    [filterKey]: [ ...(next[filterKey] || []), value ]
+  }), {})
 
+  console.log('filtering:', filters)
 
+  const filterableKeys = Object.keys(filters)
   const filteredCars = inventory.map(car => {
-    // const rank = filterableKeys.reduce((next, filterKey) => {
-    //   const filterValue = filter[filterKey]
-    //   const carKey = mapHeadingToKey(filterKey)
-    //   const carValue = car[carKey]
-    //   return next + (filterValue.includes(carValue) ? 1 : 0)
-    // }, 0)
+    const rank = filterableKeys.reduce((next, filterKey) => {
+      const filterValue = filters[filterKey]
+      const carValue = car[filterKey]
+      return next + (filterValue.includes(carValue) ? 1 : 0)
+    }, 0)
 
-    // return {
-    //   ...car,
-    //   isMatched: rank === amountFilters ? 'exportxact' : rank === amountFilters - 1 ? 'close' : false
-    // }
+    const isMatched = rank === amountFilters
+      ? 'exact' : rank === amountFilters - 1 ? 'close' : false
+
+    return {
+      ...car,
+      isMatched
+    }
   })
+  .filter(car => car.isMatched !== false)
 
-  // console.log(filteredCars)
+  // console.log(
+  //   {
+  //     exact: filteredCars.filter(car => car.isMatched === 'exact'),
+  //     close: filteredCars.filter(car => car.isMatched === 'close')
+  //   }
+  // )
   console.groupEnd()
 
-  return filteredCars
+  return {
+    exact: filteredCars.filter(car => car.isMatched === 'exact'),
+    close: filteredCars.filter(car => car.isMatched === 'close')
+  }
 }
 
 export const InventoryContext = React.createContext()
@@ -117,6 +134,7 @@ class InventoryController extends Component {
     filterAttributes: [],
     appliedFilters: [],
     models: [],
+    filteredCarsCount: {},
     currentModel: {},
     showFilter: false,
     onModelChange: this.onModelChange,
@@ -128,12 +146,13 @@ class InventoryController extends Component {
     const models = this.props.modelsData.map(({ slug, name, ...rest }) => ({ slug, name }))
     this.aorDealer = getAorDealer(this.props.dealersData)
     this.modelFilters = this.props.pageData.filters
-    this.aorInventory = getAorInventory(this.aorDealer)
+    this.aorInventory = getInventory(this.aorDealer)
     const filterAttributes = this.getModelData(this.props.params.model)
 
     console.log('--- setting data state ---')
 
     this.setState({
+      filteredCarsCount: { total: this.modelInventory.length },
       filteredCars: this.modelInventory,
       currentModel: this.currentModel,
       aorDealer: this.aorDealer,
@@ -149,13 +168,43 @@ class InventoryController extends Component {
   }
 
   filterCars() {
-    filterCars(this.modelInventory, this.state.appliedFilters)
+    const cars = filterCars(this.modelInventory, this.state.appliedFilters)
+    console.log(cars)
+
+    if (cars.exact) {
+      const filteredCars = [
+        ...(cars.exact || []),
+        ...(cars.close || [])
+      ]
+
+      if (this.state.appliedFilters.length > 0 &&
+         (cars.exact.length !== 0 || cars.close.length !== 0)
+      ) { this.getNearbyCars() }
+
+      this.setState({
+        filteredCars,
+        filteredCarsCount: {
+          total: filteredCars.length,
+          exact: cars.exact.length || 0,
+          close: cars.close.length || 0
+        }
+      })
+    } else {
+      this.setState({
+        filteredCars: cars,
+        filteredCarsCount: { total: cars.length }
+      })
+    }
+  }
+
+  getNearbyCars() {
+    console.log('get nearby cars')
   }
 
   render() {
     return (
       <InventoryContext.Provider value={this.state}>
-        {console.log('InventoryContext.Provider render', this.props, this.state)}
+        {console.log('InventoryContext.Provider render')}
         {this.props.children}
       </InventoryContext.Provider>
     )

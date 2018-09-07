@@ -9,7 +9,7 @@ import './masthead.scss'
 
 class Masthead extends Component {
   render() {
-    const { currentModel, filteredCars, appliedFilters, aorDealer } = this.props
+    const { currentModel, filteredCarsCount, appliedFilters, aorDealer } = this.props
 
     return (
       <section className="vw__results-masthead">
@@ -20,9 +20,10 @@ class Masthead extends Component {
               <h1 className="h5-light headline">Great, let’s get you into a {currentModel.name}.</h1>
               <p className="info">
                 <span className="h9-light">
-                  There are <span className="h9">{filteredCars.length}</span> for {currentModel.name} at
+                  {filteredCarsCount.exact !== undefined  && <>There are <strong className="h9">{filteredCarsCount.exact} exact matches</strong> and <strong className="h9">{filteredCarsCount.close} close matches</strong></>}
+                  {filteredCarsCount.exact === undefined && <>There are <strong className="h9">{filteredCarsCount.total} matches</strong></>}
                   {' '}
-                  <span className="h9 label-dealer">{aorDealer.name}</span>
+                  for {currentModel.name} at <strong className="h9 label-dealer">{aorDealer.name}</strong>
                 </span>
               </p>
 

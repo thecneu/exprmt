@@ -19,6 +19,7 @@ const CardCarDetail = ({ car, type }) => (
               <div className="car-title">
                 <div>{car.modelYear} {car.model}</div>
                 <div>{car.subTrimLevel}</div>
+                <div>{car.transmissionType}</div>
               </div>
 
               <div className="vin">
@@ -31,8 +32,8 @@ const CardCarDetail = ({ car, type }) => (
               <div className="exterior-color">{car.exteriorColorDescription}</div>
               <div className="interior-color">{car.interiorColorDescription}</div>
               <ColorSwatch exteriorColorBaseColor={car.exteriorColorBaseColor} interiorColorBaseColor={car.interiorColorBaseColor} />
-              <div className="dealer-name">{car.DealerNameTruncated}</div>
-              <div className="dealer-mileage">{car.distance} miles away</div>
+              <div className="dealer-name">{car.dealer.name}</div>
+              <div className="dealer-mileage">{car.dealer.distance.toFixed(2)} miles away</div>
               <div className="car-price">{car.msrpFormatted}</div>
               <div className="contact-dealer"><ButtonLink full>Contact Dealer</ButtonLink></div>
               <div className="view-details"><Link url={`/details/${car.vin}` || car.vehicleURL}>View Details</Link></div>
@@ -75,8 +76,8 @@ const CardCarDetail = ({ car, type }) => (
           <div className="content-container dealer-content">
             <div className="top">
               <div className="dealer-info">
-                <div className="dealer-name">{car.DealerNameTruncated}</div>
-                <div className="dealer-mileage">{car.distance} miles away</div>
+                <div className="dealer-name">{car.dealer.name}</div>
+                <div className="dealer-mileage">{car.dealer.distance.toFixed(2)} miles away</div>
                 <img src="/assets/map.jpg" className="dealer-map" alt="Map" />
               </div>
             </div>

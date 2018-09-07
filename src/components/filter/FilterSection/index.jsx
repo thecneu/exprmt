@@ -50,9 +50,9 @@ class FilterSection extends Component {
         </header>
 
         {isOpen && (
-          <div className={cx('section-content', { 'has-swatch': attributes.length > 30 })}>
+          <div className={cx('section-content', { 'has-swatch': attributes.length > 80 })}>
             {attributes.map(attribute =>
-              <FilterAttribute key={attribute.value} isSwatch={attributes.length > 30} selected={this.isSelected(attribute)} attribute={attribute} updateAppliedFilter={updateAppliedFilter} />
+              <FilterAttribute key={attribute.value} isSwatch={attributes.length > 80} selected={this.isSelected(attribute)} attribute={attribute} updateAppliedFilter={updateAppliedFilter} />
             )}
           </div>
         )}
