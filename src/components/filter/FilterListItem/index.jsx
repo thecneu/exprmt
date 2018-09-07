@@ -4,7 +4,7 @@ import styles from './filter-list-item.module.scss'
 
 const FilterListItem = ({ clearFilters, isClearButton, filter, updateAppliedFilter }) => (
   isClearButton ? (
-    <div className={styles.item} onClick={() => clearFilters()}>
+    <div className={styles.item} onClick={clearFilters}>
       <DisplayHtml>Clear filters</DisplayHtml>
     </div>
   ) : (

@@ -1,3 +1,5 @@
+@import 'src/mixins';
+
 .vw__checkbox {
   label {
     @include input;
@@ -23,20 +25,17 @@
       margin-right: 16px;
     }
 
-    &:hover {
-      border: 2px solid $color-blue1;
-    }
-
     &.selected {
+      background: black;
       border: 1px solid $color-blue1;
 
       .vw__icon {
         opacity: 1;
       }
+    }
 
-      &:hover {
-        border: 2px solid $color-blue1;
-      }
+    &.is-disabled {
+      border: 1px solid rgba($color-bluegray55, .5);
     }
 
     .vw__icon {

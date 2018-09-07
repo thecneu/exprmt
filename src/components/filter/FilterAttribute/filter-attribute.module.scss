@@ -39,21 +39,19 @@
     }
   }
 
-  input[type=checkbox] {
-    margin-right: 16px;
-    // 26
-
-    @include bp(wide) {
-      margin-right: 12px;
-      // 22
-    }
-  }
-
   &.swatch {
     @include bp(wide) {
       border: 0;
       padding: 0;
       width: 20%;
+    }
+  }
+
+  &:hover {
+    :global {
+      .checkbox {
+        border: 2px solid $color-blue1;
+      }
     }
   }
 }

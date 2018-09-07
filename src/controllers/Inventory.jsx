@@ -3,7 +3,7 @@ import DataProvider from 'data-providers/DataProvider'
 
 const getInventory = (dealer) => {
   // console.log(`http://www.vw.com/vwsdl/rest/product/dealers/inventory/${dealerid}.json`)
-  const inventory = require(`data/${dealer.dealerid}.json`)
+  const inventory = require(`data/inventory/${dealer.dealerid}.json`)
   const { aor, dealerid, name, latlong, distance } = dealer
   return inventory.map(car => ({
     ...car,
@@ -103,15 +103,13 @@ class InventoryController extends Component {
     this.setState(({ showFilter }) => ({ showFilter: !showFilter}))
   }
 
-  clearFilters = () => this.setState({ appliedFilters: [] })
+  clearFilters = () => this.setState({ ...this.cleanState() })
 
   onModelChange = (slug) => {
     const filterAttributes = this.getModelData(slug)
 
     this.setState({
-      appliedFilters: [],
-      nearbyFilteredCars: [],
-      filteredCars: this.modelInventory,
+      ...this.cleanState(),
       currentModel: this.currentModel,
       filterAttributes
     })
@@ -139,7 +137,8 @@ class InventoryController extends Component {
     showFilter: false,
     onModelChange: this.onModelChange,
     updateAppliedFilter: this.updateAppliedFilter,
-    toggleFilter: this.toggleFilter
+    toggleFilter: this.toggleFilter,
+    clearFilters: this.clearFilters
   }
 
   componentDidMount() {
@@ -159,6 +158,15 @@ class InventoryController extends Component {
       models,
       filterAttributes,
     })
+  }
+
+  cleanState() {
+    return {
+      appliedFilters: [],
+      nearbyFilteredCars: [],
+      filteredCarsCount: { total: this.modelInventory.length },
+      filteredCars: this.modelInventory
+    }
   }
 
   getModelData(slug) {
@@ -198,7 +206,29 @@ class InventoryController extends Component {
   }
 
   getNearbyCars() {
-    console.log('get nearby cars')
+    console.group('get nearby cars')
+    const nearbyDealers = this.props.dealersData.slice(1)
+    const nearbyFilteredCars = []
+    for(let i = 0; i < nearbyDealers.length; i++) {
+      const cars = getCarsByModel(getInventory(nearbyDealers[i]), this.currentModel.name)
+      const filteredCars = filterCars(cars, this.state.appliedFilters)
+      console.log('Dealer', i)
+      if (filteredCars.exact.length) {
+        console.log('found', filteredCars.exact.length, 'cars')
+        nearbyFilteredCars.push(...filteredCars.exact)
+      }
+
+      if (nearbyFilteredCars.length >= 5) {
+        break;
+      }
+    }
+
+    console.log(nearbyFilteredCars)
+    console.groupEnd()
+
+    if (nearbyFilteredCars.length > 0) {
+      this.setState({ nearbyFilteredCars })
+    }
   }
 
   render() {

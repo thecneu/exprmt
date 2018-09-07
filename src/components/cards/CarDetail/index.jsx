@@ -5,8 +5,13 @@ import Link from 'components/common/Link'
 import ButtonLink from 'components/common/ButtonLink'
 import './car-detail.scss'
 
-const CardCarDetail = ({ car, type }) => (
+const CardCarDetail = ({ car, type, showMatchLabel }) => (
   <div className={`vw__card-cardetail ${type === 'list' ? 'is-list' : ''}`}>
+    {showMatchLabel && (
+      <div className={`match-label is-${car.isMatched}`}>
+        <span className="title-5">{car.isMatched}</span>
+      </div>
+    )}
     <div className="card-container">
       <div className="car-info car-panel">
         <div className="content">
@@ -23,7 +28,6 @@ const CardCarDetail = ({ car, type }) => (
               </div>
 
               <div className="vin">
-                {car.isMatched}
                 <nobr><b>vin</b> {car.vin}</nobr>
               </div>
             </div>

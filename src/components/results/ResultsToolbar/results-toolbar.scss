@@ -6,7 +6,6 @@
   @include bp(tablet) {
     padding: 30px 0;
     display: block;
-    border: 1px solid;
   }
 
   .vw__filter-button-container {
@@ -16,23 +15,34 @@
   }
 
   .grid-container {
+    margin: 0 (-$gutter/2);
+    align-items: center;
+
     .filter-area {
-      border: 1px solid;
+      padding: 0 ($gutter/2);
       width: (5 / 12) * 100%;
 
       @include bp(desktop) {
+        width: 25%;
       }
     }
 
     .results-area {
-      border: 1px solid;
+      padding: 0 ($gutter/2);
       display: flex;
       flex: 1;
       justify-content: space-between;
+      align-items: center;
 
       .filter-list-area {
-        border: 1px solid blue;
+        flex: 1;
       }
+    }
+  }
+
+  .vw__filter-button {
+    @include bp(wide) {
+      display: none;
     }
   }
 }

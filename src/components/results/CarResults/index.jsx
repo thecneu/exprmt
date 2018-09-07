@@ -7,6 +7,8 @@ import './car-results.scss'
 class CarResults extends Component {
   state = { showNearbyCars: false }
 
+  showNearbyCars = () => this.setState({ showNearbyCars: true })
+
   render() {
     const { type } = this.props
     const { showNearbyCars } = this.state
@@ -24,16 +26,21 @@ class CarResults extends Component {
               )}
             </div>
 
-            {nearbyFilteredCars.length > 0 && <button>Show nearby cars</button>}
+            {nearbyFilteredCars.length > 0
+              && !showNearbyCars
+              && <button onClick={this.showNearbyCars}>See exact matches nearby</button>}
 
             {showNearbyCars && (
-              <div className="grid-container">
-                {nearbyFilteredCars.map(car =>
-                  <div key={car.vin} className={cx('grid-item', { 'is-list' : type === 'list' })}>
-                    <CardCarDetail car={car} type={type} showMatchLabel={true} />
-                  </div>
-                )}
-              </div>
+              <section className="nearby-container">
+                <h3>Exact Matches Nearby</h3>
+                <div className="grid-container">
+                  {nearbyFilteredCars.map(car =>
+                    <div key={car.vin} className={cx('grid-item', { 'is-list' : type === 'list' })}>
+                      <CardCarDetail car={car} type={type} showMatchLabel={true} />
+                    </div>
+                  )}
+                </div>
+              </section>
             )}
           </div>
         )}

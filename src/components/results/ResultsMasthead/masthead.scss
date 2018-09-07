@@ -3,4 +3,8 @@
 
 .vw__results-masthead {
   @extend %masthead;
+
+  .filter-list-container {
+    margin-top: 20px;
+  }
 }

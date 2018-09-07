@@ -3,20 +3,27 @@ import cx from 'classnames'
 import ColorBox from 'components/filter/ColorBox'
 import DisplayHtml from 'components/common/DisplayHtml'
 import styles from './filter-attribute.module.scss'
+import 'components/common/checkbox.scss'
 
 class FilterAttribute extends Component {
-  updateFilter = (e) => {
+  updateFilter = () => {
     const { attribute, updateAppliedFilter } = this.props
-    e.stopPropagation()
-    updateAppliedFilter(attribute)
+
+    if (attribute.required === undefined) {
+      updateAppliedFilter(attribute)
+    }
   }
 
   render() {
     const { selected, attribute, isSwatch } = this.props
     return (
       <div className={cx(styles.attribute, { [styles.swatch]: isSwatch })} onClick={this.updateFilter}>
-        <div className={cx(styles.label, { [styles.selected]: isSwatch && selected })}>
-          {!isSwatch && <input type="checkbox" checked={selected} />}
+        <div className={cx(styles.label, { [styles.selected]: isSwatch && (selected || attribute.required) }, { [styles.disabled]: attribute.required === false })}>
+          {!isSwatch && (
+            <div className="vw__checkbox">
+              <div className={cx('checkbox', { selected: selected || attribute.required }, { 'is-disabled': attribute.required === false })} />
+            </div>
+          )}
           {attribute.color && <ColorBox color={attribute.color} isSwatch={isSwatch} selected={selected} />}
           {!isSwatch && <DisplayHtml className={styles.value}>{attribute.value}</DisplayHtml>}
         </div>

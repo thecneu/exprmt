@@ -1,9 +1,10 @@
 @import 'src/mixins';
 
 .vw__filter-list {
-  // display: none;
+  display: none;
+  margin-bottom: -10px;
 
-  @include bp(xl) {
+  @include bp(wide) {
     display: block;
   }
 }
