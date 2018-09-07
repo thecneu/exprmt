@@ -1,7 +1,6 @@
 @import 'src/mixins';
 
 .vw__card-cardetail {
-  border: 1px solid;
   height: 100%;
 
   .card-container {
@@ -20,11 +19,11 @@
     height: 100%;
 
     @include bp(tablet) {
-      padding: .75 * $gutter;
+      padding: .75 * map-get($gutters, tablet);
     }
 
     @include bp(desktop) {
-      padding: $gutter;
+      padding: map-get($gutters, desktop);
     }
   }
 
@@ -141,8 +140,6 @@
   &.is-list {
     @include bp(tablet) {
       margin-bottom: 10px;
-      border: 1px solid;
-      background: lightblue;
       min-height: 346px;
     }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { InventoryContext } from 'controllers/Inventory'
 
 const ModelsDropdown = () => (
@@ -16,5 +16,25 @@ const ModelsDropdown = () => (
     )}
   </InventoryContext.Consumer>
 )
+/*
+class Dropdown extends Component {
+  state = { expanded: false }
+
+  render() {
+    <div className="vw__models-dropdown">
+      <div className="chosen" onClick={this.toggleExpanded}>
+        {currentModel.name}
+      </div>
+      <div className="options">
+        {models.map(model => (
+          <div className="option" key={model.slug} onClick={() => this.onChange(model.slug)}>
+            {model.name}
+          </div>
+        ))}
+      </div>
+    </div>
+  }
+}
+*/
 
 export default ModelsDropdown

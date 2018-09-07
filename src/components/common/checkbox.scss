@@ -1,0 +1,51 @@
+.vw__checkbox {
+  label {
+    @include input;
+
+    @include bp(desktop) {
+      @include input-large;
+    }
+  }
+
+  .checkbox {
+    width: 22px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-right: 12px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+
+    @include bp(desktop) {
+      height: 26px;
+      width: 26px;
+      margin-right: 16px;
+    }
+
+    &:hover {
+      border: 2px solid $color-blue1;
+    }
+
+    &.selected {
+      border: 1px solid $color-blue1;
+
+      .vw__icon {
+        opacity: 1;
+      }
+
+      &:hover {
+        border: 2px solid $color-blue1;
+      }
+    }
+
+    .vw__icon {
+      width: 93%;
+      height: 93%;
+      pointer-events: none;
+      opacity: 0;
+      transition: 230ms ease-in;
+    }
+  }
+}
+

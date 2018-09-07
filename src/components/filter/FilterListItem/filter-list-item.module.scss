@@ -1,13 +1,15 @@
+@import 'src/mixins';
+
 .item {
   @include label-3;
+  transition: 230ms ease-in;
   color: $color-bluegray80;
   border: 1px solid $color-bluegray80;
   display: inline-block;
-  margin-right: 8px;
-  margin-bottom: 8px;
   cursor: pointer;
   padding: 10px;
-  transition: 230ms ease-in;
+  margin-right: 10px;
+  margin-bottom: 10px;
 
   .vw__icon {
     margin-left: 10px;

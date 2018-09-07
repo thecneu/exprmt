@@ -45,11 +45,12 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
 
 export const filterCars = (inventory, appliedFilters) => {
   console.group('car filter called', appliedFilters)
-  // const filter = Object.keys(theFilter).reduce((next, key) =>
+  // const filters = Object.keys(theFilter).reduce((next, key) =>
   //   theFilter[key].length ? { ...next, [key]: theFilter[key] } : next
   // , {})
 
-  if (appliedFilters.length === 0) {
+  const amountFilters = appliedFilters.length
+  if (amountFilters === 0) {
     console.log('just cars')
     console.groupEnd()
     return inventory
@@ -59,18 +60,17 @@ export const filterCars = (inventory, appliedFilters) => {
 
 
   const filteredCars = inventory.map(car => {
-    const amountFilters = appliedFilters.length
-    const rank = filterableKeys.reduce((next, filterKey) => {
-      const filterValue = filter[filterKey]
-      const carKey = mapHeadingToKey(filterKey)
-      const carValue = car[carKey]
-      return next + (filterValue.includes(carValue) ? 1 : 0)
-    }, 0)
+    // const rank = filterableKeys.reduce((next, filterKey) => {
+    //   const filterValue = filter[filterKey]
+    //   const carKey = mapHeadingToKey(filterKey)
+    //   const carValue = car[carKey]
+    //   return next + (filterValue.includes(carValue) ? 1 : 0)
+    // }, 0)
 
-    return {
-      ...car,
-      isMatched: rank === amountFilters ? 'exact' : rank === amountFilters - 1 ? 'close' : false
-    }
+    // return {
+    //   ...car,
+    //   isMatched: rank === amountFilters ? 'exportxact' : rank === amountFilters - 1 ? 'close' : false
+    // }
   })
 
   console.log(filteredCars)

@@ -1,20 +1,55 @@
 @import 'src/mixins';
 
 .vw__filter-section {
+  &:first-child {
+    header {
+      border-top: 2px solid black;
+
+      @include bp(wide) {
+        border-top: 2px solid $color-bluegray90;
+      }
+    }
+  }
+
   header {
+    user-select: none;
+    border-bottom: 2px solid $color-bluegray95;
     cursor: pointer;
+    background: white;
+    height: 72px;
+    padding: 0 28px;
+
+    @include bp(wide) {
+      border-bottom: 2px solid $color-bluegray90;
+      background: none;
+      height: 68px;
+      padding: 0 32px;
+
+      &:hover {
+        background: rgba(white, .5);
+      }
+    }
+
+    &.is-open {
+      border-top: 2px solid $color-blue1;
+
+      @include bp(wide) {
+        border-top: 0;
+        height: 54px;
+      }
+    }
   }
 
   .grid-container {
     justify-content: space-between;
-  }
-
-  label {
-    display: block;
+    align-items: center;
+    height: 100%;
   }
 
   .filtered-choices {
+    @include label-3;
     padding-right: 10px;
+    color: $color-bluegray55;
 
     @include bp(desktop) {
       // display: none;
@@ -23,6 +58,33 @@
 
   .filter-actions {
     display: flex;
+  }
 
+  .filter-name {
+    text-transform: uppercase;
+    color: $color-blue1;
+  }
+
+  .filter-subname {
+    text-transform: uppercase;
+    color: $color-blue1;
+  }
+
+  .section-content {
+    background: rgba($color-bluegray95, .5);
+
+    &.has-swatch {
+      @include bp(wide) {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 32px;
+      }
+    }
+  }
+
+  .action {
+    button {
+      // width: 16px;
+    }
   }
 }

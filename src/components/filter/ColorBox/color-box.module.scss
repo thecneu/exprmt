@@ -1,6 +1,11 @@
 .box {
-  width: 15px;
-  height: 15px;
-  margin-right: 8px;
+  min-width: 16px;
+  height: 16px;
+  margin-right: 12px;
   display: inline-block;
+  border-radius: 50%;
+}
+
+.swatch {
+  margin-right: 0;
 }

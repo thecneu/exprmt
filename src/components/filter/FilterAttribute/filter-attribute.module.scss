@@ -1,0 +1,63 @@
+@import 'src/mixins';
+
+.attribute {
+  cursor: pointer;
+  min-height: 60px;
+  padding: 0 28px;
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+
+  @include bp(wide) {
+    padding: 8px 32px;
+    min-height: 40px;
+    border-bottom: 1px solid $color-bluegray90;
+  }
+
+  &:last-child {
+    border-bottom: none;
+
+    @include bp(wide) {
+      border-bottom: 1px solid $color-bluegray90;
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+
+    &.disabled {
+      color: rgba($color-bluegray55, .5);
+    }
+
+    &.selected {
+      @include bp(wide) {
+        border: 1px solid black;
+        border-radius: 50%;
+        padding: 3px;
+      }
+    }
+  }
+
+  input[type=checkbox] {
+    margin-right: 16px;
+    // 26
+
+    @include bp(wide) {
+      margin-right: 12px;
+      // 22
+    }
+  }
+
+  &.swatch {
+    @include bp(wide) {
+      border: 0;
+      padding: 0;
+      width: 20%;
+    }
+  }
+}
+
+.value {
+  @include label-2-filter;
+}

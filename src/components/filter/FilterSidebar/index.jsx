@@ -13,9 +13,11 @@ const FilterSidebar = ({ showFilter = false }) => (
         {console.log('filtersidebar render')}
         <div className="filter-container">
           <FilterHeader toggleFilter={toggleFilter} appliedFilters={appliedFilters} />
-          {filterAttributes.map(section =>
-            <FilterSection key={section.filterKey} {...section} appliedFilters={appliedFilters} updateAppliedFilter={updateAppliedFilter} />
-          )}
+          <div>
+            {filterAttributes.map(section =>
+              <FilterSection key={section.filterKey} {...section} appliedFilters={appliedFilters} updateAppliedFilter={updateAppliedFilter} />
+            )}
+          </div>
         </div>
       </aside>
     )}

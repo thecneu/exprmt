@@ -1,13 +1,25 @@
 @import 'src/mixins';
 
 .header {
+  padding: 0 16px;
   background: white;
+  // border-bottom: 2px solid black;
 
-  @include bp(desktop) {
+  @include bp(wide) {
     display: none;
+  }
+
+  button {
+    @include title-3;
+    appearance: none;
+    border: none;
+    text-transform: uppercase;
+    color: $color-bluegray50;
   }
 }
 
 .grid {
+  align-items: center;
   justify-content: space-between;
+  height: 64px;
 }

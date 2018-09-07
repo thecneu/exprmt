@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import cx from 'classnames'
 import FilterAttribute from 'components/filter/FilterAttribute'
 import './filter-section.scss'
 
@@ -25,10 +26,15 @@ class FilterSection extends Component {
     return (
       <div className="vw__filter-section">
         {console.log('filtersection render')}
-        <header onClick={this.toggle}>
+        <header className={isOpen ? 'is-open' : ''} onClick={this.toggle}>
           <div className="grid-container">
             <div className="headline-container">
-              <h2>{name}</h2>
+              <div className="filter-name">
+                <span className="title-1">{name}</span>
+              </div>
+              <div className="filter-subname">
+                <span className="title-3"></span>
+              </div>
             </div>
 
             <div className="filter-actions">
@@ -44,9 +50,9 @@ class FilterSection extends Component {
         </header>
 
         {isOpen && (
-          <div className="section-content">
+          <div className={cx('section-content', { 'has-swatch': attributes.length > 30 })}>
             {attributes.map(attribute =>
-              <FilterAttribute key={attribute.value} selected={this.isSelected(attribute)} attribute={attribute} updateAppliedFilter={updateAppliedFilter} />
+              <FilterAttribute key={attribute.value} isSwatch={attributes.length > 30} selected={this.isSelected(attribute)} attribute={attribute} updateAppliedFilter={updateAppliedFilter} />
             )}
           </div>
         )}

@@ -10,10 +10,12 @@
 
   svg {
     fill: $color-blue1;
+    width: 18px;
     height: 18px;
 
     @include bp(desktop) {
-      height: 22px;
+      width: 26px;
+      height: 20px;
     }
   }
 

@@ -1,0 +1,47 @@
+.vw__models-dropdown {
+  border-radius: 5px;
+  width: 100%;
+  background: white;
+
+  .chosen {
+    min-height: 32px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 0 14px;
+    @include input;
+
+    &:hover {
+      border-width: 2px;
+    }
+
+    @include bp(desktop) {
+      min-height: 38px;
+    }
+  }
+
+  &.expanded {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .42);
+
+    .chosen {
+      border-bottom: 1px solid $color-bluegray50;
+      margin-bottom: 10px;
+    }
+
+    .value {
+      @include option;
+      padding: 0 14px;
+      height: 26px;
+      line-height: 26px;
+      color: $color-bluegray50;
+
+      &.selected {
+        color: $color-blue1;
+      }
+
+      &:hover {
+        background: black;
+        color: white;
+      }
+    }
+  }
+}

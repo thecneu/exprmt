@@ -1,3 +1,21 @@
+@import 'src/mixins';
+
 .vw__zip-input {
   border: 1px solid;
+
+  input {
+    @include input;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid $color-blue1;
+    width: 120px;
+    padding: 0 10px;
+    line-height: 32px;
+    height: 32px;
+
+    &:focus {
+      border: 2px solid $color-blue1;
+      outline: 0;
+    }
+  }
 }
