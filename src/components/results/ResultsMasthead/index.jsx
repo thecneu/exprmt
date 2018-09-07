@@ -9,7 +9,7 @@ import './masthead.scss'
 
 class Masthead extends Component {
   render() {
-    const { currentModel, filteredCarsCount, appliedFilters, aorDealer } = this.props
+    const { currentModel, filteredCarsCount, aorDealer } = this.props
 
     return (
       <section className="vw__results-masthead">
