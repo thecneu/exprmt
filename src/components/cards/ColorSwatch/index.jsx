@@ -4,8 +4,8 @@ import './color-swatch.scss'
 
 const ColorSwatch = ({ exteriorColorBaseColor, interiorColorBaseColor }) => (
   <div className="vw__color-swatch">
-    <ColorBox color={exteriorColorBaseColor} />
-    <ColorBox color={interiorColorBaseColor} />
+    <ColorBox color={exteriorColorBaseColor} isSwatch={true} />
+    <ColorBox color={interiorColorBaseColor} isSwatch={true} />
   </div>
 )
 

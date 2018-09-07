@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from './card-model.module.scss'
+import './card-model.scss'
 
 const CardModel = ({ model: { name, slug, price, textImage, carImage }}) => (
-  <div className={styles.model}>
+  <div className="vw__card-model">
     <Link to={`/results/${slug}`}>
-      <div className={styles.image}>
+      <div className="car-text">
         <img src={textImage} alt={name} />
       </div>
 
-      <div className={styles.car}>
+      <div className="car-image">
         <img src={carImage} alt={name} />
       </div>
 

@@ -1,6 +1,6 @@
 @import 'src/mixins';
 
-.item {
+.vw__filter-list-item {
   @include label-3;
   transition: 230ms ease-in;
   color: $color-bluegray50;

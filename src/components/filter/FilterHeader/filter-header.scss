@@ -1,9 +1,8 @@
 @import 'src/mixins';
 
-.header {
+.vw__filter-header {
   padding: 0 16px;
   background: white;
-  // border-bottom: 2px solid black;
 
   @include bp(wide) {
     display: none;
@@ -16,10 +15,10 @@
     text-transform: uppercase;
     color: $color-bluegray50;
   }
-}
 
-.grid {
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
+  .grid-container {
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
 }

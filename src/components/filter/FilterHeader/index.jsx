@@ -1,16 +1,16 @@
 import React from 'react'
-import styles from './filter-header.module.scss'
+import './filter-header.scss'
 
 const FilterHeader = ({ toggleFilter, appliedFilters }) => (
-  <header className={`vw__filter-header ${styles.header}`}>
-    <div className={`grid-container ${styles.grid}`}>
+  <header className="vw__filter-header">
+    <div className="grid-container">
       <div className="left-container">
         <button onClick={toggleFilter}>Close</button>
       </div>
 
       <div className="middle-container">
         {/*<FilterIcon />*/}
-        <span>Filters</span>
+        <span className="title-1">Filters</span>
       </div>
 
       <div className="right-container">

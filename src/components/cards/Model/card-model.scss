@@ -1,6 +1,6 @@
 @import 'src/mixins';
 
-.model {
+.vw__card-model {
   position: relative;
   background: white;
   padding: 10px;
@@ -26,11 +26,11 @@
     text-decoration: none;
   }
 
-  .image {
+  .car-text {
     position: absolute;
   }
 
-  .car {
+  .car-image {
     position: relative;
     z-index: 1;
     min-height: 90px;

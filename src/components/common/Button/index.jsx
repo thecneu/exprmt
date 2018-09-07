@@ -1,8 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
 
-const Button = ({ inverted = false, full = true, children, ...props }) => (
-  <button {...props} className={cx('vw__button', {'btn-inverted': inverted}, {'btn-full': full})}>
+const Button = ({ stroked = false, full = true, children, ...props }) => (
+  <button {...props} className={cx('vw__button', { 'btn-stroked': stroked }, { 'btn-full': full })}>
     {children}
   </button>
 )

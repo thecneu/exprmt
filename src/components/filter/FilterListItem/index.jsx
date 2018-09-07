@@ -1,14 +1,14 @@
 import React from 'react'
 import DisplayHtml from 'components/common/DisplayHtml'
-import styles from './filter-list-item.module.scss'
+import './filter-list-item.scss'
 
 const FilterListItem = ({ clearFilters, isClearButton, filter, updateAppliedFilter }) => (
   isClearButton ? (
-    <div className={styles.item} onClick={clearFilters}>
+    <div className="vw__filter-list-item" onClick={clearFilters}>
       <DisplayHtml>Clear filters</DisplayHtml>
     </div>
   ) : (
-    <div className={styles.item} onClick={() => updateAppliedFilter(filter)}>
+    <div className="vw__filter-list-item" onClick={() => updateAppliedFilter(filter)}>
       <DisplayHtml>{filter.value}</DisplayHtml>
     </div>
   )

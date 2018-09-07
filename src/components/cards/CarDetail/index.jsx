@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 import CarStats from 'components/cards/CarStats'
 import ColorSwatch from 'components/cards/ColorSwatch'
 import Link from 'components/common/Link'
@@ -6,7 +7,7 @@ import ButtonLink from 'components/common/ButtonLink'
 import './car-detail.scss'
 
 const CardCarDetail = ({ car, type, showMatchLabel }) => (
-  <div className={`vw__card-cardetail ${type === 'list' ? 'is-list' : ''}`}>
+  <div className={cx('vw__card-cardetail', { 'is-list': type === 'list' })}>
     {showMatchLabel && (
       <div className={`match-label is-${car.isMatched}`}>
         <span className="title-5">{car.isMatched}</span>

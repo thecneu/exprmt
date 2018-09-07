@@ -1,11 +1,11 @@
-.box {
+.vw__color-box {
   min-width: 16px;
   height: 16px;
   margin-right: 12px;
   display: inline-block;
   border-radius: 50%;
-}
 
-.swatch {
-  margin-right: 0;
+  &.swatch {
+    margin-right: 0;
+  }
 }

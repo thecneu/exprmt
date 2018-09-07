@@ -1,6 +1,6 @@
 @import 'src/mixins';
 
-.attribute {
+.vw__filter-attribute {
   cursor: pointer;
   min-height: 60px;
   padding: 0 28px;
@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
 
-    &.disabled {
+    &.is-disabled {
       color: rgba($color-bluegray55, .5);
     }
 
@@ -48,14 +48,12 @@
   }
 
   &:hover {
-    :global {
-      .checkbox {
-        border: 2px solid $color-blue1;
-      }
+    .checkbox {
+      border: 2px solid $color-blue1;
     }
   }
-}
 
-.value {
-  @include label-2-filter;
+  .attribute-value {
+    @include label-2-filter;
+  }
 }

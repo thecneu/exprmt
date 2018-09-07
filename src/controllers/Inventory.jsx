@@ -81,13 +81,6 @@ export const filterCars = (inventory, appliedFilters) => {
     }
   })
   .filter(car => car.isMatched !== false)
-
-  // console.log(
-  //   {
-  //     exact: filteredCars.filter(car => car.isMatched === 'exact'),
-  //     close: filteredCars.filter(car => car.isMatched === 'close')
-  //   }
-  // )
   console.groupEnd()
 
   return {

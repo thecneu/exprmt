@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from './color-box.module.scss'
+import cx from 'classnames'
+import './color-box.scss'
 
 const ColorBox = ({ color: backgroundColor, isSwatch }) => (
-  <div className={[styles.box, styles.swatch].join(' ')} style={{ backgroundColor }} />
+  <div className={cx('vw__color-box', { swatch: isSwatch })} style={{ backgroundColor }} />
 )
 
 export default ColorBox
