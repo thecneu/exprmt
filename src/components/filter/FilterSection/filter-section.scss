@@ -1,22 +1,15 @@
 @import 'src/mixins';
 
 .vw__filter-section {
-  &:first-child {
-    header {
-      border-top: 2px solid black;
-
-      @include bp(wide) {
-        border-top: 2px solid $color-bluegray90;
-      }
-    }
-  }
-
-  header {
+  .filter-accordion {
+    appearance: none;
     user-select: none;
+    border: 0;
     border-bottom: 2px solid $color-bluegray95;
     cursor: pointer;
     background: white;
     height: 72px;
+    width: 100%;
     padding: 0 28px;
 
     @include bp(wide) {
@@ -26,7 +19,7 @@
       padding: 0 32px;
 
       &:hover {
-        background: rgba(white, .5);
+        background: rgba(white, 0.5);
       }
     }
 
@@ -40,6 +33,16 @@
     }
   }
 
+  &:first-child {
+    .filter-accordion {
+      border-top: 2px solid black;
+
+      @include bp(wide) {
+        border-top: 2px solid $color-bluegray90;
+      }
+    }
+  }
+
   .grid-container {
     justify-content: space-between;
     align-items: center;
@@ -48,6 +51,7 @@
 
   .filtered-choices {
     @include label-3;
+
     padding-right: 10px;
     color: $color-bluegray55;
 
@@ -71,7 +75,7 @@
   }
 
   .section-content {
-    background: rgba($color-bluegray95, .5);
+    background: rgba($color-bluegray95, 0.5);
 
     &.has-swatch {
       @include bp(wide) {
@@ -79,12 +83,6 @@
         flex-wrap: wrap;
         padding: 0 32px;
       }
-    }
-  }
-
-  .action {
-    button {
-      // width: 16px;
     }
   }
 }

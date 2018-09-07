@@ -26,7 +26,7 @@ class FilterSection extends Component {
     return (
       <div className="vw__filter-section">
         {console.log('filtersection render')}
-        <header className={isOpen ? 'is-open' : ''} onClick={this.toggle}>
+        <button className={cx('filter-accordion', { 'is-open': isOpen })} onClick={this.toggle}>
           <div className="grid-container">
             <div className="headline-container">
               <div className="filter-name">
@@ -43,11 +43,11 @@ class FilterSection extends Component {
               </div>
 
               <div className="action">
-                <button>{isOpen ? '-' : '+'}</button>
+                <div>{isOpen ? '-' : '+'}</div>
               </div>
             </div>
           </div>
-        </header>
+        </button>
 
         {isOpen && (
           <div className={cx('section-content', { 'has-swatch': attributes.length > 80 })}>

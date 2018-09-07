@@ -5,7 +5,7 @@ const ModelsDropdown = () => (
   <InventoryContext.Consumer>
     {({ currentModel, models, onModelChange }) => (
       <div className="vw__models-dropdown">
-        <select value={currentModel.slug} onChange={(e) => onModelChange(e.currentTarget.value)}>
+        <select value={currentModel.slug} onChange={(e) => onModelChange(e.currentTarget.value)} onBlur={(e) => onModelChange(e.currentTarget.value)}>
           {models.map(model => (
             <option key={model.slug} value={model.slug}>
               {model.name}
