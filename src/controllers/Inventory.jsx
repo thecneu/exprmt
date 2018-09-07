@@ -73,7 +73,7 @@ export const filterCars = (inventory, appliedFilters) => {
     // }
   })
 
-  console.log(filteredCars)
+  // console.log(filteredCars)
   console.groupEnd()
 
   return filteredCars

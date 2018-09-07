@@ -1,4 +1,5 @@
 import React from 'react'
+import './to-top.scss'
 
 const scrollToTop = (e) => {
   e.preventDefault();
@@ -6,7 +7,10 @@ const scrollToTop = (e) => {
 }
 
 const ButtonToTop = () => (
-  <button className="vw__to-top" onClick={scrollToTop}>To Top</button>
+  <button className="vw__to-top" onClick={scrollToTop}>
+    <div className="vw__icon"></div>
+    <span>Top</span>
+  </button>
 )
 
 export default ButtonToTop

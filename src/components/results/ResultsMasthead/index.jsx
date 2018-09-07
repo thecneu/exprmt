@@ -3,7 +3,7 @@ import { InventoryContext } from 'controllers/Inventory'
 import FilterButton from 'components/filter/FilterButton'
 import FilterList from 'components/filter/FilterList'
 import ModelsDropdown from 'components/models/ModelsDropdown'
-import ToTop from 'components/common/ToTop'
+import ButtonToTop from 'components/common/ButtonToTop'
 import ZipInput from 'components/common/ZipInput'
 import './masthead.scss'
 
@@ -45,7 +45,7 @@ class Masthead extends Component {
               </div>
 
               <div className="totop-container">
-                <ToTop />
+                <ButtonToTop />
               </div>
             </div>
           </div>

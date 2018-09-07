@@ -4,8 +4,8 @@ import './results-view-types.scss'
 
 const ResultsViewTypes = ({ type, changeType }) => (
   <div className="vw__results-view-types">
-    <button onClick={() => changeType('list')} className={cx({ active: type === 'list' })}>list</button>
-    <button onClick={() => changeType('grid')} className={cx({ active: type === 'grid' })}>grid</button>
+    <button onClick={() => type !== 'list' && changeType('list')} className={cx('vw__btn-view-type', { selected: type === 'list' })}>list</button>
+    <button onClick={() => type !== 'grid' && changeType('grid')} className={cx('vw__btn-view-type', { selected: type === 'grid' })}>grid</button>
   </div>
 )
 

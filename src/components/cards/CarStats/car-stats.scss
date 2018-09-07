@@ -1,3 +1,5 @@
+@import 'src/mixins';
+
 .vw__car-stats {
   margin-bottom: 20px;
 
@@ -9,7 +11,12 @@
 
   li {
     margin: 0;
-    flex: 1;
+    padding: 0 24px;
+    border-right: 1px solid $color-bluegray90;
+
+    div:first-child {
+      margin-bottom: 14px;
+    }
   }
 
   .stat-container {

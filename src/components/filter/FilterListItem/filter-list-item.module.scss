@@ -3,7 +3,7 @@
 .item {
   @include label-3;
   transition: 230ms ease-in;
-  color: $color-bluegray80;
+  color: $color-bluegray50;
   border: 1px solid $color-bluegray80;
   display: inline-block;
   cursor: pointer;
@@ -17,10 +17,6 @@
     svg {
       fill: $color-blue1;
     }
-  }
-
-  &.btn-clear {
-    color: $color-bluegray50;
   }
 
   &:hover {

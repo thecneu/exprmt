@@ -1,5 +1,6 @@
 import React from 'react'
 import { InventoryContext } from 'controllers/Inventory'
+import './filter-button.scss'
 
 const FilterButton = () => (
   <InventoryContext.Consumer>

@@ -8,26 +8,26 @@
     min-width: 90px;
     text-align: right;
   }
-
-  .active {
-    border: 1px solid;
-  }
 }
 
 .vw__btn-view-type {
+  appearance: none;
+  background: none;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  border: 2px dashed #FF00D5;
+  border: 1px dashed rgba(#FF00D5, .1);
   width: 40px;
   height: 32px;
   border-radius: 5px;
-  margin: 0 6px;
+  margin-left: 6px;
+  outline: 0;
+  color: $color-bluegray80;
 
   @include bp(desktop) {
     width: 46px;
     height: 38px;
-    margin: 0 8px;
+    margin-left: 8px;
   }
 
   .vw__icon {
@@ -45,7 +45,8 @@
   }
 
   &.selected {
-    border: 2px solid $color-bluegray80;
+    border: 1px solid $color-bluegray80;
+    color: $color-blue1;
 
     .vw__icon svg {
       fill: $color-blue1;
@@ -53,6 +54,15 @@
   }
 
   &:hover:not(.selected) {
-    border: 2px solid $color-bluegray80;
+    border: 1px solid $color-bluegray80;
+  }
+
+  &:active:not(.selected) {
+    border: 1px solid $color-bluegray80;
+    color: $color-blue1;
+
+    .vw__icon svg {
+      fill: $color-blue1;
+    }
   }
 }

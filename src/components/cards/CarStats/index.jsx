@@ -10,20 +10,20 @@ const CarStats = ({ city, highway, hp }) => (
     <ul>
       <li>
         <div className="stat-container">
-          <div>{city}</div>
-          <div>City</div>
+          <div className="text-stat">{city}</div>
+          <div className="text-stat-label">City</div>
         </div>
       </li>
       <li>
         <div className="stat-container">
-          <div>{highway}</div>
-          <div>Hwy</div>
+          <div className="text-stat">{highway}</div>
+          <div className="text-stat-label">Hwy</div>
         </div>
       </li>
       <li>
         <div className="stat-container">
-          <div>{findHp(hp)}</div>
-          <div>hp</div>
+          <div className="text-stat">{findHp(hp)}</div>
+          <div className="text-stat-label">hp</div>
         </div>
       </li>
     </ul>
