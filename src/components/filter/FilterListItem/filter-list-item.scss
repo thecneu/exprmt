@@ -2,7 +2,8 @@
 
 .vw__filter-list-item {
   @include label-3;
-  transition: 230ms ease-in;
+
+  background: none;
   color: $color-bluegray50;
   border: 1px solid $color-bluegray80;
   display: inline-block;
@@ -10,6 +11,7 @@
   padding: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
+  transition: 230ms ease-in;
 
   .vw__icon {
     margin-left: 10px;

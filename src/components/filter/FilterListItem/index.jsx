@@ -4,13 +4,11 @@ import './filter-list-item.scss'
 
 const FilterListItem = ({ clearFilters, isClearButton, filter, updateAppliedFilter }) => (
   isClearButton ? (
-    <div className="vw__filter-list-item" onClick={clearFilters}>
-      <DisplayHtml>Clear filters</DisplayHtml>
-    </div>
+    <button className="vw__filter-list-item" onClick={clearFilters}>Clear filters</button>
   ) : (
-    <div className="vw__filter-list-item" onClick={() => updateAppliedFilter(filter)}>
+    <button className="vw__filter-list-item" onClick={() => updateAppliedFilter(filter)}>
       <DisplayHtml>{filter.value}</DisplayHtml>
-    </div>
+    </button>
   )
 )
 
