@@ -17,7 +17,7 @@ class FilterAttribute extends Component {
   render() {
     const { selected, attribute, isSwatch } = this.props
     return (
-      <div className={cx('vw__filter-attribute', { swatch: isSwatch })} onClick={this.updateFilter}>
+      <button className={cx('vw__filter-attribute', { swatch: isSwatch })} onClick={this.updateFilter}>
         <div className={cx('label', { selected: isSwatch && (selected || attribute.required) }, { 'is-disabled': attribute.required === false })}>
           {!isSwatch && (
             <div className="vw__checkbox">
@@ -27,7 +27,7 @@ class FilterAttribute extends Component {
           {attribute.color && <ColorBox color={attribute.color} isSwatch={isSwatch} selected={selected} />}
           {!isSwatch && <DisplayHtml className="attribute-value">{attribute.value}</DisplayHtml>}
         </div>
-      </div>
+      </button>
     )
   }
 }
