@@ -165,7 +165,7 @@ class InventoryController extends Component {
   getModelData(slug) {
     this.currentModel = getModelBySlug(this.props.modelsData, slug)
     this.modelInventory = getCarsByModel(this.aorInventory, this.currentModel.name)
-    return buildFilterAttributes(this.props.filtersData, this.modelFilters, this.modelInventory)
+    return buildFilterAttributes(this.currentModel.filterAttributes, this.modelFilters, this.modelInventory)
   }
 
   filterCars() {

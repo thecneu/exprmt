@@ -8,7 +8,6 @@ import pageJson from 'data/page.json'
 class DataProvider extends Component {
   state = {
     dealersData: dealersJson,
-    filtersData: filtersJson,
     modelsData: modelsJson,
     modelsLayoutData: modelsLayoutJson,
     pageData: pageJson

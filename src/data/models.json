@@ -16,16 +16,61 @@
       {
         "key": "trimLevel",
         "values": [
+          "S",
+          "SE with 4MOTION&reg;",
+          "SE with Technology and 4MOTION&reg;",
+          "SEL with 4MOTION&reg;",
+          "SEL Premium with 4MOTION&reg;"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Deep Black Pearl Effect",
+            "BLACK"
+          ],
+          [
+            "Tourmaline Blue",
+            "BLUE"
+          ],
+          [
+            "Platinum Gray Metallic",
+            "GRAY"
+          ],
+          [
+            "Pure White",
+            "WHITE"
+          ],
+          [
+            "Reflex Silver",
+            "SILVER"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Titan Black Cloth",
+            "BLACK"
+          ],
+          [
+            "Shetland V-Tex Leatherette",
+            "BEIGE"
+          ],
+          [
+            "Titan Black V-Tex",
+            "BLACK"
+          ],
+          [
+            "Shetland Vienna Leather",
+            "BEIGE"
+          ],
+          [
+            "Black Leather",
+            "BLACK"
+          ]
         ]
       }
     ]
@@ -47,16 +92,33 @@
       {
         "key": "trimLevel",
         "values": [
+          "S"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "White Silver",
+            "SILVER"
+          ],
+          [
+            "Bottle Green",
+            "GREEN"
+          ],
+          [
+            "Platinum Gray Metallic",
+            "GRAY"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Titan Black Cloth",
+            "BLACK"
+          ]
         ]
       }
     ]
@@ -78,47 +140,48 @@
       {
         "key": "trimLevel",
         "values": [
+          "S",
+          "S with Style and Comfort",
+          "SE",
+          "Dune"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Silk Blue Metallic W/Beige Top",
+            "BLUE"
+          ],
+          [
+            "Tornado Red W/Beige Top",
+            "RED"
+          ],
+          [
+            "Pure White W/Beige Top",
+            "WHITE"
+          ],
+          [
+            "Deep Black W/Black Top",
+            "BLACK"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
-        ]
-      }
-    ]
-  },
-  {
-    "name": "e-Golf",
-    "slug": "e-golf",
-    "price": "$30,495",
-    "textImage": "http://www.vw.com/content/dam/vwcom/allModels/images/backdrop/e-golf.png",
-    "carImage": "http://www.vwimg.com/iris/iris?vehicle=2018_BE23D1_S3T_2017_07_02&paint=0Q0Q&fabric=ET&pov=E13%2CCGD&quality=90&bkgnd=transparent&RESP=PNG&x=1200&y=2200&w=6600&h=4860&width=600",
-    "filterAttributes": [
-      {
-        "key": "transmissionType",
-        "values": [
-          "Automatic",
-          "Manual"
-        ]
-      },
-      {
-        "key": "trimLevel",
-        "values": [
-        ]
-      },
-      {
-        "key": "exteriorColorDescription",
-        "values": [
-        ]
-      },
-      {
-        "key": "interiorColorDescription",
-        "values": [
+          [
+            "Beige V-Tex",
+            "BEIGE"
+          ],
+          [
+            "Titan Black V-Tex",
+            "BLACK"
+          ],
+          [
+            "Dune Cloth",
+            "BEIGE"
+          ]
         ]
       }
     ]
@@ -140,16 +203,58 @@
       {
         "key": "trimLevel",
         "values": [
+          "S",
+          "SE"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Deep Black Pearl Effect",
+            "BLACK"
+          ],
+          [
+            "Silk Blue Metallic",
+            "BLUE"
+          ],
+          [
+            "Night Blue Metallic",
+            "BLUE"
+          ],
+          [
+            "Platinum Gray Metallic",
+            "GRAY"
+          ],
+          [
+            "Pure White",
+            "WHITE"
+          ],
+          [
+            "Tungsten Silver Metallic",
+            "SILVER"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Titan Black Cloth Golf",
+            "BLACK"
+          ],
+          [
+            "Beige Cloth",
+            "BEIGE"
+          ],
+          [
+            "Beige Leatherette",
+            "BEIGE"
+          ],
+          [
+            "Black Leatherette",
+            "BLACK"
+          ]
         ]
       }
     ]
@@ -171,16 +276,55 @@
       {
         "key": "trimLevel",
         "values": [
+          "S",
+          "SE",
+          "SEL"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Platinum Gray Metallic",
+            "GRAY"
+          ],
+          [
+            "Pure White",
+            "WHITE"
+          ],
+          [
+            "Great Falls Green",
+            "GREEN"
+          ],
+          [
+            "Silk Blue Metallic",
+            "BLUE"
+          ],
+          [
+            "Deep Black Pearl Effect",
+            "BLACK"
+          ],
+          [
+            "Tornado Red",
+            "RED"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Black Leatherette",
+            "BLACK"
+          ],
+          [
+            "Beige Leatherette",
+            "BEIGE"
+          ],
+          [
+            "Marrakesch Brown",
+            "BROWN"
+          ]
         ]
       }
     ]
@@ -202,16 +346,47 @@
       {
         "key": "trimLevel",
         "values": [
+          "S",
+          "SE",
+          "Autobahn"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+        [
+          "Deep Black Pearl Effect",
+          "BLACK"
+        ],
+        [
+          "Dark Iron Blue",
+          "BLUE"
+        ],
+        [
+          "White Silver",
+          "SILVER"
+        ],
+        [
+          "Pure White",
+          "WHITE"
+        ],
+        [
+          "Night Blue Metallic",
+          "BLUE"
+        ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Titan Black Cloth",
+            "BLACK"
+          ],
+          [
+            "Titan Black Leather",
+            "BLACK"
+          ]
         ]
       }
     ]
@@ -233,16 +408,29 @@
       {
         "key": "trimLevel",
         "values": [
+          "Golf R w/ DCC&reg; and Nav."
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Tornado Red",
+            "RED"
+          ],
+          [
+            "Oryx White Pearl Effect",
+            "WHITE"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Titan Black Leather",
+            "BLACK"
+          ]
         ]
       }
     ]
@@ -264,16 +452,39 @@
       {
         "key": "trimLevel",
         "values": [
+          "S",
+          "S with 4MOTION&reg;",
+          "SE"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "White Silver",
+            "SILVER"
+          ],
+          [
+            "Deep Black Pearl Effect",
+            "BLACK"
+          ],
+          [
+            "Night Blue Metallic",
+            "BLUE"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Titan Black Cloth",
+            "BLACK"
+          ],
+          [
+            "Black Leatherette",
+            "BLACK"
+          ]
         ]
       }
     ]
@@ -295,16 +506,76 @@
       {
         "key": "trimLevel",
         "values": [
+          "S",
+          "SE",
+          "R-Line",
+          "SEL Premium"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Black",
+            "BLACK"
+          ],
+          [
+            "Pure White",
+            "WHITE"
+          ],
+          [
+            "Tornado Red",
+            "RED"
+          ],
+          [
+            "Platinum Gray Metallic",
+            "GRAY"
+          ],
+          [
+            "White Silver",
+            "SILVER"
+          ],
+          [
+            "Habanero Orange",
+            "ORANGE"
+          ],
+          [
+            "Silk Blue Metallic",
+            "BLUE"
+          ],
+          [
+            "Deep Black Pearl Effect",
+            "BLACK"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Titan Black Cloth",
+            "BLACK"
+          ],
+          [
+            "Storm Gray Cloth",
+            "GRAY"
+          ],
+          [
+            "Black Leatherette",
+            "BLACK"
+          ],
+          [
+            "Storm Gray Leatherette",
+            "GRAY"
+          ],
+          [
+            "Black/Gray Leatherette",
+            "GRAY"
+          ],
+          [
+            "Black Leather",
+            "BLACK"
+          ]
         ]
       }
     ]
@@ -326,16 +597,74 @@
       {
         "key": "trimLevel",
         "values": [
+          "R-Line",
+          "2.0T SE",
+          "GT",
+          "2.0T SE with Technology",
+          "2.0T SEL Premium",
+          "V6 SEL Premium"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Platinum Gray Metallic",
+            "GRAY"
+          ],
+          [
+            "Deep Black Pearl Effect",
+            "BLACK"
+          ],
+          [
+            "Reflex Silver",
+            "SILVER"
+          ],
+          [
+            "Fortana Red",
+            "RED"
+          ],
+          [
+            "Tourmaline Blue",
+            "BLUE"
+          ],
+          [
+            "Pure White",
+            "WHITE"
+          ],
+          [
+            "Reflex Silver W/Black Roof",
+            "SILVER"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Titan Black Leatherette",
+            "BLACK"
+          ],
+          [
+            "Cornsilk Beige Leatherette W/Brown Piping",
+            "BEIGE"
+          ],
+          [
+            "Titan Black W/ Moonrock",
+            "GX"
+          ],
+          [
+            "Moonrock Gray Leatherette W/Quartz Piping",
+            "GRAY"
+          ],
+          [
+            "Titan Black Leather",
+            "BLACK"
+          ],
+          [
+            "Beige Leather",
+            "BEIGE"
+          ]
         ]
       }
     ]
@@ -357,16 +686,88 @@
       {
         "key": "trimLevel",
         "values": [
+          "S",
+          "S with 4MOTION&reg;",
+          "SE",
+          "SE with 4MOTION&reg;",
+          "SEL",
+          "SEL with 4MOTION&REG;",
+          "SEL Premium",
+          "SEL Premium with 4MOTION&reg;"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Platinum Gray Metallic",
+            "GRAY"
+          ],
+          [
+            "Pure White",
+            "WHITE"
+          ],
+          [
+            "White Silver",
+            "SILVER"
+          ],
+          [
+            "Moss Green",
+            "GREEN"
+          ],
+          [
+            "Deep Black Pearl Effect",
+            "BLACK"
+          ],
+          [
+            "Silk Blue Metallic",
+            "BLUE"
+          ],
+          [
+            "Cardinal Red",
+            "RED"
+          ],
+          [
+            "Habanero Orange",
+            "ORANGE"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          [
+            "Gray Cloth",
+            "GRAY"
+          ],
+          [
+            "Titan Black Cloth",
+            "BLACK"
+          ],
+          [
+            "Gray Leatherette",
+            "GRAY"
+          ],
+          [
+            "Black Leatherette",
+            "BLACK"
+          ],
+          [
+            "Golden Oak/Black Leatherette",
+            "GOLDEN"
+          ],
+          [
+            "Gray Leather",
+            "GRAY"
+          ],
+          [
+            "Black Leather",
+            "BLACK"
+          ],
+          [
+            "Saffrano/Black Leather",
+            "NY"
+          ]
         ]
       }
     ]
@@ -388,16 +789,27 @@
       {
         "key": "trimLevel",
         "values": [
+          "Limited"
         ]
       },
       {
         "key": "exteriorColorDescription",
         "values": [
+          [
+            "Pure White",
+            "WHITE"
+          ],
+          [
+            "Deep Black Pearl Effect",
+            "BLACK"
+          ]
         ]
       },
       {
         "key": "interiorColorDescription",
         "values": [
+          "Black Cloth",
+          "BLACK"
         ]
       }
     ]
