@@ -179,7 +179,7 @@ class InventoryController extends Component {
       ]
 
       if (this.state.appliedFilters.length > 0 &&
-         (cars.exact.length !== 0 || cars.close.length !== 0)
+         (cars.exact.length !== 0 && cars.close.length !== 0)
       ) { this.getNearbyCars() }
 
       this.setState({
