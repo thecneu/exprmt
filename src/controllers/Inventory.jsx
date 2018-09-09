@@ -50,8 +50,7 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
 export const filterCars = (inventory, appliedFilters) => {
   console.group('car filter called', appliedFilters)
 
-  const amountFilters = appliedFilters.length
-  if (amountFilters === 0) {
+  if (appliedFilters.length === 0) {
     console.log('just cars')
     console.groupEnd()
     return inventory
@@ -65,10 +64,12 @@ export const filterCars = (inventory, appliedFilters) => {
   console.log('filtering:', filters)
 
   const filterableKeys = Object.keys(filters)
+  const amountFilters = filterableKeys.length
   const filteredCars = inventory.map(car => {
     const rank = filterableKeys.reduce((next, filterKey) => {
       const filterValue = filters[filterKey]
       const carValue = car[filterKey]
+      console.log('car filter', filterValue, carValue, filterValue.includes(carValue), next + (filterValue.includes(carValue) ? 1 : 0))
       return next + (filterValue.includes(carValue) ? 1 : 0)
     }, 0)
 
@@ -170,7 +171,6 @@ class InventoryController extends Component {
 
   filterCars() {
     const cars = filterCars(this.modelInventory, this.state.appliedFilters)
-    console.log(cars)
 
     if (cars.exact) {
       const filteredCars = [
@@ -181,6 +181,7 @@ class InventoryController extends Component {
       if (this.state.appliedFilters.length > 0 && (cars.exact.length !== 0 && cars.close.length !== 0)) {
         this.getNearbyCars()
       } else {
+        console.log('do not call nearbyFilteredCars or reset to 0')
         this.setState({ nearbyFilteredCars: [] })
       }
 
@@ -207,9 +208,9 @@ class InventoryController extends Component {
     for(let i = 0; i < nearbyDealers.length; i++) {
       const cars = getCarsByModel(getInventory(nearbyDealers[i]), this.currentModel.name)
       const filteredCars = filterCars(cars, this.state.appliedFilters)
-      console.log('Dealer', i)
+      console.log(`nearbyDealer ${nearbyDealers[i].dealerid} found ${filteredCars.exact.length} cars`)
+
       if (filteredCars.exact.length) {
-        console.log('found', filteredCars.exact.length, 'cars')
         nearbyFilteredCars.push(...filteredCars.exact)
       }
 
@@ -218,12 +219,9 @@ class InventoryController extends Component {
       }
     }
 
-    console.log(nearbyFilteredCars)
     console.groupEnd()
-
-    if (nearbyFilteredCars.length > 0) {
-      this.setState({ nearbyFilteredCars })
-    }
+    console.log('setting nearbyFilteredCars', nearbyFilteredCars.length)
+    this.setState({ nearbyFilteredCars })
   }
 
   render() {

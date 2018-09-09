@@ -11,11 +11,11 @@ class Dropdown extends Component {
     this.toggleExpanded()
   }
 
-  render() {
+  renderDropdown() {
     const { currentModel, models, onModelChange } = this.props;
 
     return (
-      <div className="vw__models-dropdown">
+      <>
         <button className="chosen" onClick={this.toggleExpanded} tabIndex="0">
           {currentModel.name}
         </button>
@@ -29,7 +29,15 @@ class Dropdown extends Component {
             ))}
           </div>
         )}
+      </>
+    )
+  }
 
+  render() {
+    const { currentModel, models, onModelChange } = this.props;
+
+    return (
+      <div className="vw__models-dropdown">
         <select value={currentModel.slug} onChange={(e) => onModelChange(e.currentTarget.value)} onBlur={(e) => onModelChange(e.currentTarget.value)}>
           {models.map(model => (
             <option key={model.slug} value={model.slug}>

@@ -62,8 +62,8 @@
     padding-right: 10px;
     color: $color-bluegray55;
 
-    @include bp(desktop) {
-      // display: none;
+    @include bp(wide) {
+      display: none;
     }
   }
 

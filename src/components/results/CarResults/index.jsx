@@ -31,7 +31,7 @@ class CarResults extends Component {
               && !showNearbyCars
               && <button onClick={this.showNearbyCars}>See exact matches nearby</button>}
 
-            {showNearbyCars && (
+            {nearbyFilteredCars.length > 0 && showNearbyCars && (
               <section className="nearby-container">
                 <h3>Exact Matches Nearby</h3>
                 <div className="grid-container">
@@ -44,6 +44,7 @@ class CarResults extends Component {
               </section>
             )}
 
+            {filteredCars.length === 0 && nearbyFilteredCars.length === 0 && <h2>Request Form</h2>}
           </div>
         )}
       </InventoryContext.Consumer>

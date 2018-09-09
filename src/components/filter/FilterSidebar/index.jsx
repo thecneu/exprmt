@@ -1,6 +1,5 @@
 import React from 'react'
 import cx from 'classnames'
-import { pure } from 'recompose'
 import { InventoryContext } from 'controllers/Inventory'
 import FilterHeader from 'components/filter/FilterHeader'
 import FilterSection from 'components/filter/FilterSection'
@@ -24,4 +23,4 @@ const FilterSidebar = ({ showFilter = false }) => (
   </InventoryContext.Consumer>
 )
 
-export default pure(FilterSidebar)
+export default FilterSidebar
