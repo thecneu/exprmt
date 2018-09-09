@@ -23,6 +23,12 @@
       }
     }
 
+    .vw__icon {
+      svg .svg {
+        stroke: $color-blue1;
+      }
+    }
+
     &.is-open {
       border-top: 2px solid $color-blue1;
 
@@ -62,6 +68,11 @@
 
   .filter-actions {
     display: flex;
+
+    .vw__icon svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 
   .filter-name {

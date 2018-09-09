@@ -15,18 +15,18 @@
 
   .vw__icon {
     width: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 
-    svg {
-      fill: $color-bluegray80;
+    svg .svg {
+      stroke: $color-bluegray80;
     }
   }
 
   &:hover {
     color: $color-blue1;
 
-    .vw__icon svg {
-      fill: $color-blue1;
+    .vw__icon svg .svg {
+      stroke: $color-blue1;
     }
   }
 }

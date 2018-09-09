@@ -1,6 +1,9 @@
 @import 'src/mixins';
 
 .vw__zip-input {
+  display: inline-flex;
+  align-items: center;
+
   input {
     @include input;
     background: none;
@@ -14,6 +17,16 @@
     &:focus {
       border: 2px solid $color-blue1;
       outline: 0;
+    }
+  }
+  .vw__icon {
+    padding: 0 8px;
+    margin-left: -34px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: $color-blue1;
     }
   }
 }

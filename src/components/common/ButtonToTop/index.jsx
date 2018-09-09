@@ -1,4 +1,5 @@
 import React from 'react'
+import ArrowUpIcon from 'icons/ArrowUp'
 import './to-top.scss'
 
 const scrollToTop = (e) => {
@@ -8,7 +9,7 @@ const scrollToTop = (e) => {
 
 const ButtonToTop = () => (
   <button className="vw__to-top" onClick={scrollToTop}>
-    <div className="vw__icon"></div>
+    <ArrowUpIcon />
     <span>Top</span>
   </button>
 )

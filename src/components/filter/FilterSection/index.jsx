@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 import FilterAttribute from 'components/filter/FilterAttribute'
+import PlusIcon from 'icons/Plus'
+import MinusIcon from 'icons/Minus'
 import './filter-section.scss'
 
 class FilterSection extends Component {
@@ -43,7 +45,7 @@ class FilterSection extends Component {
               </div>
 
               <div className="action">
-                <div>{isOpen ? '-' : '+'}</div>
+                <div>{isOpen ? <MinusIcon /> : <PlusIcon />}</div>
               </div>
             </div>
           </div>
