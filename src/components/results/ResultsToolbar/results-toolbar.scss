@@ -15,8 +15,15 @@
   }
 
   .grid-container {
-    margin: 0 (-$gutter/2);
     align-items: center;
+    @include bp(wide) {
+      display: flex;
+      margin: 0 (-map_get($gutters, wide)/2);
+    }
+
+    @include bp(xl) {
+      margin: 0 (-map_get($gutters, xl)/2);
+    }
 
     .filter-area {
       padding: 0 ($gutter/2);
@@ -24,15 +31,30 @@
 
       @include bp(desktop) {
         width: 25%;
+
+        @include bp(wide) {
+          padding: 0 (map_get($gutters, wide)/2);
+        }
+
+        @include bp(wide) {
+          padding: 0 (map_get($gutters, xl)/2);
+        }
       }
     }
 
     .results-area {
-      padding: 0 ($gutter/2);
       display: flex;
       flex: 1;
       justify-content: space-between;
       align-items: center;
+
+      @include bp(wide) {
+        padding: 0 (map_get($gutters, wide)/2);
+      }
+
+      @include bp(wide) {
+        padding: 0 (map_get($gutters, xl)/2);
+      }
 
       .filter-list-area {
         flex: 1;

@@ -1,8 +1,9 @@
 @import 'src/mixins';
 
 .vw__filter-section {
+  padding-bottom: 4px;
+
   .filter-accordion {
-    appearance: none;
     user-select: none;
     border: 0;
     border-bottom: 2px solid $color-bluegray95;

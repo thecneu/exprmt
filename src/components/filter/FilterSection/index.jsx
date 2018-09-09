@@ -18,7 +18,10 @@ class FilterSection extends Component {
 
   appliedFilters() {
     const { appliedFilters, filterKey } = this.props
-    return appliedFilters.filter(filter => filter.filterKey === filterKey).map(filter => filter.value).join(', ')
+    const appliedFilter = appliedFilters.filter(filter => filter.filterKey === filterKey)
+    const filterString = appliedFilter.map(filter => filter.value).join(', ')
+    const maxStringLength = window.matchMedia('(min-width: 767px)') ? 65 : 23
+    return filterString.length > maxStringLength ? `(${appliedFilter.length})` : filterString
   }
 
   render() {

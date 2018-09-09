@@ -1,7 +1,8 @@
 @import 'src/mixins';
 
 .vw__filter-sidebar {
-  display: none;
+  margin-bottom: 20px;
+  // display: none;
 
   &.is-active {
     -webkit-scrolling-overflow: touch;
@@ -16,14 +17,14 @@
     overflow-y: auto;
   }
 
-  @include bp(desktop) {
+  @include bp(wide) {
     display: block;
   }
 
   .filter-container {
     background: white;
 
-    @include bp(desktop) {
+    @include bp(wide) {
       background: none;
     }
   }

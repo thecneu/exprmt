@@ -8,6 +8,7 @@
     border-radius: 5px;
     border: 1px solid black;
     padding: 0 14px;
+    width: 100%;
     @include input;
 
     &:hover {
@@ -32,6 +33,7 @@
       padding: 0 14px;
       height: 26px;
       line-height: 26px;
+      width: 100%;
       color: $color-bluegray50;
 
       &.selected {
@@ -43,5 +45,9 @@
         color: white;
       }
     }
+  }
+
+  select {
+    display: none;
   }
 }

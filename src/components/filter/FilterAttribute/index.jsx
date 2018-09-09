@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import cx from 'classnames'
 import ColorBox from 'components/filter/ColorBox'
 import DisplayHtml from 'components/common/DisplayHtml'
+import CheckmarkIcon from 'icons/Checkmark'
 import './filter-attribute.scss'
 import 'components/common/checkbox.scss'
 
@@ -21,7 +22,9 @@ class FilterAttribute extends Component {
         <div className={cx('label', { selected: isSwatch && (selected || attribute.required) }, { 'is-disabled': attribute.required === false })}>
           {!isSwatch && (
             <div className="vw__checkbox">
-              <div className={cx('checkbox', { selected: selected || attribute.required }, { 'is-disabled': attribute.required === false })} />
+              <div className={cx('checkbox', { selected: selected || attribute.required }, { 'is-disabled': attribute.required === false })}>
+                <CheckmarkIcon />
+              </div>
             </div>
           )}
           {attribute.color && <ColorBox color={attribute.color} isSwatch={isSwatch} selected={selected} />}

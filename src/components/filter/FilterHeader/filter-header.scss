@@ -10,15 +10,30 @@
 
   button {
     @include title-3;
-    appearance: none;
+    background: none;
     border: none;
     text-transform: uppercase;
     color: $color-bluegray50;
   }
 
   .grid-container {
-    align-items: center;
     justify-content: space-between;
     height: 64px;
+  }
+
+  .left-container,
+  .middle-container,
+  .right-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vw__icon {
+    margin-right: 8px;
+
+    svg {
+      width: 18px;
+    }
   }
 }

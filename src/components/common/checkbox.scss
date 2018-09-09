@@ -15,9 +15,10 @@
     border: 1px solid black;
     border-radius: 3px;
     margin-right: 12px;
-    text-align: center;
-    vertical-align: middle;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: 230ms ease-in;
 
     @include bp(desktop) {
       height: 26px;
@@ -25,8 +26,15 @@
       margin-right: 16px;
     }
 
+    .vw__icon {
+      width: 75%;
+      transform: translateY(1.5px);
+      pointer-events: none;
+      opacity: 0;
+      transition: 230ms ease-in;
+    }
+
     &.selected {
-      background: black;
       border: 1px solid $color-blue1;
 
       .vw__icon {
@@ -36,14 +44,6 @@
 
     &.is-disabled {
       border: 1px solid rgba($color-bluegray55, .5);
-    }
-
-    .vw__icon {
-      width: 93%;
-      height: 93%;
-      pointer-events: none;
-      opacity: 0;
-      transition: 230ms ease-in;
     }
   }
 }

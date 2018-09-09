@@ -18,6 +18,7 @@ class CarResults extends Component {
         {({ filteredCars, nearbyFilteredCars, appliedFilters }) => (
           <div className="vw__car-results">
             {console.log('carresults render', this.props)}
+            {console.log('filteredCars', filteredCars.length)}
             <div className="grid-container">
               {filteredCars.map(car =>
                 <div key={car.vin} className={cx('grid-item', { 'is-list' : type === 'list' })}>
@@ -42,6 +43,7 @@ class CarResults extends Component {
                 </div>
               </section>
             )}
+
           </div>
         )}
       </InventoryContext.Consumer>

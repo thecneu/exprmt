@@ -6,7 +6,8 @@
   background: none;
   color: $color-bluegray50;
   border: 1px solid $color-bluegray80;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
   padding: 10px;
   margin-right: 10px;
@@ -17,6 +18,8 @@
     margin-left: 10px;
 
     svg {
+      width: 10px;
+      height: 10px;
       fill: $color-blue1;
     }
   }
