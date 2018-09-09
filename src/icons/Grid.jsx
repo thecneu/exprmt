@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Grid = () => (
   <div className="vw__icon">
@@ -11,6 +11,6 @@ const Grid = () => (
       <rect className="svg" width="6" height="8.06" rx="2" transform="translate(20 11.94)"/>
     </svg>
   </div>
-)
+);
 
-export default Grid
+export default Grid;

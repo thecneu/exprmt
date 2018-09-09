@@ -1,6 +1,6 @@
-import React from 'react'
-import FilterIcon from 'icons/Filter'
-import './filter-header.scss'
+import React from 'react';
+import FilterIcon from 'icons/Filter';
+import './filter-header.scss';
 
 const FilterHeader = ({ toggleFilter }) => (
   <header className="vw__filter-header">
@@ -19,6 +19,6 @@ const FilterHeader = ({ toggleFilter }) => (
       </div>
     </div>
   </header>
-)
+);
 
-export default FilterHeader
+export default FilterHeader;

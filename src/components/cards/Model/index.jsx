@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './card-model.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './card-model.scss';
 
-const CardModel = ({ model: { name, slug, price, textImage, carImage }}) => (
+const CardModel = ({ model: { name, slug, price, textImage, carImage } }) => (
   <div className="vw__card-model">
     <Link to={`/results/${slug}`}>
       <div className="car-text">
@@ -13,9 +13,11 @@ const CardModel = ({ model: { name, slug, price, textImage, carImage }}) => (
         <img src={carImage} alt={name} />
       </div>
 
-      <div><span className="label-1">{price}</span></div>
+      <div>
+        <span className="label-1">{price}</span>
+      </div>
     </Link>
   </div>
-)
+);
 
-export default CardModel
+export default CardModel;

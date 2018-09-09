@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import ResultsToolbar from 'components/results/ResultsToolbar'
-import CarResults from 'components/results/CarResults'
-import FilterSidebar from 'components/filter/FilterSidebar'
-import './results-container.scss'
+import React, { Component } from 'react';
+import ResultsToolbar from 'components/results/ResultsToolbar';
+import CarResults from 'components/results/CarResults';
+import FilterSidebar from 'components/filter/FilterSidebar';
+import './results-container.scss';
 
 class ResultsWrapper extends Component {
   state = { type: 'list' }
 
   changeType = (type) => {
-    console.log('--- change type ---')
-    this.setState({ type })
+    console.log('--- change type ---');
+    this.setState({ type });
   }
 
   render() {
-    const { type } = this.state
+    const { type } = this.state;
 
     return (
       <div className="vw__results-container">
@@ -32,8 +32,8 @@ class ResultsWrapper extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default ResultsWrapper
+export default ResultsWrapper;

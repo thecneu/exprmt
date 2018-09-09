@@ -1,10 +1,10 @@
-import React from 'react'
-import ZipInput from 'components/common/ZipInput'
-import './masthead.scss'
+import React from 'react';
+import ZipInput from 'components/common/ZipInput';
+import './masthead.scss';
 
 const ModelsMasthead = () => (
   <section className="vw__models-masthead">
-    <div className="top-bar"></div>
+    <div className="top-bar" />
     <div className="container">
       <div className="content-container">
         <div className="info-content">
@@ -20,6 +20,6 @@ const ModelsMasthead = () => (
       </div>
     </div>
   </section>
-)
+);
 
-export default ModelsMasthead
+export default ModelsMasthead;
