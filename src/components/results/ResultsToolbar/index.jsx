@@ -1,9 +1,9 @@
-import React from 'react'
-import FilterButton from 'components/filter/FilterButton'
-import FilterList from 'components/filter/FilterList'
-import ModelsDropdown from 'components/models/ModelsDropdown'
-import ResultsViewTypes from 'components/results/ResultsViewTypes'
-import './results-toolbar.scss'
+import React from 'react';
+import FilterButton from 'components/filter/FilterButton';
+import FilterList from 'components/filter/FilterList';
+import ModelsDropdown from 'components/models/ModelsDropdown';
+import ResultsViewTypes from 'components/results/ResultsViewTypes';
+import './results-toolbar.scss';
 
 const ResultsToolbar = ({ changeType, type }) => (
   <div className="vw__results-toolbar">
@@ -23,6 +23,6 @@ const ResultsToolbar = ({ changeType, type }) => (
       </div>
     </div>
   </div>
-)
+);
 
-export default ResultsToolbar
+export default ResultsToolbar;

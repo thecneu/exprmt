@@ -6,6 +6,7 @@
 
   input {
     @include input;
+
     background: none;
     border-radius: 5px;
     border: 1px solid $color-blue1;

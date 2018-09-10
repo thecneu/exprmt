@@ -16,6 +16,7 @@
 
   .grid-container {
     align-items: center;
+
     @include bp(wide) {
       display: flex;
       margin: 0 (-map_get($gutters, wide)/2);
@@ -33,11 +34,11 @@
         width: 25%;
 
         @include bp(wide) {
-          padding: 0 (map_get($gutters, wide)/2);
+          padding: 0 (map_get($gutters, wide)/2 + 10px);
         }
 
         @include bp(wide) {
-          padding: 0 (map_get($gutters, xl)/2);
+          padding: 0 (map_get($gutters, xl)/2 + 10px);
         }
       }
     }

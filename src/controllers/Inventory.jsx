@@ -7,7 +7,7 @@ const getInventory = (dealer) => {
   const { aor, dealerid, name, latlong, distance } = dealer;
   return inventory.map((car) => ({
     ...car,
-    dealer: { aor, dealerid, name, latlong, distance },
+    dealer: { aor, dealerid, name, latlong, distance }
   }));
 };
 const getModelBySlug = (carModels = [], slug) => carModels.find((model) => model.slug === slug);
@@ -25,13 +25,13 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
       color: Array.isArray(attribute) ? attribute[1] : false,
       required: filterGroup.required.length
         ? modelInventory.filter((car) => car[filterTypeKey] === attribute).length
-        : false,
+        : false
     }));
 
     if (attributes.some(({ required }) => required === 0)) {
       attributes = attributes.map((attribute) => ({
         ...attribute,
-        required: attribute.required > 0,
+        required: attribute.required > 0
       }));
     } else {
       attributes = attributes.map(({ required, ...attribute }) => ({ ...attribute }));
@@ -41,7 +41,7 @@ const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
       filterKey: filterTypeKey,
       name: filterGroup.friendlyName,
       required: filterGroup.required,
-      attributes,
+      attributes
     };
   });
 
@@ -60,7 +60,7 @@ export const filterCars = (inventory, appliedFilters) => {
   const filters = appliedFilters.reduce(
     (next, { filterKey, value }) => ({
       ...next,
-      [filterKey]: [...(next[filterKey] || []), value],
+      [filterKey]: [...(next[filterKey] || []), value]
     }),
     {}
   );
@@ -74,6 +74,7 @@ export const filterCars = (inventory, appliedFilters) => {
       const rank = filterableKeys.reduce((next, filterKey) => {
         const filterValue = filters[filterKey];
         const carValue = car[filterKey];
+
         console.log(
           'car filter',
           filterValue,
@@ -81,6 +82,7 @@ export const filterCars = (inventory, appliedFilters) => {
           filterValue.includes(carValue),
           next + (filterValue.includes(carValue) ? 1 : 0)
         );
+
         return next + (filterValue.includes(carValue) ? 1 : 0);
       }, 0);
 
@@ -89,7 +91,7 @@ export const filterCars = (inventory, appliedFilters) => {
 
       return {
         ...car,
-        isMatched,
+        isMatched
       };
     })
     .filter((car) => car.isMatched !== false);
@@ -97,7 +99,7 @@ export const filterCars = (inventory, appliedFilters) => {
 
   return {
     exact: filteredCars.filter((car) => car.isMatched === 'exact'),
-    close: filteredCars.filter((car) => car.isMatched === 'close'),
+    close: filteredCars.filter((car) => car.isMatched === 'close')
   };
 };
 
@@ -106,9 +108,9 @@ class InventoryController extends Component {
   toggleFilter = () => {
     document.body.classList.toggle('is-overflow');
     this.setState(({ showFilter }) => ({ showFilter: !showFilter }));
-  };
+  }
 
-  clearFilters = () => this.setState({ ...this.cleanState() });
+  clearFilters = () => this.setState({ ...this.cleanState() })
 
   onModelChange = (slug) => {
     const filterAttributes = this.getModelData(slug);
@@ -116,22 +118,19 @@ class InventoryController extends Component {
     this.setState({
       ...this.cleanState(),
       currentModel: this.currentModel,
-      filterAttributes,
+      filterAttributes
     });
 
     this.props.history.push(`/results/${slug}`);
-  };
+  }
 
   updateAppliedFilter = (filter) => {
-    this.setState(
-      ({ appliedFilters }) => ({
-        appliedFilters: appliedFilters.includes(filter)
-          ? appliedFilters.filter((applied) => applied !== filter)
-          : [...appliedFilters, filter],
-      }),
-      () => this.filterCars()
-    );
-  };
+    this.setState(({ appliedFilters }) => ({
+      appliedFilters: appliedFilters.includes(filter)
+        ? appliedFilters.filter((applied) => applied !== filter)
+        : [...appliedFilters, filter]
+    }), () => this.filterCars());
+  }
 
   state = {
     aorDealer: {},
@@ -146,14 +145,11 @@ class InventoryController extends Component {
     onModelChange: this.onModelChange,
     updateAppliedFilter: this.updateAppliedFilter,
     toggleFilter: this.toggleFilter,
-    clearFilters: this.clearFilters,
-  };
+    clearFilters: this.clearFilters
+  }
 
   componentDidMount() {
-    const models = this.props.modelsData.map(({ slug, name, ...rest }) => ({
-      slug,
-      name,
-    }));
+    const models = this.props.modelsData.map(({ slug, name, ...rest }) => ({ slug, name }));
     this.aorDealer = getAorDealer(this.props.dealersData);
     this.modelFilters = this.props.pageData.filters;
     this.aorInventory = getInventory(this.aorDealer);
@@ -167,7 +163,7 @@ class InventoryController extends Component {
       currentModel: this.currentModel,
       aorDealer: this.aorDealer,
       models,
-      filterAttributes,
+      filterAttributes
     });
   }
 
@@ -176,13 +172,14 @@ class InventoryController extends Component {
       appliedFilters: [],
       nearbyFilteredCars: [],
       filteredCarsCount: { total: this.modelInventory.length },
-      filteredCars: this.modelInventory,
+      filteredCars: this.modelInventory
     };
   }
 
   getModelData(slug) {
     this.currentModel = getModelBySlug(this.props.modelsData, slug);
     this.modelInventory = getCarsByModel(this.aorInventory, this.currentModel.name);
+
     return buildFilterAttributes(
       this.currentModel.filterAttributes,
       this.modelFilters,
@@ -211,13 +208,13 @@ class InventoryController extends Component {
         filteredCarsCount: {
           total: filteredCars.length,
           exact: cars.exact.length || 0,
-          close: cars.close.length || 0,
-        },
+          close: cars.close.length || 0
+        }
       });
     } else {
       this.setState({
         filteredCars: cars,
-        filteredCarsCount: { total: cars.length },
+        filteredCarsCount: { total: cars.length }
       });
     }
   }
@@ -226,9 +223,11 @@ class InventoryController extends Component {
     console.group('get nearby cars');
     const nearbyDealers = this.props.dealersData.slice(1);
     const nearbyFilteredCars = [];
+
     for (let i = 0; i < nearbyDealers.length; i++) {
       const cars = getCarsByModel(getInventory(nearbyDealers[i]), this.currentModel.name);
       const filteredCars = filterCars(cars, this.state.appliedFilters);
+
       console.log(
         `nearbyDealer ${nearbyDealers[i].dealerid} found ${
           filteredCars.exact.length

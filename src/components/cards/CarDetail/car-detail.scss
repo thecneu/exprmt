@@ -3,7 +3,7 @@
 .vw__card-cardetail {
   position: relative;
   height: 100%;
-  box-shadow: 0 1px 1px rgba(black, .2);
+  box-shadow: 0 1px 1px rgba(black, 0.2);
 
   .card-container {
     height: 100%;
@@ -21,7 +21,7 @@
     height: 100%;
 
     @include bp(tablet) {
-      padding: .75 * map-get($gutters, tablet);
+      padding: 0.75 * map-get($gutters, tablet);
     }
 
     @include bp(desktop) {
@@ -51,10 +51,6 @@
 
   .car-image {
     text-align: center;
-
-    img {
-      height: 70px;
-    }
   }
 
   .car-title {
@@ -164,7 +160,7 @@
 
     .car-info {
       @include bp(tablet) {
-         width: 50%;
+        width: 50%;
 
         .contact-dealer {
           display: none;
@@ -194,9 +190,9 @@
   }
 }
 
-
 .packages {
   @include text-3;
+
   color: $color-bluegray55;
   text-transform: uppercase;
   margin-bottom: 4px;

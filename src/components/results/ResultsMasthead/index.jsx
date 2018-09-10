@@ -29,6 +29,7 @@ class Masthead extends Component {
                       <strong className="h9">
                         {filteredCarsCount.exact} exact matches
                       </strong>{' '}
+
                       and{' '}
                       <strong className="h9">
                         {filteredCarsCount.close} close matches

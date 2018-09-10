@@ -2,6 +2,7 @@
 
 .vw__button {
   @include title-2;
+
   background: $color-blue1;
   border-radius: 5px;
   color: white;
@@ -23,6 +24,7 @@
 
   &.btn-stroked {
     @include title-3;
+
     background: none;
     padding: 0 10px;
     min-height: 26px;
@@ -50,7 +52,7 @@
     background: none;
     border: 1px solid $color-blue1;
     color: $color-blue1;
-    font-family: 'VW Head bold';
+    font-family: 'VW Head bold', sans-serif;
     font-size: 15px;
     line-height: 18px;
     min-height: 60px;

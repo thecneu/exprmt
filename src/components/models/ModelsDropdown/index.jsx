@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { InventoryContext } from 'controllers/Inventory';
 
 class Dropdown extends Component {
-  state = { expanded: false };
+  state = { expanded: false }
 
-  toggleExpanded = () => this.setState(({ expanded }) => ({ expanded: !expanded }));
+  toggleExpanded = () => this.setState(({ expanded }) => ({ expanded: !expanded }))
 
   onChange = (slug) => {
     this.props.onModelChange(slug);
     this.toggleExpanded();
-  };
+  }
 
   renderDropdown() {
-    const { currentModel, models, onModelChange } = this.props;
+    const { currentModel, models } = this.props;
 
     return (
       <>
