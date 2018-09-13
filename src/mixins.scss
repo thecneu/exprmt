@@ -58,6 +58,54 @@ $gutter-xl: 40px;
   }
 }
 
+@mixin has-cells {
+  margin: 0 (-(map-get($gutters, mobile)/2));
+
+  @include has-cells-no-mobile;
+}
+
+@mixin has-cells-no-mobile {
+  @include bp(tablet) {
+    margin: 0 (-(map-get($gutters, tablet)/2));
+  }
+
+  @include bp(desktop) {
+    margin: 0 (-(map-get($gutters, desktop)/2));
+  }
+
+  @include bp(wide) {
+    margin: 0 (-(map-get($gutters, wide)/2));
+  }
+
+  @include bp(xl) {
+    margin: 0 (-(map-get($gutters, xl)/2));
+  }
+}
+
+@mixin grid-cell {
+  padding: 0 (map-get($gutters, mobile)/2);
+
+  @include grid-cell-no-mobile;
+}
+
+@mixin grid-cell-no-mobile {
+  @include bp(tablet) {
+    padding: 0 (map-get($gutters, tablet)/2);
+  }
+
+  @include bp(desktop) {
+    padding: 0 (map-get($gutters, desktop)/2);
+  }
+
+  @include bp(wide) {
+    padding: 0 (map-get($gutters, wide)/2);
+  }
+
+  @include bp(xl) {
+    padding: 0 (map-get($gutters, xl)/2);
+  }
+}
+
 @mixin text-3 {}
 @mixin title-2 {}
 @mixin title-3 {}

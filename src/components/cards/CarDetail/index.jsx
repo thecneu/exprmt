@@ -22,7 +22,7 @@ const CardCarDetail = ({ car, type, showMatchLabel }) => (
                 <img src={car.mediaImageUrl + '&quality=10'} alt={car.mediaImageUrlAlt} />
               </div>
 
-              <div className="car-title">
+              <div className="car-title title-2">
                 <div>
                   {car.modelYear} {car.model}
                 </div>
@@ -30,7 +30,7 @@ const CardCarDetail = ({ car, type, showMatchLabel }) => (
                 <div>{car.transmissionType}</div>
               </div>
 
-              <div className="vin">
+              <div className="vin title-5">
                 <nobr>
                   <b>vin</b> {car.vin}
                 </nobr>
@@ -38,23 +38,25 @@ const CardCarDetail = ({ car, type, showMatchLabel }) => (
             </div>
 
             <div className="bottom">
-              <div className="exterior-color">{car.exteriorColorDescription}</div>
-              <div className="interior-color">{car.interiorColorDescription}</div>
+              <div className="label-2">{car.exteriorColorDescription}</div>
+              <div className="label-2">{car.interiorColorDescription}</div>
 
               <ColorSwatch
                 exteriorColorBaseColor={car.exteriorColorBaseColor}
                 interiorColorBaseColor={car.interiorColorBaseColor}
               />
 
-              <div className="dealer-name">{car.dealer.name}</div>
+              <div className="dealer-name">
+                <Link caret={false}>{car.dealer.name}</Link>
+              </div>
               <div className="dealer-mileage">
                 {car.dealer.distance.toFixed(2)} miles away
               </div>
 
-              <div className="car-price">{car.msrpFormatted}</div>
+              <div className="car-price heading-8">{car.msrpFormatted}</div>
 
               <div className="contact-dealer">
-                <ButtonLink full>Contact Dealer</ButtonLink>
+                <ButtonLink>Contact Dealer</ButtonLink>
               </div>
 
               <div className="view-details">
@@ -104,7 +106,7 @@ const CardCarDetail = ({ car, type, showMatchLabel }) => (
               </div>
 
               <div className="contact-dealer">
-                <ButtonLink full>Contact Dealer</ButtonLink>
+                <ButtonLink>Contact Dealer</ButtonLink>
               </div>
             </div>
           </div>
@@ -112,7 +114,9 @@ const CardCarDetail = ({ car, type, showMatchLabel }) => (
           <div className="content-container dealer-content">
             <div className="top">
               <div className="dealer-info">
-                <div className="dealer-name">{car.dealer.name}</div>
+                <div className="dealer-name">
+                  <Link caret={false}>{car.dealer.name}</Link>
+                </div>
                 <div className="dealer-mileage">
                   {car.dealer.distance.toFixed(2)} miles away
                 </div>
@@ -122,7 +126,7 @@ const CardCarDetail = ({ car, type, showMatchLabel }) => (
 
             <div className="bottom">
               <div className="contact-dealer">
-                <ButtonLink full>Contact Dealer</ButtonLink>
+                <ButtonLink fill>Contact Dealer</ButtonLink>
               </div>
             </div>
           </div>

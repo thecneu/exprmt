@@ -2,11 +2,11 @@ import React from 'react';
 import FilterIcon from 'icons/Filter';
 import './filter-header.scss';
 
-const FilterHeader = ({ toggleFilter }) => (
+const FilterHeader = ({ toggleFilter, clearFilters }) => (
   <header className="vw__filter-header">
     <div className="grid-container">
       <div className="left-container">
-        <button onClick={toggleFilter}>Close</button>
+        <button onClick={toggleFilter}>Done</button>
       </div>
 
       <div className="middle-container">
@@ -15,7 +15,7 @@ const FilterHeader = ({ toggleFilter }) => (
       </div>
 
       <div className="right-container">
-        <button onClick={toggleFilter}>Done</button>
+        <button onClick={() => { clearFilters(); toggleFilter(); }}>Clear all</button>
       </div>
     </div>
   </header>

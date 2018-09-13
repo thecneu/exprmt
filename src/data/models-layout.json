@@ -13,7 +13,7 @@
    },
    {
       "name": "compacts",
-      "models": ["beetle", "golf", "golf-gti", "e-golf", "golf-r"]
+      "models": ["beetle", "golf", "golf-gti", "golf-r"]
    },
    {
       "name": "convertibles",

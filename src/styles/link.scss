@@ -5,24 +5,32 @@
   font-family: 'VW Head bold', sans-serif;
   font-size: 15px;
   line-height: 18px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 
   .vw__icon {
     margin-left: 8px;
+    width: 6px;
+
+    svg .svg {
+      stroke: $color-blue1;
+    }
   }
 
   &:hover {
     color: $color-blue2;
 
-    .vw__icon svg {
-      fill: $color-blue2;
+    .vw__icon svg .svg {
+      stroke: $color-blue2;
     }
   }
 
   &:active {
     color: $color-blue3;
 
-    .vw__icon svg {
-      fill: $color-blue3;
+    .vw__icon svg .svg {
+      stroke: $color-blue3;
     }
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import { InventoryContext } from 'controllers/Inventory';
 import CardCarDetail from 'components/cards/CarDetail';
+import Button from 'components/common/Button';
 import './car-results.scss';
 
 class CarResults extends Component {
@@ -36,7 +37,9 @@ class CarResults extends Component {
 
             {nearbyFilteredCars.length > 0 &&
               !showNearbyCars && (
-                <button onClick={this.showNearbyCars}>See exact matches nearby</button>
+                <div className="nearby-button">
+                  <Button full onClick={this.showNearbyCars}>See exact matches nearby</Button>
+                </div>
               )}
 
             {nearbyFilteredCars.length > 0 &&

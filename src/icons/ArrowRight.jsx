@@ -8,8 +8,8 @@ const ArrowRight = () => (
         className="svg"
         fill="none"
         stroke="#2c2d32"
-        stroke-linecap="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeWidth="2"
       />
     </svg>
   </div>

@@ -20,15 +20,18 @@
     svg {
       width: 10px;
       height: 10px;
-      fill: $color-blue1;
+
+      .svg {
+        stroke: $color-blue1;
+      }
     }
   }
 
   &:hover {
     border-color: $color-blue1;
 
-    .vw__icon svg {
-      fill: $color-blue1;
+    .vw__icon svg .svg {
+      stroke: $color-blue1;
     }
   }
 

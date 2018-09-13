@@ -75,14 +75,6 @@ export const filterCars = (inventory, appliedFilters) => {
         const filterValue = filters[filterKey];
         const carValue = car[filterKey];
 
-        console.log(
-          'car filter',
-          filterValue,
-          carValue,
-          filterValue.includes(carValue),
-          next + (filterValue.includes(carValue) ? 1 : 0)
-        );
-
         return next + (filterValue.includes(carValue) ? 1 : 0);
       }, 0);
 

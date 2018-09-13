@@ -13,20 +13,20 @@
 
   @include bp(wide) {
     display: flex;
-    margin: 0 (-map_get($gutters, wide)/2);
+    margin: 0 (-(map-get($gutters, wide)/2));
   }
 
   @include bp(xl) {
-    margin: 0 (-map_get($gutters, xl)/2);
+    margin: 0 (-(map-get($gutters, xl)/2));
   }
 
   > .grid-item {
     @include bp(wide) {
-      padding: 0 (map_get($gutters, wide)/2);
+      padding: 0 (map-get($gutters, wide)/2);
     }
 
     @include bp(xl) {
-      padding: 0 (map_get($gutters, xl)/2);
+      padding: 0 (map-get($gutters, xl)/2);
     }
   }
 

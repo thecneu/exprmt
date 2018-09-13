@@ -11,6 +11,7 @@
   align-items: center;
   width: 100%;
   text-align: left;
+  outline: 0;
 
   @include bp(wide) {
     padding: 8px 32px;
@@ -51,9 +52,14 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     .checkbox {
       border: 2px solid $color-blue1;
+
+      &.selected {
+        border-width: 2px;
+      }
     }
   }
 

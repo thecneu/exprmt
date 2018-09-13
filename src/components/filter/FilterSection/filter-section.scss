@@ -50,6 +50,12 @@
     }
   }
 
+  &:last-child {
+    .filter-accordion {
+      border-bottom: 0;
+    }
+  }
+
   .grid-container {
     justify-content: space-between;
     align-items: center;

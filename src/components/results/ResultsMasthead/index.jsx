@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
 import { InventoryContext } from 'controllers/Inventory';
 import FilterButton from 'components/filter/FilterButton';
 import FilterList from 'components/filter/FilterList';
@@ -8,30 +9,50 @@ import ZipInput from 'components/common/ZipInput';
 import './masthead.scss';
 
 class Masthead extends Component {
+  state = { isSticky: false }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll);
+  }
+
+  onScroll = () => {
+    const y = window.scrollY
+    const isSticky = this.state.isSticky
+    const rect = this.masthead.getBoundingClientRect()
+    if (y > rect.height + 108 && !isSticky) {
+      return this.setState({ isSticky: true })
+    }
+
+    if (y < rect.height && isSticky) {
+      return this.setState({ isSticky: false })
+    }
+  }
+
   render() {
     const { currentModel, filteredCarsCount, aorDealer } = this.props;
+    const { isSticky } = this.state
 
     return (
-      <section className="vw__results-masthead">
-        <div className="top-bar">{console.log('results-masthead render')}</div>
+      <section ref={(masthead) => this.masthead = masthead} className={cx('vw__results-masthead', { 'is-sticky': isSticky })}>
+        <div className="top-bar" />
         <div className="container">
           <div className="content-container">
             <div className="info-content">
-              <h1 className="h5-light headline">
+              <h1 className="heading-5-light headline">
                 Great, let’s get you into a {currentModel.name}.
               </h1>
 
               <p className="info">
-                <span className="h9-light">
+                <span className="heading-9-light">
                   {filteredCarsCount.exact !== undefined && (
                     <>
                       There are{' '}
-                      <strong className="h9">
+                      <strong className="heading-9">
                         {filteredCarsCount.exact} exact matches
                       </strong>{' '}
 
                       and{' '}
-                      <strong className="h9">
+                      <strong className="heading-9">
                         {filteredCarsCount.close} close matches
                       </strong>
                     </>
@@ -40,13 +61,13 @@ class Masthead extends Component {
                   {filteredCarsCount.exact === undefined && (
                     <>
                       There are{' '}
-                      <strong className="h9">{filteredCarsCount.total} matches</strong>
+                      <strong className="heading-9">{filteredCarsCount.total} matches</strong>
                     </>
                   )}
 
                   {' '}
                   for {currentModel.name} at{' '}
-                  <strong className="h9 label-dealer">{aorDealer.name}</strong>
+                  <strong className="heading-9 label-dealer">{aorDealer.name}</strong>
                 </span>
               </p>
 

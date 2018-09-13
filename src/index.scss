@@ -1,4 +1,6 @@
 @import 'mixins';
+@import 'styles/button';
+@import 'styles/link';
 @import 'site';
 
 *,
@@ -37,8 +39,7 @@ select {
 
 .container {
   margin: 0 auto;
-  // max-width: 1160px;
-
+  max-width: 1160px;
   width: map-get($container-width, mobile);
 
   @include bp(tablet) {

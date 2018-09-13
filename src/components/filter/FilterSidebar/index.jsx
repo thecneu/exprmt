@@ -7,11 +7,15 @@ import './filter-sidebar.scss';
 
 const FilterSidebar = ({ showFilter = false }) => (
   <InventoryContext.Consumer>
-    {({ filterAttributes, appliedFilters, toggleFilter, updateAppliedFilter }) => (
+    {({ filterAttributes, appliedFilters, toggleFilter, clearFilters, updateAppliedFilter }) => (
       <aside className={cx('vw__filter-sidebar', { 'is-active': showFilter })}>
         {console.log('filtersidebar render')}
         <div className="filter-container">
-          <FilterHeader toggleFilter={toggleFilter} appliedFilters={appliedFilters} />
+          <FilterHeader
+            toggleFilter={toggleFilter}
+            clearFilters={clearFilters}
+            appliedFilters={appliedFilters}
+          />
 
           <div>
             {filterAttributes.map((section) => (

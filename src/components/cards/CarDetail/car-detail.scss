@@ -58,7 +58,14 @@
   }
 
   .dealer-name {
+    text-transform: uppercase;
     padding-bottom: 6px;
+  }
+
+  .dealer-mileage {
+    @include title-3;
+
+    color: $color-bluegray50;
   }
 
   .car-price {
@@ -71,6 +78,20 @@
 
     .contact-dealer {
       padding-bottom: 24px;
+    }
+  }
+
+  .packages {
+    @include text-3;
+
+    color: $color-bluegray55;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    list-style: none;
+
+    .vw__icon {
+      fill: $color-bluegray80;
+      margin-right: 8px;
     }
   }
 
@@ -187,18 +208,5 @@
         margin-left: 4px;
       }
     }
-  }
-}
-
-.packages {
-  @include text-3;
-
-  color: $color-bluegray55;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-
-  .vw__icon {
-    fill: $color-bluegray80;
-    margin-right: 8px;
   }
 }

@@ -8,8 +8,8 @@ const ModelsMasthead = () => (
     <div className="container">
       <div className="content-container">
         <div className="info-content">
-          <h1 className="h5-light headline">Let's find your perfect Volkwagen.</h1>
-          <p className="h9 info">Select a model to find inventory near you.</p>
+          <h1 className="heading-5-light headline">Let's find your perfect Volkwagen.</h1>
+          <p className="heading-9-light info">Select a model to find inventory near you.</p>
         </div>
 
         <div className="actions-content">
