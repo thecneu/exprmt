@@ -10,7 +10,7 @@ const FilterListItem = ({ clearFilters, isClearButton, filter, updateAppliedFilt
     </button>
   ) : (
     <button className="vw__filter-list-item" onClick={() => updateAppliedFilter(filter)}>
-      <DisplayHtml>{filter.value}</DisplayHtml>
+      <DisplayHtml>{filter.text}</DisplayHtml>
       <CloseIcon />
     </button>
   );

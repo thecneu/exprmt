@@ -26,7 +26,7 @@ class FilterAttribute extends Component {
         <div
           className={cx(
             'label',
-            { selected: isSwatch && (selected || attribute.required) },
+            { selected: isSwatch && (selected || attribute.required === true) },
             { 'is-disabled': attribute.required === false }
           )}
         >
@@ -35,7 +35,7 @@ class FilterAttribute extends Component {
               <div
                 className={cx(
                   'checkbox',
-                  { selected: selected || attribute.required },
+                  { selected: selected || attribute.required === true },
                   { 'is-disabled': attribute.required === false }
                 )}
               >

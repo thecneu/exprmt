@@ -18,31 +18,27 @@ const getCarsByModel = (inventory = [], model) => inventory.filter((car) => car.
 
 const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
   const filterAttributes = filterData.map((filterGroup) => {
-    const filters = (modelFilters.find(({ key }) => filterTypeKey === key) || {}).values;
     const filterTypeKey = filterGroup.key;
+    const hasRequired = filterGroup.required.length;
+    const modelFilter = modelFilters.find(({ key }) => filterTypeKey === key) || {};
+    const filters = hasRequired ? filterGroup.required : modelFilter.values;
 
-    let attributes = filters.map((attribute) => ({
+    let attributes = filters.map((attribute) => omitBy({
       filterKey: filterTypeKey,
-      required: filterGroup.required.length
-        ? modelInventory.filter((car) => car[filterTypeKey] === attribute).length
-        : false
-    }));
-      value: attribute.description || attribute,
+      value: attribute.description || attribute.value || attribute,
+      text: attribute.text || attribute,
       color: attribute.color,
-      swatch: attribute.swatch
+      swatch: attribute.swatch,
+      required: hasRequired ? modelFilter.values.includes(attribute.value || attribute) : undefined
     }, isUndefined));
 
-    if (attributes.some(({ required }) => required === 0)) {
-      attributes = attributes.map((attribute) => ({
-        ...attribute,
-        required: attribute.required > 0
-      }));
+    if (attributes.every((attribute) => attribute.required)) {
+      attributes = attributes.map(({ required, ...attribute }) => ({ ...attribute }))
     }
 
     return {
       filterKey: filterTypeKey,
       name: filterGroup.friendlyName,
-      required: filterGroup.required,
       attributes
     };
   });

@@ -4,8 +4,8 @@
       "key": "transmissionType",
       "friendlyName": "transmission",
       "required": [
-        { "filterKey": "Automatic", "value": "Automatic" },
-        { "filterKey": "Manual", "value": "Standard" }
+        { "value": "Automatic", "text": "Automatic" },
+        { "value": "Manual", "text": "Standard" }
       ]
     },
     {
