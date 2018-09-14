@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import omitBy from 'lodash/omitBy';
+import isUndefined from 'lodash/isUndefined';
 import DataProvider from 'data-providers/DataProvider';
 
 const getInventory = (dealer) => {
@@ -16,25 +18,25 @@ const getCarsByModel = (inventory = [], model) => inventory.filter((car) => car.
 
 const buildFilterAttributes = (modelFilters, filterData, modelInventory) => {
   const filterAttributes = filterData.map((filterGroup) => {
-    const filterTypeKey = filterGroup.key[0];
     const filters = (modelFilters.find(({ key }) => filterTypeKey === key) || {}).values;
+    const filterTypeKey = filterGroup.key;
 
     let attributes = filters.map((attribute) => ({
       filterKey: filterTypeKey,
-      value: Array.isArray(attribute) ? attribute[0] : attribute,
-      color: Array.isArray(attribute) ? attribute[1] : false,
       required: filterGroup.required.length
         ? modelInventory.filter((car) => car[filterTypeKey] === attribute).length
         : false
     }));
+      value: attribute.description || attribute,
+      color: attribute.color,
+      swatch: attribute.swatch
+    }, isUndefined));
 
     if (attributes.some(({ required }) => required === 0)) {
       attributes = attributes.map((attribute) => ({
         ...attribute,
         required: attribute.required > 0
       }));
-    } else {
-      attributes = attributes.map(({ required, ...attribute }) => ({ ...attribute }));
     }
 
     return {

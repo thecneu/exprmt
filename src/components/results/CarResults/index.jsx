@@ -38,7 +38,7 @@ class CarResults extends Component {
             {nearbyFilteredCars.length > 0 &&
               !showNearbyCars && (
                 <div className="nearby-button">
-                  <Button full onClick={this.showNearbyCars}>See exact matches nearby</Button>
+                  <Button inverted fill onClick={this.showNearbyCars}>See exact matches nearby</Button>
                 </div>
               )}
 

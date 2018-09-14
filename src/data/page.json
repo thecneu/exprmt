@@ -1,22 +1,25 @@
 {
   "filters": [
     {
-      "key": ["transmissionType"],
+      "key": "transmissionType",
       "friendlyName": "transmission",
-      "required": ["Automatic", "Manual"]
+      "required": [
+        { "filterKey": "Automatic", "value": "Automatic" },
+        { "filterKey": "Manual", "value": "Standard" }
+      ]
     },
     {
-      "key": ["trimLevel"],
+      "key": "trimLevel",
       "friendlyName": "trims",
       "required": []
     },
     {
-      "key": ["exteriorColorDescription", "exteriorColorBaseColor"],
+      "key": "exteriorColorDescription",
       "friendlyName": "exterior color",
       "required": []
     },
     {
-      "key": ["interiorColorDescription", "interiorColorBaseColor"],
+      "key": "interiorColorDescription",
       "friendlyName": "interior color",
       "required": []
     }

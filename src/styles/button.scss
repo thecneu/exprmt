@@ -47,12 +47,7 @@
     }
   }
 
-  &.btn-fill {
-    display: flex;
-    width: 100%;
-  }
-
-  &.btn-full {
+  &.btn-inverted {
     background: none;
     border: 1px solid $color-blue1;
     color: $color-blue1;
@@ -60,8 +55,6 @@
     font-size: 15px;
     line-height: 18px;
     min-height: 60px;
-    display: flex;
-    width: 100%;
     text-transform: none;
 
     &:hover {
@@ -73,5 +66,11 @@
       background: $color-blue1;
       color: white;
     }
+  }
+
+
+  &.btn-fill {
+    display: flex;
+    width: 100%;
   }
 }

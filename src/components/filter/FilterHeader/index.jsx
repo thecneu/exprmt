@@ -15,7 +15,7 @@ const FilterHeader = ({ toggleFilter, clearFilters }) => (
       </div>
 
       <div className="right-container">
-        <button onClick={() => { clearFilters(); toggleFilter(); }}>Clear all</button>
+        <button onClick={() => clearFilters() || toggleFilter()}>Clear all</button>
       </div>
     </div>
   </header>

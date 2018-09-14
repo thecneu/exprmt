@@ -4,7 +4,7 @@ import './to-top.scss';
 
 const scrollToTop = (e) => {
   e.preventDefault();
-  document.body.scrollIntoView();
+  window.scrollTo(0, 0);
 };
 
 const ButtonToTop = () => (
